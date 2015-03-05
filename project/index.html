@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 	<link rel="stylesheet" href="css/normalize.css" type="text/css" charset="utf-8">
 	<link rel="stylesheet" href="css/skeleton.css" type="text/css" charset="utf-8">
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css" charset="utf-8">
+	
 	<link rel="icon" type="image/png" href="">
 	
 	<style>
@@ -71,6 +73,13 @@
 	nav a span.icon_title {
 		display: block;
 		text-transform: uppercase;
+	}
+	
+	input#search {
+	    font-family: FontAwesome;
+	    font-style: normal;
+	    font-weight: normal;
+	    text-decoration: inherit;
 	}
 	
 	
@@ -149,11 +158,8 @@
 	<main>
 		<header class="container">
 			<h1>onPoint</h1>
-			<h2>tagline</h2>
 			<form>
-				<div class="row">
-					<input class="u-full-width" type="search" placeholder="search" id="search">
-				</div>
+					<input class="u-full-width" type="search" placeholder="&#xF002;" id="search">
 			</form>
 		</header>
 	</main>
