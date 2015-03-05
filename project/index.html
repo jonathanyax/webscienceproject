@@ -84,8 +84,8 @@
 	
 	div.addpoint {
 		position: absolute;
-		top: 1em;
 		right: 1em;
+		top: 1em;
 	}
 	div.addpoint a {
 		display: block;
@@ -132,16 +132,16 @@
 		}
 		main {
 			margin-left: 175px !important;
-			/* THE DYE */
-/*			background: #DDD;*/
 		}
 		header {
-			/* THE DYE */
-/*			background: #CCC;*/
 			text-align: center;
 		}
 		header h1 {
 			padding: 0.5em 0;
+		}
+		header h1 a {
+			color: #666;
+			text-decoration: none;
 		}
 	}
 
@@ -179,10 +179,13 @@
 			<div class="addpoint">
 				<a href="#"><i class="fa fa-map-marker"></i></a>
 			</div>
-			<h1>onPoint</h1>
-			<form>
-					<input class="u-full-width" type="search" placeholder="&#xF002;" id="search">
-			</form>
+			<div class="row">
+				<h1><a href="#">onPoint</a></h1>
+				<form>
+						<input class="u-full-width" type="search" placeholder="&#xF002;" id="search">
+				</form>
+			</div>
+			
 		</header>
 	</main>
 </body>
