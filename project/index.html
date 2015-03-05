@@ -15,6 +15,9 @@
 	
 	<style>
 	/* TEMP INLINE STYLES */
+	* {
+		box-sizing: border-box;
+	}
 	body {
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		font-weight: 200;
@@ -22,15 +25,15 @@
 	}
 	
 	nav {
-		background: #EEE;
+		background: #F6F9F9;
 	}	
 	nav div#user {
 		padding: 2em 0;
 	}
 	nav div#user a {
 		display: block;
-		height: 90px;
-		width: 90px;
+		height: 100px;
+		width: 100px;
 		margin: 0 auto;
 		background: #879CA6;
 		border-radius: 50%;
@@ -56,20 +59,6 @@
 	nav ul a:hover {
 		color: #000;
 	}
-	nav ul#functions a {
-		display: block;
-		padding: 1em 0;
-	}
-	nav ul#settings {
-		margin: 0;
-		width: 150px;
-		background: #DEDEDE;
-		position: absolute;
-		bottom: 0;
-	}
-	nav ul#settings li {
-		display: inline-block;
-	}
 	nav a span {
 		text-align: center;
 	}
@@ -91,6 +80,34 @@
 			border-left: 0.5em solid #12CA9A;
 			height: 100vh;
 			width: 150px;
+			position: relative;
+			float: left;
+		}
+		nav ul#functions a {
+			display: block;
+			padding: 1em 0;
+		}
+		nav ul#settings {
+			position: absolute;
+			bottom: 0;
+			margin: 0;
+			width: 100%;
+			background: #ECEDED;
+		}
+		nav ul#settings li {
+			display: inline;
+			width: 100%;
+		}
+		nav ul#settings li a {
+			width: 50%;
+			float: left;
+			text-align: center;
+			padding: 0.5em 0;
+		}
+		main {
+			height: 100%;
+			margin-left: 150px;
+			background: #AAA;
 		}
 	}
 
@@ -123,5 +140,8 @@
 			<li><a href="#">?</a></li>
 		</div>
 	</nav>
+	<main>
+		main content
+	</main>
 </body>
 </html>
