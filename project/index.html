@@ -12,8 +12,116 @@
 	<link rel="stylesheet" href="css/normalize.css" type="text/css" charset="utf-8">
 	<link rel="stylesheet" href="css/skeleton.css" type="text/css" charset="utf-8">
 	<link rel="icon" type="image/png" href="">
+	
+	<style>
+	/* TEMP INLINE STYLES */
+	body {
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-weight: 200;
+		font-size: 16px;
+	}
+	
+	nav {
+		background: #EEE;
+	}	
+	nav div#user {
+		padding: 2em 0;
+	}
+	nav div#user a {
+		display: block;
+		height: 90px;
+		width: 90px;
+		margin: 0 auto;
+		background: #879CA6;
+		border-radius: 50%;
+		border: 0.5em double #EFEFEF;
+		color: #FFF;
+		text-decoration: none;
+	}
+	nav div#user a:hover {
+		background: #666;
+	}
+	nav div#user a span.icon_wrap {
+		display: block;
+		padding: 20% 0 0 0;
+	}
+	
+	nav ul li {
+		list-style-type: none;
+	}
+	nav ul a {
+		text-decoration: none;
+		color: #666;
+	}
+	nav ul a:hover {
+		color: #000;
+	}
+	nav ul#functions a {
+		display: block;
+		padding: 1em 0;
+	}
+	nav ul#settings {
+		margin: 0;
+		width: 150px;
+		background: #DEDEDE;
+		position: absolute;
+		bottom: 0;
+	}
+	nav ul#settings li {
+		display: inline-block;
+	}
+	nav a span {
+		text-align: center;
+	}
+	nav a span.icon {
+		display: block;
+	}
+	nav a span.icon_title {
+		display: block;
+		text-transform: uppercase;
+	}
+	
+	
+	/* Larger than mobile */
+	@media (min-width: 400px) {}
+
+	/* Larger than phablet (also point when grid becomes active) */
+	@media (min-width: 550px) {
+		nav {
+			border-left: 0.5em solid #12CA9A;
+			height: 100vh;
+			width: 150px;
+		}
+	}
+
+	/* Larger than tablet */
+	@media (min-width: 750px) {}
+
+	/* Larger than desktop */
+	@media (min-width: 1000px) {}
+
+	/* Larger than Desktop HD */
+	@media (min-width: 1200px) {}
+
+	
+	</style>
+	
 </head>
 <body>
-	
+	<nav>
+		<div id="user">
+			<a href="#"><span class="icon_wrap"><span class="icon">lock</span><span class="icon_title">Sign In</span></span></a>
+		</div>
+		<ul id="functions">
+			<li><a href="#"><span class="icon">home</span><span class="icon_title">home</span></a></li>
+			<li><a href="#"><span class="icon">search</span><span class="icon_title">search</span></a></li>
+			<li><a href="#"><span class="icon">discover</span><span class="icon_title">discover</span></a></li>
+			<li><a href="#"><span class="icon">regions</span><span class="icon_title">regions</span></a></li>
+		</ul>
+		<ul id="settings">
+			<li><a href="#">cog</a></li>
+			<li><a href="#">?</a></li>
+		</div>
+	</nav>
 </body>
 </html>
