@@ -82,6 +82,20 @@
 	    text-decoration: inherit;
 	}
 	
+	div.addpoint {
+		position: absolute;
+		top: 1em;
+		right: 1em;
+	}
+	div.addpoint a {
+		display: block;
+		font-size: 2.5em;
+		color: #12CA9A;
+	}
+	div.addpoint a:hover {
+		color: #879CA6;
+	}
+	
 	
 	/* Larger than mobile */
 	@media (min-width: 400px) {}
@@ -91,7 +105,7 @@
 		nav {
 			border-left: 0.5em solid #12CA9A;
 			height: 100vh;
-			width: 150px;
+			width: 175px;
 			position: relative;
 			float: left;
 		}
@@ -117,12 +131,17 @@
 			padding: 0.5em 0;
 		}
 		main {
-			margin-left: 150px !important;
-			background: #DDD;
+			margin-left: 175px !important;
+			/* THE DYE */
+/*			background: #DDD;*/
 		}
 		header {
-			background: #CCC;
+			/* THE DYE */
+/*			background: #CCC;*/
 			text-align: center;
+		}
+		header h1 {
+			padding: 0.5em 0;
 		}
 	}
 
@@ -157,6 +176,9 @@
 	</nav>
 	<main>
 		<header class="container">
+			<div class="addpoint">
+				<a href="#"><i class="fa fa-map-marker"></i></a>
+			</div>
 			<h1>onPoint</h1>
 			<form>
 					<input class="u-full-width" type="search" placeholder="&#xF002;" id="search">
