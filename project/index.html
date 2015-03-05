@@ -56,8 +56,11 @@
 		text-decoration: none;
 		color: #666;
 	}
+	nav ul a.current {
+		color: #12CA9A;
+	}
 	nav ul a:hover {
-		color: #000;
+		color: #12CA9A;
 	}
 	nav a span {
 		text-align: center;
@@ -105,9 +108,12 @@
 			padding: 0.5em 0;
 		}
 		main {
-			height: 100%;
-			margin-left: 150px;
-			background: #AAA;
+			margin-left: 150px !important;
+			background: #DDD;
+		}
+		header {
+			background: #CCC;
+			text-align: center;
 		}
 	}
 
@@ -130,7 +136,7 @@
 			<a href="#"><span class="icon_wrap"><span class="icon">lock</span><span class="icon_title">Sign In</span></span></a>
 		</div>
 		<ul id="functions">
-			<li><a href="#"><span class="icon">home</span><span class="icon_title">home</span></a></li>
+			<li><a href="#" class="current"><span class="icon">home</span><span class="icon_title">home</span></a></li>
 			<li><a href="#"><span class="icon">search</span><span class="icon_title">search</span></a></li>
 			<li><a href="#"><span class="icon">discover</span><span class="icon_title">discover</span></a></li>
 			<li><a href="#"><span class="icon">regions</span><span class="icon_title">regions</span></a></li>
@@ -141,7 +147,15 @@
 		</div>
 	</nav>
 	<main>
-		main content
+		<header class="container">
+			<h1>onPoint</h1>
+			<h2>tagline</h2>
+			<form>
+				<div class="row">
+					<input class="u-full-width" type="search" placeholder="search" id="search">
+				</div>
+			</form>
+		</header>
 	</main>
 </body>
 </html>
