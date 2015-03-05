@@ -108,23 +108,31 @@
 		background: #BBB;
 	}
 	div#featuredCities div.city {
-		padding: 0.5em;
+		padding: 0.75em;
 		border-radius: 10px;
 		height: 200px;
 		background: #EEE;
+		margin-bottom: 1em;
 	}
 	
 	
 	/* Larger than mobile */
-	@media (min-width: 400px) {}
+	@media (min-width: 400px) {
+		
+	}
 
 	/* Larger than phablet (also point when grid becomes active) */
 	@media (min-width: 550px) {
+		
+	}
+
+	/* Larger than tablet */
+	@media (min-width: 750px) {
 		nav {
 			border-left: 0.5em solid #12CA9A;
 			height: 100vh;
 			width: 175px;
-			position: relative;
+			position: fixed;
 			float: left;
 		}
 		nav ul#functions a {
@@ -162,9 +170,6 @@
 			text-decoration: none;
 		}
 	}
-
-	/* Larger than tablet */
-	@media (min-width: 750px) {}
 
 	/* Larger than desktop */
 	@media (min-width: 1000px) {}
