@@ -96,6 +96,21 @@
 		color: #879CA6;
 	}
 	
+	div#coverflow {
+		/*temp height before module is added*/
+		height: 300px;
+	}
+	
+	div#featuredCities {
+		background: #BBB;
+	}
+	div#featuredCities div.city {
+		padding: 0.5em;
+		border-radius: 10px;
+		height: 200px;
+		background: #EEE;
+	}
+	
 	
 	/* Larger than mobile */
 	@media (min-width: 400px) {}
@@ -184,8 +199,24 @@
 				<form>
 						<input class="u-full-width" type="search" placeholder="&#xF002;" id="search">
 				</form>
+				<div id="coverflow">
+					<h3>Cover Flow Goes Here</h3>
+				</div>
+				<div id="featuredCities">
+					<div class="three columns city">
+						<span>New York Metropolitan Area</span>
+					</div>
+					<div class="three columns city">
+						<span>Greater Boston Area</span>
+					</div>
+					<div class="three columns city">
+						<span>Albany &ndash; Capital Region</span>
+					</div>
+					<div class="three columns city">
+						<span>San Francisco Bay Area</span>
+					</div>
+				</div>
 			</div>
-			
 		</header>
 	</main>
 </body>
