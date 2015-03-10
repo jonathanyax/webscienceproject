@@ -8,10 +8,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script src="scripts/modernizr.custom.26633.js"></script>
+	<script src="scripts/jquery.gridrotator.js"></script>
+	<script src="scripts/scripts.js"></script>
+	
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 	<link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/skeleton.css" type="text/css">
 	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="css/gridrotator.css" type="text/css">
 	
 	<!-- <link rel="icon" type="image/png" href=""> -->
 	
@@ -109,12 +114,12 @@
 		color: #879CA6;
 	}
 	
-	div#coverflow {
-		/*temp height before module is added*/
-		height: 300px;
+	div#imagegrid {
+		margin: 1em 0;
 	}
 	
 	div#featuredCities {
+		margin: 2em 0;
 		background: #BBB;
 	}
 	div#featuredCities div.city {
@@ -295,26 +300,124 @@
 				<form>
 						<input class="u-full-width" type="search" placeholder="&#xF002;" id="search">
 				</form>
-				<div id="coverflow">
-					<h3>Grid Goes Here</h3>
-				</div>
-				<div id="featuredCities">
-					<div class="three columns city">
-						<span>New York Metropolitan Area</span>
-					</div>
-					<div class="three columns city">
-						<span>Greater Boston Area</span>
-					</div>
-					<div class="three columns city">
-						<span>Albany &ndash; Capital Region</span>
-					</div>
-					<div class="three columns city">
-						<span>San Francisco Bay Area</span>
-					</div>
-				</div>
-				
 			</div>
 		</header>
+		
+		<div id="imagegrid">
+			<div id="ri-grid" class="ri-grid ri-grid-size-2">
+				<img class="ri-loading-image" src="images/loading.gif"/>
+				<ul>
+					<li><a href="#"><img src="images/sample_grid/sample_001.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_002.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_003.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_004.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_005.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_006.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_007.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_008.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_009.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_010.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_011.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_012.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_013.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_014.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_015.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_016.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_017.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_018.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_019.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_020.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_021.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_022.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_023.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_024.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_025.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_026.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_027.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_028.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_029.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_030.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_031.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_032.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_033.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_034.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_035.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_036.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_037.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_038.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_039.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_040.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_041.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_042.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_043.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_044.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_045.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_046.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_047.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_048.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_049.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_050.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_051.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_052.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_053.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_054.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_055.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_056.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_057.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_058.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_059.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_060.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_061.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_062.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_063.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_064.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_065.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_066.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_067.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_068.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_069.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_070.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_071.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_072.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_073.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_074.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_075.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_076.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_077.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_078.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_079.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_080.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_081.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_082.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_083.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_084.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_085.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_086.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_087.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_088.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_089.JPG"/></a></li>
+					<li><a href="#"><img src="images/sample_grid/sample_090.JPG"/></a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div id="featuredCities">
+				<div class="three columns city">
+					<span>New York Metropolitan Area</span>
+				</div>
+				<div class="three columns city">
+					<span>Greater Boston Area</span>
+				</div>
+				<div class="three columns city">
+					<span>Albany &ndash; Capital Region</span>
+				</div>
+				<div class="three columns city">
+					<span>San Francisco Bay Area</span>
+				</div>
+			</div>
+		</div>
+		
 	</main>
 </body>
 </html>
