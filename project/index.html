@@ -27,39 +27,23 @@
 	}
 	
 	nav {
-		background: #F6F9F9;
+		background: #12CA9A;
 	}	
-	nav div#user {
-		padding: 2em 0;
-	}
-	nav div#user a {
-		display: block;
-		height: 100px;
-		width: 100px;
-		margin: 0 auto;
-		background: #879CA6;
-		border-radius: 50%;
-		border: 0.5em double #EFEFEF;
-		color: #FFF;
-		text-decoration: none;
-	}
-	nav div#user a:hover {
-		background: #666;
-	}
-	nav div#user a span.icon_wrap {
-		display: block;
-		padding: 20% 0 0 0;
-	}
 	
-	nav ul#settings {
-		font-size: 1.25em;
-	}
-	nav ul li {
-		list-style-type: none;
-	}
+
+
 	nav ul a {
 		text-decoration: none;
 		color: #666;
+	}
+	nav ul li {
+		display: inline;
+	}
+	nav ul#settings {
+		display: none;
+	}
+	nav div#user {
+		display: none;
 	}
 	nav ul a.current {
 		color: #12CA9A;
@@ -67,16 +51,13 @@
 	nav ul a:hover {
 		color: #12CA9A;
 	}
-	nav a span {
-		text-align: center;
-	}
 	nav a span.icon {
-		display: block;
+		font-size: 1.5em;
 	}
 	nav a span.icon_title {
-		display: block;
-		text-transform: uppercase;
+		display: none;
 	}
+	
 	
 	input#search {
 	    font-family: FontAwesome;
@@ -129,22 +110,58 @@
 	/* Larger than tablet */
 	@media (min-width: 750px) {
 		nav {
+			background: #F6F9F9;
 			border-left: 0.5em solid #12CA9A;
 			height: 100vh;
 			width: 175px;
 			position: fixed;
 			float: left;
 		}
+		nav a span {
+			text-align: center;
+		}
+		nav a span.icon {
+			display: block;
+		}
+		nav a span.icon_title {
+			display: block;
+			text-transform: uppercase;
+		}
+		nav div#user {
+			display: block;
+			padding: 1em 0;
+		}
+		nav div#user a {
+			display: block;
+			height: 100px;
+			width: 100px;
+			margin: 0 auto;
+			background: #879CA6;
+			border-radius: 50%;
+			border: 0.5em double #EFEFEF;
+			color: #FFF;
+			text-decoration: none;
+		}
+		nav div#user a:hover {
+			background: #666;
+		}
+		nav div#user a span.icon_wrap {
+			display: block;
+			padding: 0.5em 0 0 0;
+		}
+		
 		nav ul#functions a {
 			display: block;
 			padding: 1em 0;
 		}
 		nav ul#settings {
+			display: block;
 			position: absolute;
 			bottom: 0;
 			margin: 0;
 			width: 100%;
 			background: #ECEDED;
+			font-size: 1.25em;
 		}
 		nav ul#settings li {
 			display: inline;
@@ -156,6 +173,10 @@
 			text-align: center;
 			padding: 0.5em 0;
 		}
+		nav ul li#user {
+			display: none;
+		}
+		
 		main {
 			margin-left: 175px !important;
 		}
@@ -184,13 +205,14 @@
 <body>
 	<nav>
 		<div id="user">
-			<a href="#"><span class="icon_wrap"><span class="icon">lock</span><span class="icon_title">Sign In</span></span></a>
+			<a href="#"><span class="icon_wrap"><span class="icon"><i class="fa fa-lock"></i></span><span class="icon_title">Sign In</span></span></a>
 		</div>
 		<ul id="functions">
-			<li><a href="#" class="current"><span class="icon">home</span><span class="icon_title">home</span></a></li>
-			<li><a href="#"><span class="icon">search</span><span class="icon_title">search</span></a></li>
-			<li><a href="#"><span class="icon">discover</span><span class="icon_title">discover</span></a></li>
-			<li><a href="#"><span class="icon">regions</span><span class="icon_title">regions</span></a></li>
+			<li><a href="#" class="current"><span class="icon"><i class="fa fa-home"></i></span><span class="icon_title">home</span></a></li>
+			<li><a href="#"><span class="icon"><i class="fa fa-leanpub"></i></span><span class="icon_title">regions</span></a></li>
+			<li><a href="#"><span class="icon"><i class="fa fa-globe"></i></span><span class="icon_title">discover</span></a></li>
+			<li><a href="#"><span class="icon"><i class="fa fa-search"></i></span><span class="icon_title">search</span></a></li>
+			<li id="user"><a href="#"><span class="icon"><i class="fa fa-user"></i></span><span class="icon_title">user</span></a></li>
 		</ul>
 		<ul id="settings">
 			<li><a href="#"><i class="fa fa-cog"></i></a></li>
@@ -208,7 +230,7 @@
 						<input class="u-full-width" type="search" placeholder="&#xF002;" id="search">
 				</form>
 				<div id="coverflow">
-					<h3>Cover Flow Goes Here</h3>
+					<h3>Grid Goes Here</h3>
 				</div>
 				<div id="featuredCities">
 					<div class="three columns city">
