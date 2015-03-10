@@ -9,11 +9,11 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-	<link rel="stylesheet" href="css/normalize.css" type="text/css" charset="utf-8">
-	<link rel="stylesheet" href="css/skeleton.css" type="text/css" charset="utf-8">
-	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css" charset="utf-8">
+	<link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/skeleton.css" type="text/css">
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css">
 	
-	<link rel="icon" type="image/png" href="">
+	<!-- <link rel="icon" type="image/png" href=""> -->
 	
 	<style>
 	/* TEMP INLINE STYLES */
@@ -30,14 +30,33 @@
 		background: #12CA9A;
 	}	
 	
-
-
 	nav ul a {
 		text-decoration: none;
-		color: #666;
+		color: #FFF;
+		display: inline-block;
+		padding: 0 0.25em;
+	}
+	nav ul a:hover {
+		background: rgb(0, 172, 133);
+		color: #FFF;
+	}
+	nav ul a.current {
+		background: rgb(0, 172, 133);
 	}
 	nav ul li {
 		display: inline;
+	}
+	nav ul#logo {
+		float: left;
+	}
+	nav ul#logo li {
+		font-size: 1.5em;
+	}
+	nav ul#functions {
+		text-align: right;
+	}
+	nav ul#logo a:hover {
+		background: rgba(0, 172, 133, 0);
 	}
 	nav ul#settings {
 		display: none;
@@ -45,17 +64,20 @@
 	nav div#user {
 		display: none;
 	}
-	nav ul a.current {
-		color: #12CA9A;
-	}
-	nav ul a:hover {
-		color: #12CA9A;
-	}
+	
 	nav a span.icon {
 		font-size: 1.5em;
 	}
 	nav a span.icon_title {
 		display: none;
+	}
+	
+	header h1 {
+		padding: 0.5em 0;
+	}
+	header h1 a {
+		color: #666;
+		text-decoration: none;
 	}
 	
 	
@@ -96,6 +118,12 @@
 		margin-bottom: 1em;
 	}
 	
+	/* testing purposes for finding iphone 4 min size*/
+	@media (max-width: 320px) {
+		body {
+			display: none;
+		}
+	}
 	
 	/* Larger than mobile */
 	@media (min-width: 400px) {
@@ -104,7 +132,13 @@
 
 	/* Larger than phablet (also point when grid becomes active) */
 	@media (min-width: 550px) {
-		
+		nav ul#logo a {
+			margin: 0 1em;
+		}
+		nav ul#functions a {
+			padding: 0 1.25em;
+			margin: 0 0.5em;
+		}
 	}
 
 	/* Larger than tablet */
@@ -149,7 +183,22 @@
 			display: block;
 			padding: 0.5em 0 0 0;
 		}
-		
+		nav ul a {
+			display: block;
+			padding: 0;
+			margin: 0;
+			color: #666;
+		}
+		nav ul a:hover {
+			color: #12CA9A;
+		}
+		nav ul a.current {
+			color: #12CA9A;
+			background: rgba(0, 172, 133, 0);
+			display: block;
+			padding: 0;
+			margin: 0;
+		}
 		nav ul#functions a {
 			display: block;
 			padding: 1em 0;
@@ -173,7 +222,7 @@
 			text-align: center;
 			padding: 0.5em 0;
 		}
-		nav ul li#user {
+		nav ul li#userprofile, nav ul#logo {
 			display: none;
 		}
 		
@@ -182,13 +231,6 @@
 		}
 		header {
 			text-align: center;
-		}
-		header h1 {
-			padding: 0.5em 0;
-		}
-		header h1 a {
-			color: #666;
-			text-decoration: none;
 		}
 	}
 
@@ -207,17 +249,20 @@
 		<div id="user">
 			<a href="#"><span class="icon_wrap"><span class="icon"><i class="fa fa-lock"></i></span><span class="icon_title">Sign In</span></span></a>
 		</div>
+		<ul id="logo">
+			<li><a href="#">OnPoint <i class="fa fa-map-marker"></i></a></li>
+		</ul>
 		<ul id="functions">
 			<li><a href="#" class="current"><span class="icon"><i class="fa fa-home"></i></span><span class="icon_title">home</span></a></li>
 			<li><a href="#"><span class="icon"><i class="fa fa-leanpub"></i></span><span class="icon_title">regions</span></a></li>
 			<li><a href="#"><span class="icon"><i class="fa fa-globe"></i></span><span class="icon_title">discover</span></a></li>
 			<li><a href="#"><span class="icon"><i class="fa fa-search"></i></span><span class="icon_title">search</span></a></li>
-			<li id="user"><a href="#"><span class="icon"><i class="fa fa-user"></i></span><span class="icon_title">user</span></a></li>
+			<li id="userprofile"><a href="#"><span class="icon"><i class="fa fa-user"></i></span><span class="icon_title">user</span></a></li>
 		</ul>
 		<ul id="settings">
 			<li><a href="#"><i class="fa fa-cog"></i></a></li>
 			<li><a href="#"><i class="fa fa-question-circle"></i></a></li>
-		</div>
+		</ul>
 	</nav>
 	<main>
 		<header class="container">
