@@ -28,6 +28,7 @@
 	
 	nav {
 		background: #12CA9A;
+		padding: 0 0.75em;
 	}	
 	
 	nav ul a {
@@ -55,6 +56,9 @@
 	nav ul#functions {
 		text-align: right;
 	}
+	nav ul#functions a {
+		padding: 0 0.25em;
+	}
 	nav ul#logo a:hover {
 		background: rgba(0, 172, 133, 0);
 	}
@@ -80,8 +84,13 @@
 		text-decoration: none;
 	}
 	
+	header h1#onpoint_title {
+		display: none;
+	}
+	
 	
 	input#search {
+		display: none;
 	    font-family: FontAwesome;
 	    font-style: normal;
 	    font-weight: normal;
@@ -89,9 +98,7 @@
 	}
 	
 	div.addpoint {
-		position: absolute;
-		right: 1em;
-		top: 1em;
+		
 	}
 	div.addpoint a {
 		display: block;
@@ -117,27 +124,26 @@
 		background: #EEE;
 		margin-bottom: 1em;
 	}
-	
-	/* testing purposes for finding iphone 4 min size*/
-	@media (max-width: 320px) {
-		body {
-			display: none;
-		}
-	}
-	
+
 	/* Larger than mobile */
 	@media (min-width: 400px) {
-		
+		nav {
+			padding: 0 1em;
+		}
+		nav ul#functions a {
+			padding: 0 0.75em;
+			margin: 0;
+		}
 	}
 
 	/* Larger than phablet (also point when grid becomes active) */
 	@media (min-width: 550px) {
-		nav ul#logo a {
-			margin: 0 1em;
+		nav {
+			padding: 0 1em;
 		}
 		nav ul#functions a {
 			padding: 0 1.25em;
-			margin: 0 0.5em;
+			margin: 0 0.25em;
 		}
 	}
 
@@ -150,6 +156,7 @@
 			width: 175px;
 			position: fixed;
 			float: left;
+			padding: 0;
 		}
 		nav a span {
 			text-align: center;
@@ -191,6 +198,7 @@
 		}
 		nav ul a:hover {
 			color: #12CA9A;
+			background: rgba(0, 0, 0, 0);
 		}
 		nav ul a.current {
 			color: #12CA9A;
@@ -226,11 +234,24 @@
 			display: none;
 		}
 		
+		div.addpoint {
+			position: absolute;
+			right: 1em;
+			top: 1em;
+		}
+		
 		main {
 			margin-left: 175px !important;
 		}
 		header {
 			text-align: center;
+		}
+		header h1#onpoint_title {
+			display: block;
+		}
+		
+		input#search {
+			display: block;
 		}
 	}
 
@@ -270,7 +291,7 @@
 				<a href="#"><i class="fa fa-map-marker"></i></a>
 			</div>
 			<div class="row">
-				<h1><a href="#">onPoint</a></h1>
+				<h1 id="onpoint_title"><a href="#">onPoint</a></h1>
 				<form>
 						<input class="u-full-width" type="search" placeholder="&#xF002;" id="search">
 				</form>
@@ -291,6 +312,7 @@
 						<span>San Francisco Bay Area</span>
 					</div>
 				</div>
+				
 			</div>
 		</header>
 	</main>
