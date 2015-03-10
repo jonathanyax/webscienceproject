@@ -120,11 +120,48 @@
 		background: #BBB;
 	}
 	div#featuredCities div.city {
-		padding: 0.75em;
-		border-radius: 10px;
-		height: 200px;
-		background: #EEE;
 		margin-bottom: 1em;
+		border-radius: 10px;
+		position: relative;
+	}
+	div#featuredCities div#sf {
+		background: url('images/city_thumbs/sf.JPG');
+		background-size: cover;
+		background-position: center;
+	}
+	div#featuredCities div#nyc {
+		background: url('images/city_thumbs/nyc.JPG');
+		background-size: cover;
+		background-position: center;
+	}
+	div#featuredCities div#bos {
+		background: url('images/city_thumbs/bos.JPG');
+		background-size: cover;
+		background-position: center;
+	}
+	div#featuredCities div#rpi {
+		background: url('images/city_thumbs/rpi.JPG');
+		background-size: cover;
+		background-position: center;
+	}
+	
+	div#featuredCities div.city a {
+		display: block;
+		height: 250px;
+	}
+	div#featuredCities div.city a span {
+		display: inline-block;
+		color: #FFF;
+		position: absolute;
+		bottom: 0;
+		background: rgba(18, 202, 154, 0.8);
+		border-radius: 0 0 10px 10px;
+		width: 100%;
+		text-align: center;
+		padding: 0.5em 0;
+	}
+	div#featuredCities div.city a:hover span {
+		background: rgba(18, 202, 154, 1);
 	}
 
 	/* Larger than mobile */
@@ -400,17 +437,17 @@
 		
 		<div class="container">
 			<div id="featuredCities">
-				<div class="three columns city">
-					<span>New York Metropolitan Area</span>
+				<div class="three columns city" id="nyc">
+					<a href="#"><span>New York Metropolitan Area</span></a>
 				</div>
-				<div class="three columns city">
-					<span>Greater Boston Area</span>
+				<div class="three columns city" id="bos">
+					<a href="#"><span>Greater Boston Area</span></a>
 				</div>
-				<div class="three columns city">
-					<span>Albany &ndash; Capital Region</span>
+				<div class="three columns city" id="rpi">
+					<a href="#"><span>Albany &ndash; Capital Region</span></a>
 				</div>
-				<div class="three columns city">
-					<span>San Francisco Bay Area</span>
+				<div class="three columns city" id="sf">
+					<a href="#"><span>San Francisco Bay Area</span></a>
 				</div>
 			</div>
 		</div>
