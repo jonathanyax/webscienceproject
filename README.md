@@ -1,5 +1,4 @@
 # ITWS-4200 Web Science Project
-## Spring 2015 Group Project
 
 # Project Summary
 This project, called “On Point,” is a social travel platform that allows people to share their insider knowledge of cities around the world, showcasing their picks of everything from the classic must-do’s to the up-and-coming hidden alleyways.  On Point’s target users are curious travelers who visit cities and want to wander like a local as well as people who enjoy traveling and sharing their recommendations.
