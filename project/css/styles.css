@@ -58,7 +58,7 @@ nav ul#logo {
   float: left;
 }
 nav ul#logo li {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 nav ul#functions {
   text-align: right;
@@ -244,6 +244,9 @@ div.featured_region.curr_region {
   nav {
     padding: 0 1em;
   }
+	nav ul#logo li {
+		font-size: 1.5em;
+	}
   nav ul#functions a {
     padding: 0.25em 0.75em;
     margin: 0;
