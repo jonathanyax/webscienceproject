@@ -128,7 +128,8 @@ div#imagegrid {
 }
 
 div#featuredCities {
-  margin: 2em;
+  margin: 2em auto;
+  overflow: hidden;
 }
 div#featuredCities div.city {
   margin-bottom: 1em;
@@ -204,7 +205,6 @@ div#regions_nav {
   list-style: none;
   border-bottom: 1px solid #D1D1D1;
   text-align: center;
-  padding-bottom: 2px;
 }
 
 div#regions_nav .city {
@@ -214,17 +214,26 @@ div#regions_nav .city {
 div#regions_nav a {
   text-decoration: none;
   font-size: 22px;
+  display: block;
   padding-bottom: 5px;
 }
 
-div#regions_nav a.active,
-div#regions_nav a:hover {
+div#regions_nav .city.active,
+div#regions_nav .city:hover {
   border-bottom: 4px solid #12CA9A;
+}
 
+div#featuredCities.featured_regions {
+  margin: 2em auto;
+  background: none;
 }
 
 div.featured_region {
   display: none;
+}
+
+div.featured_region.curr_region {
+  display: block;
 }
 
 /* Larger than mobile */
