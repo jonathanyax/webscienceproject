@@ -65,6 +65,10 @@ nav ul#functions {
 nav ul#functions a {
   padding: 0 0.25em;
 }
+nav ul#functions a.current span.icon_title {
+	-webkit-text-stroke: 1px #12CA9A;
+	color: #12CA9A;
+}
 nav ul#functions a span.icon_title {
   -webkit-text-stroke: 1px #666;
 }
@@ -332,6 +336,10 @@ div.featured_region.curr_region {
     display: block;
     padding: 1.5em 0;
   }
+	nav ul#functions li a:hover span.icon_title {
+		-webkit-text-stroke: 1px #12CA9A;
+		color: #12CA9A;
+	}
   nav ul#settings {
     display: block;
     position: absolute;
