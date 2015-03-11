@@ -66,6 +66,9 @@ nav ul#functions {
 nav ul#functions a {
   padding: 0 0.25em;
 }
+nav ul#functions a span.icon_title {
+  -webkit-text-stroke: 1px #8B9DA8;
+}
 nav ul#logo a:hover {
   background: rgba(0, 172, 133, 0);
 }
@@ -89,15 +92,13 @@ nav a span.icon_title {
 header h1 {
   padding: 0.5em 0;
   font-family: Lane-Narrow;
-  text-shadow: 0 0 2px #8B9DA8;
-  font-size: 68px;
   color: #8B9DA8;
-  line-height: 81px;
   font-family: 'lane-narrow';
+  -webkit-text-stroke: 2px #8B9DA8;
   text-shadow: 0 0 2px #8B9DA8;
+
 }
 header h1 a {
-  color: #666;
   text-decoration: none;
 }
 
