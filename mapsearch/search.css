@@ -1,0 +1,42 @@
+      body {
+        font-family: Arial;
+      }
+
+      #map {
+        width: 800px;
+        height: 500px;
+        margin: 0px;
+        padding: 0px
+      }
+
+      h3 {
+        background-color: #fff;
+        border: 2px solid #ddd;
+        margin: 3px;
+        text-align: center;
+      }
+
+      #searchbar {
+        background-color: #fff;
+        margin: 3px;
+
+      }
+      .controls {
+        margin-top: 16px;
+        border: 1px solid #555;
+        border-radius: 2px;
+      }
+
+      #searchbox {
+        background-color: #fff;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #searchbox:focus {
+        border-color: #4d90fe;
+      }
