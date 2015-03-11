@@ -1,0 +1,377 @@
+/* TEMP INLINE STYLES */
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "on-point";
+  src:url("../fonts/on-point/on-point.eot");
+  src:url("../fonts/on-point/on-point.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/on-point/on-point.woff") format("woff"),
+    url("../fonts/on-point/on-point.ttf") format("truetype"),
+    url("../fonts/on-point/on-point.svg#on-point") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'lane-narrow';
+    src: url('../fonts/lane-narrow/LANENAR_-webfont.eot');
+    src: url('../fonts/lane-narrow/LANENAR_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lane-narrow/LANENAR_-webfont.woff') format('woff'),
+         url('../fonts/lane-narrow/LANENAR_-webfont.ttf') format('truetype'),
+         url('../fonts/lane-narrow/LANENAR_-webfont.svg#lane_-_narrowregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  font-family: Lane-Narrow;
+}
+
+nav {
+  background: #12CA9A;
+  padding: 0 0.75em;
+} 
+
+nav ul a {
+  text-decoration: none;
+  color: #FFF;
+  display: inline-block;
+  padding: 0 0.25em;
+}
+nav ul a:hover {
+  background: rgb(0, 172, 133);
+  color: #FFF;
+}
+nav ul a.current {
+  background: rgb(0, 172, 133);
+}
+nav ul li {
+  display: inline;
+}
+nav ul#logo {
+  float: left;
+}
+nav ul#logo li {
+  font-size: 1.5em;
+}
+nav ul#functions {
+  text-align: right;
+}
+nav ul#functions a {
+  padding: 0 0.25em;
+}
+nav ul#logo a:hover {
+  background: rgba(0, 172, 133, 0);
+}
+nav ul#settings {
+  display: none;
+}
+nav div#user {
+  display: none;
+}
+
+nav a span.icon {
+  font-size: 1.5em;
+  line-height: 0.9;
+}
+nav a span.icon_title {
+  display: none;
+  font-family: 'lane-narrow';
+  text-shadow: 0 0 1px #8B9DA8;
+}
+
+header h1 {
+  padding: 0.5em 0;
+  font-family: Lane-Narrow;
+  text-shadow: 0 0 2px #8B9DA8;
+  font-size: 68px;
+  color: #8B9DA8;
+  line-height: 81px;
+  font-family: 'lane-narrow';
+  text-shadow: 0 0 2px #8B9DA8;
+}
+header h1 a {
+  color: #666;
+  text-decoration: none;
+}
+
+header h1#onpoint_title {
+  display: none;
+}
+
+
+input#search {
+  display: none;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+
+div.addpoint a {
+  display: inline-block;
+  font-size: 2.5em;
+  color: #12CA9A;
+}
+div.addpoint a:hover {
+  color: #879CA6;
+}
+
+div#imagegrid {
+  margin: 1em 0;
+}
+
+div#featuredCities {
+  margin: 2em 0;
+  background: #BBB;
+}
+div#featuredCities div.city {
+  margin-bottom: 1em;
+  border-radius: 10px;
+  position: relative;
+}
+div#featuredCities div#sf {
+  background: url('../images/city_thumbs/sf.JPG');
+  background-size: cover;
+  background-position: center;
+}
+div#featuredCities div#nyc {
+  background: url('../images/city_thumbs/nyc.JPG');
+  background-size: cover;
+  background-position: center;
+}
+div#featuredCities div#bos {
+  background: url('../images/city_thumbs/bos.JPG');
+  background-size: cover;
+  background-position: center;
+}
+div#featuredCities div#rpi {
+  background: url('../images/city_thumbs/rpi.JPG');
+  background-size: cover;
+  background-position: center;
+}
+
+div#featuredCities div#manhattan {
+  background: url('../images/city_thumbs/manhattan.jpg');
+  background-size: cover;
+  background-position: center;
+}
+div#featuredCities div#longisland {
+  background: url('../images/city_thumbs/longisland.jpg');
+  background-size: cover;
+  background-position: center;
+}
+div#featuredCities div#jerseycity {
+  background: url('../images/city_thumbs/jerseycity.jpg');
+  background-size: cover;
+  background-position: center;
+}
+div#featuredCities div#newhaven {
+  background: url('../images/city_thumbs/newhaven.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+div#featuredCities div.city a {
+  display: block;
+  height: 250px;
+}
+div#featuredCities div.city a span {
+  display: inline-block;
+  color: #FFF;
+  position: absolute;
+  bottom: 0;
+  background: rgba(18, 202, 154, 0.8);
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0.25em;
+  text-shadow: 0 0 1px #fff;
+  font-size: 16px;
+}
+div#featuredCities div.city a:hover span {
+  background: rgba(18, 202, 154, 1);
+}
+
+div#regions_nav {
+  font-family: 'lane-narrow';
+  /*text-shadow: 0 0 2px #8B9DA8;*/
+  list-style: none;
+  border-bottom: 1px solid #D1D1D1;
+  text-align: center;
+  padding-bottom: 2px;
+}
+
+div#regions_nav .city {
+  display: inline-block;
+}
+
+div#regions_nav a {
+  text-decoration: none;
+  font-size: 22px;
+  padding-bottom: 5px;
+}
+
+div#regions_nav a.active,
+div#regions_nav a:hover {
+  border-bottom: 4px solid #12CA9A;
+
+}
+
+div.featured_region {
+  display: none;
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+  nav {
+    padding: 0 1em;
+  }
+  nav ul#functions a {
+    padding: 0 0.75em;
+    margin: 0;
+  }
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+  nav {
+    padding: 0 1em;
+  }
+  nav ul#functions a {
+    padding: 0 1.25em;
+    margin: 0 0.25em;
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  nav {
+    background: #F6F9F9;
+    border-left: 0.5em solid #12CA9A;
+    height: 100vh;
+    width: 175px;
+    position: fixed;
+    float: left;
+    padding: 0;
+  }
+  nav a span {
+    text-align: center;
+  }
+  nav a span.icon {
+    display: block;
+  }
+  nav a span.icon_title {
+    display: block;
+    text-transform: uppercase;
+  }
+  nav div#user {
+    display: block;
+    padding: 1em 0;
+  }
+  nav div#user a {
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.2);
+            box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  }
+  nav div#user a:hover span.user_icon_wrap {
+    background: #666;
+  }
+  nav div#user a span.user_icon_wrap {
+    background: #879CA6;
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-transition: background 300ms ease-in-out;
+    -moz-transition: background 300ms ease-in-out;
+    -ms-transition: background 300ms ease-in-out;
+    -o-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+  }
+  nav div#user a span.icon_wrap {
+    display: block;
+    padding: 1.4em 0 0 0;
+  }
+  nav ul a {
+    display: block;
+    padding: 0;
+    margin: 0;
+    color: #666;
+  }
+  nav ul a:hover {
+    color: #12CA9A;
+    background: rgba(0, 0, 0, 0);
+  }
+  nav ul a.current {
+    color: #12CA9A;
+    background: rgba(0, 172, 133, 0);
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  nav ul#functions a {
+    display: block;
+    padding: 1.5em 0;
+  }
+  nav ul#settings {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    background: #ECEDED;
+    font-size: 1.25em;
+  }
+  nav ul#settings li {
+    display: inline;
+    width: 100%;
+  }
+  nav ul#settings li a {
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 0.5em 0;
+  }
+  nav ul li#userprofile, nav ul#logo {
+    display: none;
+  }
+  
+  div.addpoint {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+  }
+  
+  main {
+    margin-left: 175px !important;
+  }
+  header {
+    text-align: center;
+  }
+  header h1#onpoint_title {
+    display: block;
+  }
+  
+  input#search {
+    display: block;
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}

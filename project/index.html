@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>ITWS</title>
+	<title>On Point</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,304 +17,29 @@
 	<link rel="stylesheet" href="css/skeleton.css" type="text/css">
 	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css">
 	<link rel="stylesheet" href="css/gridrotator.css" type="text/css">
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
 	
 	<!-- <link rel="icon" type="image/png" href=""> -->
-	
-	<style>
-	/* TEMP INLINE STYLES */
-	* {
-		box-sizing: border-box;
-	}
-	body {
-		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-		font-weight: 200;
-		font-size: 16px;
-	}
-	
-	nav {
-		background: #12CA9A;
-		padding: 0 0.75em;
-	}	
-	
-	nav ul a {
-		text-decoration: none;
-		color: #FFF;
-		display: inline-block;
-		padding: 0 0.25em;
-	}
-	nav ul a:hover {
-		background: rgb(0, 172, 133);
-		color: #FFF;
-	}
-	nav ul a.current {
-		background: rgb(0, 172, 133);
-	}
-	nav ul li {
-		display: inline;
-	}
-	nav ul#logo {
-		float: left;
-	}
-	nav ul#logo li {
-		font-size: 1.5em;
-	}
-	nav ul#functions {
-		text-align: right;
-	}
-	nav ul#functions a {
-		padding: 0 0.25em;
-	}
-	nav ul#logo a:hover {
-		background: rgba(0, 172, 133, 0);
-	}
-	nav ul#settings {
-		display: none;
-	}
-	nav div#user {
-		display: none;
-	}
-	
-	nav a span.icon {
-		font-size: 1.5em;
-	}
-	nav a span.icon_title {
-		display: none;
-	}
-	
-	header h1 {
-		padding: 0.5em 0;
-	}
-	header h1 a {
-		color: #666;
-		text-decoration: none;
-	}
-	
-	header h1#onpoint_title {
-		display: none;
-	}
-	
-	
-	input#search {
-		display: none;
-	    font-family: FontAwesome;
-	    font-style: normal;
-	    font-weight: normal;
-	    text-decoration: inherit;
-	}
-	
-	div.addpoint a {
-		display: inline-block;
-		font-size: 2.5em;
-		color: #12CA9A;
-	}
-	div.addpoint a:hover {
-		color: #879CA6;
-	}
-	
-	div#imagegrid {
-		margin: 1em 0;
-	}
-	
-	div#featuredCities {
-		margin: 2em 0;
-		background: #BBB;
-	}
-	div#featuredCities div.city {
-		margin-bottom: 1em;
-		border-radius: 10px;
-		position: relative;
-	}
-	div#featuredCities div#sf {
-		background: url('images/city_thumbs/sf.JPG');
-		background-size: cover;
-		background-position: center;
-	}
-	div#featuredCities div#nyc {
-		background: url('images/city_thumbs/nyc.JPG');
-		background-size: cover;
-		background-position: center;
-	}
-	div#featuredCities div#bos {
-		background: url('images/city_thumbs/bos.JPG');
-		background-size: cover;
-		background-position: center;
-	}
-	div#featuredCities div#rpi {
-		background: url('images/city_thumbs/rpi.JPG');
-		background-size: cover;
-		background-position: center;
-	}
-	
-	div#featuredCities div.city a {
-		display: block;
-		height: 250px;
-	}
-	div#featuredCities div.city a span {
-		display: inline-block;
-		color: #FFF;
-		position: absolute;
-		bottom: 0;
-		background: rgba(18, 202, 154, 0.8);
-		border-radius: 0 0 10px 10px;
-		width: 100%;
-		text-align: center;
-		padding: 0.5em 0.25em;
-	}
-	div#featuredCities div.city a:hover span {
-		background: rgba(18, 202, 154, 1);
-	}
-
-	/* Larger than mobile */
-	@media (min-width: 400px) {
-		nav {
-			padding: 0 1em;
-		}
-		nav ul#functions a {
-			padding: 0 0.75em;
-			margin: 0;
-		}
-	}
-
-	/* Larger than phablet (also point when grid becomes active) */
-	@media (min-width: 550px) {
-		nav {
-			padding: 0 1em;
-		}
-		nav ul#functions a {
-			padding: 0 1.25em;
-			margin: 0 0.25em;
-		}
-	}
-
-	/* Larger than tablet */
-	@media (min-width: 750px) {
-		nav {
-			background: #F6F9F9;
-			border-left: 0.5em solid #12CA9A;
-			height: 100vh;
-			width: 175px;
-			position: fixed;
-			float: left;
-			padding: 0;
-		}
-		nav a span {
-			text-align: center;
-		}
-		nav a span.icon {
-			display: block;
-		}
-		nav a span.icon_title {
-			display: block;
-			text-transform: uppercase;
-		}
-		nav div#user {
-			display: block;
-			padding: 1em 0;
-		}
-		nav div#user a {
-			display: block;
-			height: 100px;
-			width: 100px;
-			margin: 0 auto;
-			background: #879CA6;
-			border-radius: 50%;
-			border: 0.5em double #EFEFEF;
-			color: #FFF;
-			text-decoration: none;
-		}
-		nav div#user a:hover {
-			background: #666;
-		}
-		nav div#user a span.icon_wrap {
-			display: block;
-			padding: 0.5em 0 0 0;
-		}
-		nav ul a {
-			display: block;
-			padding: 0;
-			margin: 0;
-			color: #666;
-		}
-		nav ul a:hover {
-			color: #12CA9A;
-			background: rgba(0, 0, 0, 0);
-		}
-		nav ul a.current {
-			color: #12CA9A;
-			background: rgba(0, 172, 133, 0);
-			display: block;
-			padding: 0;
-			margin: 0;
-		}
-		nav ul#functions a {
-			display: block;
-			padding: 1em 0;
-		}
-		nav ul#settings {
-			display: block;
-			position: absolute;
-			bottom: 0;
-			margin: 0;
-			width: 100%;
-			background: #ECEDED;
-			font-size: 1.25em;
-		}
-		nav ul#settings li {
-			display: inline;
-			width: 100%;
-		}
-		nav ul#settings li a {
-			width: 50%;
-			float: left;
-			text-align: center;
-			padding: 0.5em 0;
-		}
-		nav ul li#userprofile, nav ul#logo {
-			display: none;
-		}
-		
-		div.addpoint {
-			position: absolute;
-			right: 1em;
-			top: 1em;
-		}
-		
-		main {
-			margin-left: 175px !important;
-		}
-		header {
-			text-align: center;
-		}
-		header h1#onpoint_title {
-			display: block;
-		}
-		
-		input#search {
-			display: block;
-		}
-	}
-
-	/* Larger than desktop */
-	@media (min-width: 1000px) {}
-
-	/* Larger than Desktop HD */
-	@media (min-width: 1200px) {}
-
-	
-	</style>
 	
 </head>
 <body>
 	<nav>
 		<div id="user">
-			<a href="#"><span class="icon_wrap"><span class="icon"><i class="fa fa-lock"></i></span><span class="icon_title">Sign In</span></span></a>
+			<a href="#">
+				<span class="user_icon_wrap">
+					<span class="icon_wrap">
+						<span class="icon"><i class="fa fa-lock"></i></span>
+						<span class="icon_title">Sign In</span>
+					</span>
+				</span>
+			</a>
 		</div>
 		<ul id="logo">
-			<li><a href="#">OnPoint <i class="fa fa-map-marker"></i></a></li>
+			<li><a href="index.html">OnPoint <i class="fa fa-map-marker"></i></a></li>
 		</ul>
 		<ul id="functions">
-			<li><a href="#" class="current"><span class="icon"><i class="fa fa-home"></i></span><span class="icon_title">home</span></a></li>
-			<li><a href="#"><span class="icon"><i class="fa fa-leanpub"></i></span><span class="icon_title">regions</span></a></li>
+			<li><a href="index.html" class="current"><span class="icon"><i class="fa fa-home"></i></span><span class="icon_title">home</span></a></li>
+			<li><a href="regions.html"><span class="icon"><i class="fa fa-leanpub"></i></span><span class="icon_title">regions</span></a></li>
 			<li><a href="#"><span class="icon"><i class="fa fa-globe"></i></span><span class="icon_title">discover</span></a></li>
 			<li><a href="#"><span class="icon"><i class="fa fa-search"></i></span><span class="icon_title">search</span></a></li>
 			<li id="userprofile"><a href="#"><span class="icon"><i class="fa fa-user"></i></span><span class="icon_title">user</span></a></li>
