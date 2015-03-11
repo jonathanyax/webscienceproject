@@ -84,15 +84,12 @@ nav a span.icon {
 }
 nav a span.icon_title {
   display: none;
-  text-shadow: 0 0 1px #8B9DA8;
 }
 
 header h1 {
   padding: 0.5em 0;
   color: #8B9DA8;
-  -webkit-text-stroke: 2px #8B9DA8;
-  text-shadow: 0 0 2px #8B9DA8;
-
+  -webkit-text-stroke: 1px #8B9DA8;
 }
 header h1 a {
   text-decoration: none;
@@ -192,7 +189,6 @@ div#featuredCities div.city a span {
   width: 100%;
   text-align: center;
   padding: 0.5em 0.25em;
-  text-shadow: 0 0 1px #fff;
   font-size: 16px;
 }
 div#featuredCities div.city a:hover span {
@@ -200,7 +196,6 @@ div#featuredCities div.city a:hover span {
 }
 
 div#regions_nav {
-  /*text-shadow: 0 0 2px #8B9DA8;*/
   list-style: none;
   border-bottom: 1px solid #D1D1D1;
   text-align: center;
