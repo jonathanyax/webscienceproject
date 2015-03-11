@@ -124,62 +124,62 @@ div#imagegrid {
   margin: 1em 0;
 }
 
-div#featuredCities {
+div#featured_cities {
   margin: 2em auto;
   overflow: hidden;
 }
-div#featuredCities div.city {
+div#featured_cities div.city {
   margin-bottom: 1em;
   border-radius: 10px;
   position: relative;
 }
-div#featuredCities div#sf {
+div#featured_cities div#sf {
   background: url('../images/city_thumbs/sf.JPG');
   background-size: cover;
   background-position: center;
 }
-div#featuredCities div#nyc {
+div#featured_cities div#nyc {
   background: url('../images/city_thumbs/nyc.JPG');
   background-size: cover;
   background-position: center;
 }
-div#featuredCities div#bos {
+div#featured_cities div#bos {
   background: url('../images/city_thumbs/bos.JPG');
   background-size: cover;
   background-position: center;
 }
-div#featuredCities div#rpi {
+div#featured_cities div#rpi {
   background: url('../images/city_thumbs/rpi.JPG');
   background-size: cover;
   background-position: center;
 }
 
-div#featuredCities div#manhattan {
+div#featured_cities div#manhattan {
   background: url('../images/city_thumbs/manhattan.jpg');
   background-size: cover;
   background-position: center;
 }
-div#featuredCities div#longisland {
+div#featured_cities div#longisland {
   background: url('../images/city_thumbs/longisland.jpg');
   background-size: cover;
   background-position: center;
 }
-div#featuredCities div#jerseycity {
+div#featured_cities div#jerseycity {
   background: url('../images/city_thumbs/jerseycity.jpg');
   background-size: cover;
   background-position: center;
 }
-div#featuredCities div#newhaven {
+div#featured_cities div#newhaven {
   background: url('../images/city_thumbs/newhaven.jpg');
   background-size: cover;
   background-position: center;
 }
 
-div#featuredCities div.city a {
+div#featured_cities div.city a {
   display: block;
   height: 250px;
 }
-div#featuredCities div.city a span {
+div#featured_cities div.city a span {
   display: inline-block;
   color: #FFF;
   position: absolute;
@@ -191,7 +191,7 @@ div#featuredCities div.city a span {
   padding: 0.5em 0.25em;
   font-size: 16px;
 }
-div#featuredCities div.city a:hover span {
+div#featured_cities div.city a:hover span {
   background: rgba(18, 202, 154, 1);
 }
 
@@ -217,7 +217,7 @@ div#regions_nav .city:hover {
   border-bottom: 4px solid #12CA9A;
 }
 
-div#featuredCities.featured_regions {
+div#featured_cities.featured_regions {
   margin: 2em auto;
   background: none;
 }
