@@ -66,7 +66,7 @@ nav ul#functions a {
   padding: 0 0.25em;
 }
 nav ul#functions a span.icon_title {
-  -webkit-text-stroke: 1px #8B9DA8;
+  -webkit-text-stroke: 1px #666;
 }
 nav ul#logo a:hover {
   background: rgba(0, 172, 133, 0);
