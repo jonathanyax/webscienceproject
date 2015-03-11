@@ -128,8 +128,7 @@ div#imagegrid {
 }
 
 div#featuredCities {
-  margin: 2em 0;
-  background: #BBB;
+  margin: 2em;
 }
 div#featuredCities div.city {
   margin-bottom: 1em;
