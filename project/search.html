@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Regions | On Point</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script src="scripts/modernizr.custom.26633.js"></script>
+	<script src="scripts/jquery.gridrotator.js"></script>
+	<script src="scripts/scripts.js"></script>
+
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/skeleton.css" type="text/css">
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="css/gridrotator.css" type="text/css">
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
+
+	<!-- <link rel="icon" type="image/png" href=""> -->
+</head>
+<body>
+  <nav>
+	<div id="user">
+	  <a href="#">
+		<span class="user_icon_wrap">
+		  <span class="icon_wrap">
+			<span class="icon"><i class="fa fa-lock"></i></span>
+			<span class="icon_title">Sign In</span>
+		  </span>
+		</span>
+	  </a>
+	</div>
+	<ul id="logo">
+	  <li><a href="index.html">OnPoint <i class="fa fa-map-marker"></i></a></li>
+	</ul>
+	<ul id="functions">
+	  <li><a href="index.html"><span class="icon"><i class="fa fa-home"></i></span><span class="icon_title">home</span></a></li>
+	  <li><a href="regions.html" class="current"><span class="icon"><i class="fa fa-leanpub"></i></span><span class="icon_title">regions</span></a></li>
+	  <li><a href="#"><span class="icon"><i class="fa fa-globe"></i></span><span class="icon_title">discover</span></a></li>
+	  <li><a href="#"><span class="icon"><i class="fa fa-search"></i></span><span class="icon_title">search</span></a></li>
+	  <li id="userprofile"><a href="#"><span class="icon"><i class="fa fa-user"></i></span><span class="icon_title">user</span></a></li>
+	</ul>
+	<ul id="settings">
+	  <li><a href="#"><i class="fa fa-cog"></i></a></li>
+	  <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+	</ul>
+  </nav>
+  <main>
+	<header class="container">
+	  <div class="addpoint">
+		<a href="#"><i class="fa fa-map-marker"></i></a>
+	  </div>
+	  <div class="row">
+		<h1 id="onpoint_title"><a href="#">onPoint</a></h1>
+	  </div>
+	</header>
+
+	<div id="regions_nav" class="container">
+		<div class="three columns city active"><a href="#" data-show-region="show_nyc">New York Metropolitan</a></div>
+		<div class="three columns city"><a href="#" data-show-region="show_bos">Greater Boston</a></div>
+		<div class="three columns city"><a href="#" data-show-region="show_alb">Albany Capital Region</a></div>
+		<div class="three columns city"><a href="#" data-show-region="show_sf">San Francisco Bay</a></div>
+	</div>
+
+		<div id="featured_cities" class="container featured_regions">
+			<div id="show_nyc" class="featured_region curr_region">
+				<div class="row">
+					<div class="six columns city" id="manhattan">
+						<a href="#"><span>Manhattan</span></a>
+					</div>
+					<div class="six columns city" id="longisland">
+						<a href="#"><span>Long Island</span></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="six columns city" id="jerseycity">
+						<a href="#"><span>Jersey City</span></a>
+					</div>
+					<div class="six columns city" id="newhaven">
+						<a href="#"><span>New Haven</span></a>
+					</div>
+				</div>
+			</div>
+			<div id="show_bos" class="featured_region">
+				<div class="row">
+					<div class="six columns city" id="boston">
+						<a href="#"><span>Boston</span></a>
+					</div>
+					<div class="six columns city" id="cambridge">
+						<a href="#"><span>Cambridge</span></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="six columns city" id="framingham">
+						<a href="#"><span>Framingham</span></a>
+					</div>
+					<div class="six columns city" id="quincy">
+						<a href="#"><span>Quincy</span></a>
+					</div>
+				</div>
+			</div>
+			<div id="show_alb" class="featured_region">
+				<div class="row">
+					<div class="six columns city" id="albany">
+						<a href="#"><span>Albany</span></a>
+					</div>
+					<div class="six columns city" id="troy">
+						<a href="#"><span>Troy</span></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="six columns city" id="schenectady">
+						<a href="#"><span>Schenectady</span></a>
+					</div>
+					<div class="six columns city" id="saratogasprings">
+						<a href="#"><span>Saratoga Springs</span></a>
+					</div>
+				</div>
+			</div>
+			<div id="show_sf" class="featured_region">
+				<div class="row">
+					<div class="six columns city" id="sanfrancisco">
+						<a href="#"><span>San Francisco</span></a>
+					</div>
+					<div class="six columns city" id="sanjose">
+						<a href="#"><span>San Jose</span></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="six columns city" id="oakland">
+						<a href="#"><span>Oakland</span></a>
+					</div>
+					<div class="six columns city" id="paloalto">
+						<a href="#"><span>Palo Alto</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
