@@ -14,6 +14,10 @@
   font-style: normal;
 }
 
+span[class^="icon-"] {
+    font-family: "on-point";
+}
+
 @font-face {
     font-family: 'lane-narrow';
     src: url('../fonts/lane-narrow/LANENAR_-webfont.eot');
@@ -35,7 +39,7 @@ body {
 nav {
   background: #12CA9A;
   padding: 0 0.75em;
-} 
+}
 
 nav ul a {
   text-decoration: none;
@@ -83,7 +87,7 @@ nav div#user {
 }
 
 nav a span.icon {
-  font-size: 1.5em;
+  font-size: 1.8em;
   line-height: 0.9;
 }
 nav a span.icon_title {
@@ -91,12 +95,19 @@ nav a span.icon_title {
 }
 
 header h1 {
-  padding: 0.5em 0;
-  color: #8B9DA8;
+  padding: 0.4em 0;
   -webkit-text-stroke: 1px #8B9DA8;
+  color: #8B9DA8;
 }
-header h1 a {
+header a {
   text-decoration: none;
+}
+
+.icon-onpoint{
+    color: #12CA9A;
+    margin-left: 18px;
+    font-size: 80px;
+    -webkit-text-stroke: 0px;
 }
 
 header h1#onpoint_title {
@@ -110,6 +121,7 @@ input#search {
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
+    border: solid 2px #EAF0EF;
 }
 
 div.addpoint {
@@ -277,6 +289,15 @@ div.featured_region.curr_region {
   nav a span.icon {
     display: block;
   }
+
+  nav a span[class^="icon-"]{
+      -webkit-text-stroke: 0.4px;
+  }
+
+  .icon-discover{
+
+  }
+
   nav a span.icon_title {
     display: block;
     text-transform: uppercase;
@@ -363,13 +384,13 @@ div.featured_region.curr_region {
   nav ul li#userprofile, nav ul#logo {
     display: none;
   }
-  
+
   div.addpoint {
     position: absolute;
     right: 1em;
     top: 1em;
   }
-  
+
   main {
     margin-left: 175px !important;
   }
@@ -379,7 +400,7 @@ div.featured_region.curr_region {
   header h1#onpoint_title {
     display: block;
   }
-  
+
   input#search {
     display: block;
   }
