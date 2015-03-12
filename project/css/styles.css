@@ -116,13 +116,12 @@ header h1#onpoint_title {
 }
 
 
-input#search {
+input.search {
+	font-family: FontAwesome;
+  border: solid 2px #EAF0EF;
+}
+input#home_search {
   display: none;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    border: solid 2px #EAF0EF;
 }
 
 div.addpoint {
@@ -410,7 +409,7 @@ div.featured_region.curr_region {
     padding-top: 10px;
   }
 
-  input#search {
+  input#home_search {
     display: block;
   }
 }
