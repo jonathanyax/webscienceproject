@@ -87,15 +87,15 @@ nav div#user {
 }
 
 nav a span.icon {
-	font-size: 1.8em;
-	line-height: 0.9;
+	font-size: 1.5em;
+	line-height: 1.5em;
 }
 nav a span.icon_title {
 	display: none;
 }
 
 header h1 {
-	padding: 0.4em 0;
+	padding: 0.25em 0;
 	-webkit-text-stroke: 1px #8B9DA8;
 	color: #8B9DA8;
 }
@@ -336,7 +336,7 @@ div.featured_region.curr_region {
 	}
 	nav div#user a span.icon_wrap {
 		display: block;
-		padding: 1.4em 0 0 0;
+		padding: 1em 0 0 0;
 	}
 	nav ul a {
 		display: block;
@@ -357,7 +357,7 @@ div.featured_region.curr_region {
 	}
 	nav ul#functions a {
 		display: block;
-		padding: 1.5em 0;
+		padding: 1.25em 0;
 	}
 	nav ul#functions li a:hover span.icon_title {
 		-webkit-text-stroke: 1px #12CA9A;
