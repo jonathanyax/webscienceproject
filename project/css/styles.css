@@ -286,7 +286,7 @@ button.delete span i {
 	vertical-align: -2px;
 }
 
-ul.points_list li {
+ul.points_list li, ul.search_list li {
 	list-style-type: none;
 }
 div.point_item {
@@ -332,6 +332,9 @@ div.point_item ul.point_item_metadata li {
 div.point_item ul.point_item_metadata li i {
 	padding: 0 0.25em 0 0;
 	text-align: middle;
+}
+ul.search_list li a {
+	text-decoration: none;
 }
 
 
