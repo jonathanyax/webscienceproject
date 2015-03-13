@@ -60,8 +60,9 @@ nav ul li {
 nav ul#logo {
 	float: left;
 }
-nav ul#logo li {
+nav ul#logo li a {
 	font-size: 1.25em;
+	padding: 0.25em 0;
 }
 nav ul#functions {
 	text-align: right;
@@ -99,6 +100,9 @@ header h1 {
 	-webkit-text-stroke: 1px #8B9DA8;
 	color: #8B9DA8;
 }
+header h1#onpoint_title {
+	display: none;
+}
 header a {
 	text-decoration: none;
 }
@@ -110,11 +114,6 @@ header a {
 	-webkit-text-stroke: 0px;
 	display: inline-block;
 }
-
-header h1#onpoint_title {
-	display: none;
-}
-
 
 input.search {
 	font-family: FontAwesome;
@@ -132,7 +131,7 @@ div.addpoint a {
 	float: right;
 	font-size: 2.5em;
 	color: #12CA9A;
-	padding: 0 0.5em;
+	padding: 0.5em 0 0.5em 0.5em;
 }
 div.addpoint a:hover {
 	color: #879CA6;
@@ -253,11 +252,12 @@ div.featured_region.curr_region {
 	nav {
 		padding: 0 1em;
 	}
-	nav ul#logo li {
+	nav ul#logo li a {
+		padding: 0;
 		font-size: 1.5em;
 	}
 	nav ul#functions a {
-		padding: 0.25em 0.75em;
+		padding: 0 0.75em;
 		margin: 0;
 	}
 }
@@ -268,7 +268,7 @@ div.featured_region.curr_region {
 		padding: 0 1em;
 	}
 	nav ul#functions a {
-		padding: 0.25em 1.25em;
+		padding: 0 1.25em;
 		margin: 0 0.25em;
 	}
 }
@@ -336,7 +336,7 @@ div.featured_region.curr_region {
 	}
 	nav div#user a span.icon_wrap {
 		display: block;
-		padding: 1em 0 0 0;
+		padding: 0.75em 0 0 0;
 	}
 	nav ul a {
 		display: block;
@@ -392,7 +392,7 @@ div.featured_region.curr_region {
 		top: 1em;
 	}
 	div.addpoint a {
-		padding: 0.5em;
+		padding: 0.5em 0 0.5em 0.5em;
 	}
 
 	main {
