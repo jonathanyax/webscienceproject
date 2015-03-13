@@ -130,7 +130,7 @@ div.addpoint a {
 	float: right;
 	font-size: 2.5em;
 	color: #12CA9A;
-	padding: 0.5em 0 0.5em 0.5em;
+	padding: 0 0 0 0.5em;
 }
 div.addpoint a:hover {
 	color: #879CA6;
