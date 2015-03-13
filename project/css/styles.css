@@ -286,6 +286,54 @@ button.delete span i {
 	vertical-align: -2px;
 }
 
+ul.points_list li {
+	list-style-type: none;
+}
+div.point_item {
+	font-family: "Helvetica Neue", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	overflow: auto;
+	background: #F6F9F9;
+	padding: 0.5em;
+}
+div.point_item ul.point_item_metadata {
+	list-style-type: none;
+	margin: 0;
+}
+div.point_item ul.point_item_metadata li {
+	display: inline;
+}
+div.point_item div.point_item_image {
+	width: 30%;
+	float: left;
+}
+div.point_item div.point_item_info {
+	width: 70%;
+	float: right;
+	padding: 0 0.5em;
+}
+div.point_item h2 {
+	font-weight: 400;
+	letter-spacing: normal;
+	font-size: 1.25em;
+	margin: 0;
+}
+div.point_item h3 {
+	font-weight: 200;
+	letter-spacing: normal;
+	font-size: 1em;
+	margin: 0;
+}
+div.point_item ul.point_item_metadata {
+	margin: 0.25em 0 0;
+}
+div.point_item ul.point_item_metadata li {
+	padding: 0 0.5em 0 0;
+}
+div.point_item ul.point_item_metadata li i {
+	padding: 0 0.25em 0 0;
+	text-align: middle;
+}
+
 
 /* Larger than mobile */
 @media (min-width: 400px) {
