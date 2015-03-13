@@ -404,6 +404,12 @@ div.featured_region.curr_region {
 	header h1#onpoint_title {
 		display: block;
 	}
+	header h1#onpoint_title a {
+		display: inline-block;
+	}
+	header h1#onpoint_title a:hover {
+		color: #000;
+	}
 	header h1#onpoint_title span {
 		vertical-align: middle;
 	}
