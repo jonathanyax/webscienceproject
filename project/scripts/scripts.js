@@ -1,12 +1,28 @@
 $(function() {
 	$( '#ri-grid' ).gridrotator( {
 		rows		: 3,
-		columns		: 15,
+		columns		: 12,
 		animType	: 'fadeInOut',
 		animSpeed	: 500,
 		interval	: 2000,
 		step		: 1,
-		preventClick: false
+		preventClick: false,
+		w320		: {
+			rows	: 2,
+			columns	: 2
+		},
+		w480		: {
+			rows	: 2,
+			columns	: 4
+		},
+		w768		: {
+			rows	: 3,
+			columns	: 5
+		},
+		w1024		: {
+			rows	: 3,
+			columns	: 9
+		}
 	} );
 
 });
