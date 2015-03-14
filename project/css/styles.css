@@ -30,11 +30,14 @@ span[class^="icon-"] {
 
 
 body {
-	font-family: 'lane-narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'lane-narrow', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 200;
 	font-size: 16px;
 	overflow: scroll;
 	overflow-x: hidden;
+}
+main {
+	margin-bottom: 3em;
 }
 
 nav {
@@ -292,7 +295,7 @@ ul.points_list li, ul.search_list li {
 	list-style-type: none;
 }
 div.point_item {
-	font-family: "Helvetica Neue", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
 	overflow: auto;
 	background: #F6F9F9;
 	padding: 0.5em;
@@ -337,6 +340,33 @@ div.point_item ul.point_item_metadata li i {
 }
 ul.search_list li a {
 	text-decoration: none;
+}
+
+/* POINT PAGE STYLES */
+section#point_data h2, section#point_data li {
+	font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+section#point_data h2 {
+	font-weight: bold;
+}
+section#point_data ul {
+	list-style-type: none;
+}
+section#point_data ul.address li {
+	font-size: 1.5em;
+	margin: 0;
+}
+div.point_comments {
+	border-top: 1px solid #879CA6;
+	padding: 1.5em 0;
+}
+div.point_comments ul li {
+	margin: 0 0 1em;
+}
+div.point_comments ul li span.author {
+	display: block;
+	text-align: right;
+	font-style: italic;
 }
 
 

@@ -286,7 +286,8 @@
 				itemWidth = Math.floor( containerWidth / this.columns ),
 				// calculate gap
 				gapWidth = containerWidth - ( this.columns * Math.floor( itemWidth ) );
-
+				
+								
 			for( var i = 0; i < this.rows; ++i ) {
 
 				for( var j = 0; j < this.columns; ++j ) {
