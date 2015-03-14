@@ -1,0 +1,66 @@
+header
+	@media screen and (min-width: mq--tablet)
+		text-align center
+	h1
+		color color--light-grey
+	h1.onpoint_title
+		display none
+		@media screen and (min-width: mq--tablet)
+			display block
+			margin-bottom 1rem 
+			padding .25em 0
+		span
+			@media screen and (min-width: mq--tablet)
+				vertical-align middle
+		a
+			
+			span.onpoint_title_text
+				@media screen and (min-width: mq--tablet)
+					display inline-block
+					line-height 1.4
+					padding-top 10px
+					font-size 50px
+					font-weight normal
+					text-stroke 1px
+	a
+		padding .4em 0
+		text-decoration none
+		color color--dark-grey 
+		@media screen and (min-width: mq--tablet)
+			display inline-block
+		&:hover
+			text-decoration none
+			@media screen and (min-width: mq--tablet)
+				color color--black
+	.icon-onpoint
+		color color--primary
+		margin-left 18px
+		font-size 86px
+		text-stroke 0
+		display inline-block
+	input#search
+		font-family FontAwesome
+		font-style normal
+		font-size 16px
+		font-weight normal
+		text-decoration inherit
+		border solid 2px color--white-blue
+		&:focus
+			border-color color--primary
+	div.addpoint
+		clear both
+		@media screen and (min-width: mq--tablet)
+			position absolute
+			right 1em
+			top 1em
+		a
+			display inline-block
+			float: right
+			font-size 2.5em
+			color color--primary
+			@media screen and (min-width: mq--tablet)
+				padding .5em 0 .5em .5em
+			&:hover
+				color color--blue-grey
+				text-decoration none
+	

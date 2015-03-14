@@ -1,0 +1,170 @@
+//
+// TYPOGRAPHIC STYLES
+// ==================
+// Base typography styles
+//
+// Layout styles for typographic elements should live in base.styl
+// Form and Table styles live in their respective stylesheets
+//
+
+
+//
+// SELECTED TEXT
+//
+
+::-moz-selection
+	color color--white
+	background color--primary
+	text-shadow none
+::selection
+	color color--white
+	background color--primary
+	text-shadow none
+
+
+//
+// BASE STYLES
+//
+
+html
+	-ms-text-size-adjust 100%
+	-webkit-text-size-adjust 100%
+	font-size base--font-size
+
+body
+	font-family lane-narrow, Hevetica Neue, Arial, sans-serif // for some reason saying base--font-body does not work :(
+	line-height base--line-height
+	color base--font-color
+	font-weight normal
+	font-size 1em
+
+
+//
+// HEADINGS
+// Uses a Double-stranded heading hierarchy to preserve the document outline.
+// http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+//
+
+h1, h2, h3, h4, h5, h6
+.h1, .h2, .h3, .h4, .h5, .h6
+	font-family base--font-heading
+	font-weight bold
+	line-height 1
+	color color--black
+
+h1, .h1
+	font-size 2.375em
+	letter-spacing 0
+h2, .h2
+	font-size 1.6em
+h3, .h3
+	font-size 1.4em
+h4, .h4
+	font-size 1.2em
+h5, .h5
+	font-size 1.1em
+h6, .h6
+	font-size 1em
+
+
+//
+// LINKS & BUTTONS
+//
+
+a
+	color color--primary
+	text-decoration none
+
+	&:focus
+	&:hover
+		color color--black
+		text-decoration underline
+
+	&:active
+		color color--black
+
+
+//
+// EMPHASIS
+//
+
+blockquote, q, em, dfn, i, cite, var
+	font-style italic
+
+th, strong, dt, b
+	font-weight bold
+
+
+//
+// QUOTES
+//
+
+blockquote p:before, blockquote p:after, q:before, q:after
+	content ''
+
+blockquote
+	font-size 1.125em
+
+	p
+		margin-bottom 0
+
+
+//
+// TEXT MARKING
+//
+
+ins
+	text-decoration none
+	border-bottom 3px double
+
+del, s
+	text-decoration line-through
+
+u
+	text-decoration underline
+
+// mark
+//   background-color lighten(color--notice, 40%)
+//   color color--black
+//   margin-left -2px
+//   margin-right -2px
+//   padding-left 2px
+//   padding-right 2px
+
+
+//
+// PRE-FORMATTED TEXT / CODE BLOCKS
+//
+
+pre
+code
+	font-family 'Monaco', monospace
+
+
+//
+// ADDITIONAL PRESONTATIONAL ELEMENTS
+//
+
+address
+	font-style normal
+
+abbr[title]
+	border-bottom 1px dotted
+
+// In HTML5, the `<small>` element represents legal text or small-print, rather
+// than dictating a font size.
+small
+	font-size inherit
+
+sub
+sup
+	position relative
+	font-size 0.75em
+	line-height 0
+	vertical-align baseline
+
+sup
+	top -0.5em
+
+sub
+	bottom -0.25em

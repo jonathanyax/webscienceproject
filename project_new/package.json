@@ -1,0 +1,19 @@
+{
+  "name": "OnPoint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emily Roth, Devin Nguyen, Pinyuan (Doris) Xian, Aiden Pelisson, Jonatha Yax",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.2",
+    "jade": "^1.9.2",
+    "nib": "^1.1.0",
+    "nodemon": "^1.3.7",
+    "socket.io": "^1.3.5",
+    "stylus": "^0.50.0"
+  }
+}

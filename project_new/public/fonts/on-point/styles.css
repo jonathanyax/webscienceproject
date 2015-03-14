@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "on-point";
+  src:url("fonts/on-point.eot");
+  src:url("fonts/on-point.eot?#iefix") format("embedded-opentype"),
+    url("fonts/on-point.woff") format("woff"),
+    url("fonts/on-point.ttf") format("truetype"),
+    url("fonts/on-point.svg#on-point") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "on-point" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "on-point" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-help:before {
+  content: "a";
+}
+.icon-del:before {
+  content: "b";
+}
+.icon-discover:before {
+  content: "c";
+}
+.icon-home:before {
+  content: "d";
+}
+.icon-newpoint:before {
+  content: "e";
+}
+.icon-onpoint:before {
+  content: "f";
+}
+.icon-regions:before {
+  content: "g";
+}
+.icon-search:before {
+  content: "h";
+}
+.icon-setting:before {
+  content: "i";
+}
+.icon-user:before {
+  content: "j";
+}

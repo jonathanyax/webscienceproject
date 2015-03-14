@@ -1,0 +1,115 @@
+extend layout
+
+block searchbar
+	//- no searchbar
+
+block content
+	div.container
+		div#regions_nav
+			div.three.columns.city.active
+				a(href="#", data-show-region="show_nyc") New York Metropolitan
+			div.three.columns.city
+				a(href="#", data-show-region="show_bos") Greater Boston
+			div.three.columns.city
+				a(href="#", data-show-region="show_alb") Albany Capital District
+			div.three.columns.city
+				a(href="#", data-show-region="show_sf") San Francisco Bay
+
+	div.container
+		div#featured_cities.featured_regions
+			div#show_nyc.featured_region.curr_region
+				div.row
+					div#newyorkcity.four.columns.city
+						a(href="#")
+							span New York City
+					div#longisland.four.columns.city
+						a(href="#")
+							span Long Island
+					div#northernnj.four.columns.city
+						a(href="#")
+							span Northern New Jersey
+				div.row
+					div#centralnj.four.columns.city
+						a(href="#")
+							span Central New Jersey
+					div#hudsonvalley.four.columns.city
+						a(href="#")
+							span Hudson Valley
+					div#westernct.four.columns.city
+						a(href="#")
+							span Western Connecticut
+				div.row
+					div#lehighvalley.four.columns.city
+						a(href="#")
+							span Lehigh Valley
+					div#poconos.four.columns.city
+						a(href="#")
+							span Southern &amp; Eastern Poconos
+			div#show_bos.featured_region
+				div.row
+					div#boston.four.columns.city
+						a(href="#")
+							span Boston
+					div#cambridge.four.columns.city
+						a(href="#")
+							span Cambridge
+					div#framingham.four.columns.city
+						a(href="#")
+							span Framingham
+				div.row
+					div#nashua.four.columns.city
+						a(href="#")
+							span Nashua
+					div#newton.four.columns.city
+						a(href="#")
+							span Newton
+					div#peabody.four.columns.city
+						a(href="#")
+							span Peabody
+				div.row
+					div#quincy.four.columns.city
+						a(href="#")
+							span Quincy
+					div#waltham.four.columns.city
+						a(href="#")
+							span Waltham
+			div#show_alb.featured_region
+				div.row
+					div#albany.four.columns.city
+						a(href="#")
+							span Albany
+					div#troy.four.columns.city
+						a(href="#")
+							span Troy
+					div#schenectady.four.columns.city
+						a(href="#")
+							span Schenectady
+				div.row
+					div#saratogasprings.four.columns.city
+						a(href="#")
+							span Saratoga Springs
+					div#colonie.four.columns.city
+						a(href="#")
+							span Colonie
+					div#rensselaer.four.columns.city
+						a(href="#")
+							span Rensselaer
+				div.row
+					div#cohoes.four.columns.city
+						a(href="#")
+							span Cohoes
+					div#watervliet.four.columns.city
+						a(href="#")
+							span Watervliet
+			div#show_sf.featured_region
+				div.row
+					div#sanfrancisco.four.columns.city
+						a(href="#")
+							span San Francisco
+					div#sanjose.four.columns.city
+						a(href="#")
+							span San Jose
+					div#oakland.four.columns.city
+						a(href="#")
+							span Oakland
+
