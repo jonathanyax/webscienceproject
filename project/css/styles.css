@@ -198,6 +198,27 @@ div#featured_cities div#newhaven {
 	background-size: cover;
 	background-position: center;
 }
+div#featured_cities div#boston {
+	background: url('../images/city_thumbs/bos.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#cambridge {
+	background: url('../images/city_thumbs/cambridge.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#framingham {
+	background: url('../images/city_thumbs/framingham.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#quincy {
+	background: url('../images/city_thumbs/quincy.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
 
 div#featured_cities div.city a {
 	display: block;
