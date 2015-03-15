@@ -218,6 +218,46 @@ div#featured_cities div#quincy {
 	background-size: cover;
 	background-position: center;
 }
+div#featured_cities div#albany {
+	background: url('../images/city_thumbs/albany.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#troy {
+	background: url('../images/city_thumbs/rpi.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#schenectady {
+	background: url('../images/city_thumbs/schnectady.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#saratogasprings {
+	background: url('../images/city_thumbs/saratogasprings.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#sanfrancisco {
+	background: url('../images/city_thumbs/sanfran.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#sanjose {
+	background: url('../images/city_thumbs/sanjose.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#oakland {
+	background: url('../images/city_thumbs/oakland.jpg');
+	background-size: cover;
+	background-position: center;
+}
+div#featured_cities div#paloalto {
+	background: url('../images/city_thumbs/paloalto.jpg');
+	background-size: cover;
+	background-position: center;
+}
 
 
 div#featured_cities div.city a {
