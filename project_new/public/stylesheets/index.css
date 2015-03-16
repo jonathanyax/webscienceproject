@@ -678,6 +678,77 @@ div.featured_regions #poconos {
   background-size: cover;
   background-position: center;
 }
+div.featured_regions #boston {
+  background: url("../../images/city_thumbs/bos.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+div.featured_regions #framingham {
+  background: url("../../images/city_thumbs/framingham.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+div.featured_regions #cambridge {
+  background: url("../../images/city_thumbs/cambridge.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+div.featured_regions #albany {
+  background: url("../../images/city_thumbs/albany.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+div.featured_regions #troy {
+  background: url("../../images/city_thumbs/rpi.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+div.featured_regions #schenectady {
+  background: url("../../images/city_thumbs/schnectady.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+div.featured_regions #saratogasprings {
+  background: url("../../images/city_thumbs/saratogasprings.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+div.featured_regions #sanfrancisco {
+  background: url("../../images/city_thumbs/sanfrancisco.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+div.featured_regions #sanjose {
+  background: url("../../images/city_thumbs/sanjose.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+div.featured_regions #oakland {
+  background: url("../../images/city_thumbs/oakland.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
 section#search_data div.search_meta {
   margin-bottom: 2em;
 }
