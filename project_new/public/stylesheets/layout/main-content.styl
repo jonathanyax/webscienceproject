@@ -10,7 +10,6 @@ div#imagegrid
 	display none
 	@media screen and (min-width: mq--tablet)
 		display block
-		margin 1em 0
 
 div#featured_cities
 	margin 2em auto
@@ -58,32 +57,50 @@ div#featured_cities
 /*****************
  * REGIONS
  ****************/
-div#regions_nav
-	list-style none
-	text-align center
-	a
-		display block
-		font-size 22px
-		color color--dark-grey
-		padding 5px
+ 
+div#regions_nav_wrap
+	@media screen and (min-width: mq--phablet)
+		border-bottom 1px solid color--medium-grey
+	ul#regions_nav
+		list-style none
 		text-align center
-		word-break break-word
-		hyphens auto
-		&:hover
-			text-decoration none
-	.city
-		@media screen and (max-width: mq--mobile)
-			margin 3px 0
 		@media screen and (min-width: mq--phablet)
-			display inline-block
-			// margin 0 0 0 4%
-	.city.active a, a:hover
-		background color--primary
-		border-radius 5px
-		color color--white
-		@media screen and (min-width: mq--phablet)
-			background none
+			margin 0 auto
+			position relative
+			overflow hidden
+		a
+			display block
+			font-size 22px
 			color color--dark-grey
+			padding 5px
+			text-align center
+			word-break break-word
+			hyphens auto
+			text-decoration none
+			&:hover
+				text-decoration none
+		li.city
+			@media screen and (max-width: mq--mobile)
+				margin 3px 0
+			@media screen and (min-width: mq--phablet)
+				display inline
+				text-align center
+		li.city.active a, a:hover
+			background color--primary
+			border-radius 5px
+			color color--white
+			@media screen and (min-width: mq--phablet)
+				background none
+				color color--dark-grey
+		li#magic_line
+			@media screen and (min-width: mq--phablet)
+				position absolute
+				bottom 0
+				left 0
+				height 4px 
+				background color--primary
+				margin-left 0
+			
 div.featured_regions
 	div.featured_region
 		display none
@@ -125,3 +142,113 @@ div.featured_regions
 		background url(../../images/city_thumbs/manhattan.jpg)
 		background-size cover
 		background-position center
+
+
+/*****************
+ * SEARCH PAGE
+ ****************/
+ 
+section#search_data
+	div.search_meta
+		margin-bottom 2em
+	div.section_title
+		display inline-block
+		width 100%
+		padding 0 0 .25em
+		border-bottom 2px solid color--primary
+		h2
+			font-size 1.7em
+			margin 0
+			float left
+			font-weight normal
+			// letter-spacing .5em
+	div#search_history
+		button.delete
+			float right
+			padding 0
+			margin-bottom -10px
+			margin-top 1px
+			height 24px
+			font-family lane-narrow, HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif
+			line-height .75em
+			span
+				padding 0 .5em
+				font-size .75em
+				i
+					font-size 1.25em
+					vertical-align -2px		
+
+ul.points_list
+	margin .5em 0
+	li
+		list-style-type none
+		margin-bottom 1rem
+	div.point_item
+		overflow auto
+		background color--light-grey
+		padding .5em
+		color color--dark-grey
+		ul.point_item_metadata
+			list-style-type none
+			margin .25em 0 0
+			li
+				display inline
+				padding 0 .5em 0 0
+				font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
+				i
+					padding 0 .25em 0 0
+					text-align middle
+		div.point_item_image
+			 width 30%
+			 float left
+		div.point_item_info
+			width 70%
+			float right
+			padding 0 .5em
+		h2, h3
+			font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
+			letter-spacing normal
+			margin-bottom 5px
+			color color--dark-grey
+		h2
+			font-weight 400
+			font-size 1.25em
+		h3
+			font-weight 200
+			font-size 1em
+
+
+ul.search_list
+	li
+		list-style-type none
+		a
+			text-decoration none
+			color color--dark-grey
+			
+
+/*****************
+ * POINT PAGE
+ ****************/
+ 
+section#point_data
+	color color--black
+	h2, li
+		font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
+	h2
+		font-weight bold
+		font-size 2.6em
+		margin-bottom 10px
+	ul
+		list-style-type none
+	ul.address li
+		font-size 1.5em
+		margin 0
+	div.point_comments
+		border-top 1px solid color--blue-grey
+		padding 1.5em 0
+		li
+			margin 0 0 1em
+			span.author
+				display block
+				text-align right
+				font-style italic

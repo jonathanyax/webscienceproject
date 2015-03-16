@@ -4,15 +4,15 @@ block searchbar
 	//- no searchbar
 
 block content
-	div.container
-		div#regions_nav
-			div.three.columns.city.active
+	div#regions_nav_wrap.container
+		ul#regions_nav
+			li.three.columns.city.active
 				a(href="#", data-show-region="show_nyc") New York Metropolitan
-			div.three.columns.city
+			li.three.columns.city
 				a(href="#", data-show-region="show_bos") Greater Boston
-			div.three.columns.city
+			li.three.columns.city
 				a(href="#", data-show-region="show_alb") Albany Capital District
-			div.three.columns.city
+			li.three.columns.city
 				a(href="#", data-show-region="show_sf") San Francisco Bay
 
 	div.container

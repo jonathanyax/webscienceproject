@@ -302,6 +302,7 @@ header input#search {
   font-weight: normal;
   text-decoration: inherit;
   border: solid 2px #eaf0ef;
+  margin-bottom: 2em;
 }
 header input#search:focus {
   border-color: #12ca9a;
@@ -607,7 +608,6 @@ div#imagegrid {
 @media screen and (min-width: 750px) {
   div#imagegrid {
     display: block;
-    margin: 1em 0;
   }
 }
 div#featured_cities {
@@ -672,11 +672,23 @@ div#featured_cities #alb {
   background-size: cover;
   background-position: center;
 }
-div#regions_nav {
+@media screen and (min-width: 550px) {
+  div#regions_nav_wrap {
+    border-bottom: 1px solid #8b9da8;
+  }
+}
+div#regions_nav_wrap ul#regions_nav {
   list-style: none;
   text-align: center;
 }
-div#regions_nav a {
+@media screen and (min-width: 550px) {
+  div#regions_nav_wrap ul#regions_nav {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+}
+div#regions_nav_wrap ul#regions_nav a {
   display: block;
   font-size: 22px;
   color: #666;
@@ -688,22 +700,24 @@ div#regions_nav a {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+  text-decoration: none;
 }
-div#regions_nav a:hover {
+div#regions_nav_wrap ul#regions_nav a:hover {
   text-decoration: none;
 }
 @media screen and (max-width: 400px) {
-  div#regions_nav .city {
+  div#regions_nav_wrap ul#regions_nav li.city {
     margin: 3px 0;
   }
 }
 @media screen and (min-width: 550px) {
-  div#regions_nav .city {
-    display: inline-block;
+  div#regions_nav_wrap ul#regions_nav li.city {
+    display: inline;
+    text-align: center;
   }
 }
-div#regions_nav .city.active a,
-div#regions_nav a:hover {
+div#regions_nav_wrap ul#regions_nav li.city.active a,
+div#regions_nav_wrap ul#regions_nav a:hover {
   background: #12ca9a;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -711,10 +725,20 @@ div#regions_nav a:hover {
   color: #fff;
 }
 @media screen and (min-width: 550px) {
-  div#regions_nav .city.active a,
-  div#regions_nav a:hover {
+  div#regions_nav_wrap ul#regions_nav li.city.active a,
+  div#regions_nav_wrap ul#regions_nav a:hover {
     background: none;
     color: #666;
+  }
+}
+@media screen and (min-width: 550px) {
+  div#regions_nav_wrap ul#regions_nav li#magic_line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: #12ca9a;
+    margin-left: 0;
   }
 }
 div.featured_regions div.featured_region {
@@ -785,4 +809,124 @@ div.featured_regions #poconos {
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
+}
+section#search_data div.search_meta {
+  margin-bottom: 2em;
+}
+section#search_data div.section_title {
+  display: inline-block;
+  width: 100%;
+  padding: 0 0 0.25em;
+  border-bottom: 2px solid #12ca9a;
+}
+section#search_data div.section_title h2 {
+  font-size: 1.7em;
+  margin: 0;
+  float: left;
+  font-weight: normal;
+}
+section#search_data div#search_history button.delete {
+  float: right;
+  padding: 0;
+  margin-bottom: -10px;
+  margin-top: 1px;
+  height: 24px;
+  font-family: lane-narrow, HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 0.75em;
+}
+section#search_data div#search_history button.delete span {
+  padding: 0 0.5em;
+  font-size: 0.75em;
+}
+section#search_data div#search_history button.delete span i {
+  font-size: 1.25em;
+  vertical-align: -2px;
+}
+ul.points_list {
+  margin: 0.5em 0;
+}
+ul.points_list li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+ul.points_list div.point_item {
+  overflow: auto;
+  background: #f6f9f9;
+  padding: 0.5em;
+  color: #666;
+}
+ul.points_list div.point_item ul.point_item_metadata {
+  list-style-type: none;
+  margin: 0.25em 0 0;
+}
+ul.points_list div.point_item ul.point_item_metadata li {
+  display: inline;
+  padding: 0 0.5em 0 0;
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+ul.points_list div.point_item ul.point_item_metadata li i {
+  padding: 0 0.25em 0 0;
+  text-align: middle;
+}
+ul.points_list div.point_item div.point_item_image {
+  width: 30%;
+  float: left;
+}
+ul.points_list div.point_item div.point_item_info {
+  width: 70%;
+  float: right;
+  padding: 0 0.5em;
+}
+ul.points_list div.point_item h2,
+ul.points_list div.point_item h3 {
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  margin-bottom: 5px;
+  color: #666;
+}
+ul.points_list div.point_item h2 {
+  font-weight: 400;
+  font-size: 1.25em;
+}
+ul.points_list div.point_item h3 {
+  font-weight: 200;
+  font-size: 1em;
+}
+ul.search_list li {
+  list-style-type: none;
+}
+ul.search_list li a {
+  text-decoration: none;
+  color: #666;
+}
+section#point_data {
+  color: #222;
+}
+section#point_data h2,
+section#point_data li {
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+section#point_data h2 {
+  font-weight: bold;
+  font-size: 2.6em;
+  margin-bottom: 10px;
+}
+section#point_data ul {
+  list-style-type: none;
+}
+section#point_data ul.address li {
+  font-size: 1.5em;
+  margin: 0;
+}
+section#point_data div.point_comments {
+  border-top: 1px solid #879ca6;
+  padding: 1.5em 0;
+}
+section#point_data div.point_comments li {
+  margin: 0 0 1em;
+}
+section#point_data div.point_comments li span.author {
+  display: block;
+  text-align: right;
+  font-style: italic;
 }
