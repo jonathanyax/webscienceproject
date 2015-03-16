@@ -513,28 +513,28 @@ div#featured_cities div.city a:hover span {
   background: #12ca9a;
 }
 div#featured_cities #sf {
-  background: url("../../images/city_thumbs/sf.JPG");
+  background: url("../../images/city_thumbs/sf.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
 }
 div#featured_cities #nyc {
-  background: url("../../images/city_thumbs/nyc.JPG");
+  background: url("../../images/city_thumbs/nyc.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
 }
 div#featured_cities #bos {
-  background: url("../../images/city_thumbs/bos.JPG");
+  background: url("../../images/city_thumbs/bos.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
 }
 div#featured_cities #alb {
-  background: url("../../images/city_thumbs/alb.JPG");
+  background: url("../../images/city_thumbs/alb.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -614,198 +614,91 @@ div.featured_regions div.featured_region {
 }
 div.featured_regions div.featured_region .curr_region {
   display: block;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
 div.featured_regions #manhattan {
   background: url("../../images/city_thumbs/manhattan.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #longisland {
   background: url("../../images/city_thumbs/longisland.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #statenisland {
   background: url("../../images/city_thumbs/statenisland.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #queens {
   background: url("../../images/city_thumbs/queens.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #brooklyn {
   background: url("../../images/city_thumbs/brooklyn.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #bronx {
   background: url("../../images/city_thumbs/bronx.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
-
 div.featured_regions #lehighvalley {
   background: url("../../images/city_thumbs/lehigh.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #poconos {
   background: url("../../images/city_thumbs/poconos.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #boston {
   background: url("../../images/city_thumbs/bos.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #cambridge {
   background: url("../../images/city_thumbs/cambridge.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #framingham {
   background: url("../../images/city_thumbs/framingham.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #lexington {
   background: url("../../images/city_thumbs/lexington.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #newton {
   background: url("../../images/city_thumbs/newton.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #peabody {
   background: url("../../images/city_thumbs/peabody.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #quincy {
   background: url("../../images/city_thumbs/quincy.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #waltham {
   background: url("../../images/city_thumbs/waltham.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
-
 div.featured_regions #albany {
   background: url("../../images/city_thumbs/albany.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #troy {
   background: url("../../images/city_thumbs/rpi.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #schenectady {
   background: url("../../images/city_thumbs/schnectady.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #saratogasprings {
   background: url("../../images/city_thumbs/saratogasprings.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #hudson {
   background: url("../../images/city_thumbs/hudson.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #rensselaer {
   background: url("../../images/city_thumbs/rensselaer.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #cohoes {
   background: url("../../images/city_thumbs/cohoes.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #watervliet {
   background: url("../../images/city_thumbs/watervliet.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
-
 div.featured_regions #sanfrancisco {
-  background: url("../../images/city_thumbs/sanfranciso.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
+  background: url("../../images/city_thumbs/sf.jpg");
 }
 div.featured_regions #sanjose {
   background: url("../../images/city_thumbs/sanjose.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 div.featured_regions #oakland {
   background: url("../../images/city_thumbs/oakland.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
 }
 section#search_data div.search_meta {
   margin-bottom: 2em;
