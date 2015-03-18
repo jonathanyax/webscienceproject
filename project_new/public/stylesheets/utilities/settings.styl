@@ -1,0 +1,121 @@
+//
+// SETTINGS
+// ========
+// 
+// Template from: https://github.com/jackbrewer/stylus-boilerplate
+//
+// Project specific setings which can be changed to modify the basic look and
+// feel of the project with little effort.
+//
+// 1. BREAKPOINTS AND MEDIA QUERIES
+// 2. COLOURS
+// 3. TYPEFACES
+// 4. BASE STYLES
+// 5. ICONS
+// 6. DEBUG STYLING
+// 7. DEFAULT ENVIRONMENT
+//
+
+
+//
+// 1. BREAKPOINTS AND MEDIA QUERIES
+// Setup standard widths to pass to media queries
+//
+
+mq--mobile--portrait  = 400px
+mq--mobile--landscape = 400px
+mq--phablet--portrait = 550px
+mq--tablet--portrait  = 750px
+mq--tablet--landscape = 800px
+mq--desktop--small    = 960px
+mq--desktop			  = 1000px
+mq--desktop--medium   = 1280px
+mq--desktop--large    = 1600px
+
+// Common aliases
+mq--mobile  = mq--mobile--portrait
+mq--phablet = mq--phablet--portrait
+mq--tablet  = mq--tablet--portrait
+mq--desktop = mq--desktop--small
+
+
+//
+// 2. COLORS
+//
+
+// Common Project Colours
+color--green             = #12CA9A
+color--dark-green        = #00AC85
+color--black             = #222
+color--dark-grey         = #666
+color--medium-grey       = #8B9DA8
+color--light-grey        = #F6F9F9
+color--blue-grey         = #879CA6
+color--light-blue        = #F6F9F9
+color--darker-light-blue = #ECEDED
+color--white             = #fff
+color--white-blue        = #EAF0EF
+
+// Brand Colours
+color--primary      = color--green
+color--primary-dark = color--dark-green
+color--nav          = color--light-blue
+color--nav-settings = color--darker-light-blue
+
+// Default Notification Colours
+// $color--success = #47a967
+// $color--notice  = #4791a9
+// $color--warning = #dc7f2a
+// $color--error   = #ca4427
+
+
+//
+// 3. TYPEFACES
+// Amend variable names to suit fonts used.
+//
+
+font--lane-narrow   = lane-narrow, Helvetica Neue, Arial, sans-serif
+font--on-point      = on-point, sans-serif
+
+
+//
+// 4. BASE STYLES
+//
+
+base--font-heading = font--lane-narrow
+base--font-body    = font--lane
+base--font-icon    = font--on-point
+base--font-color   = color--dark-grey
+base--font-size    = 16px
+base--line-height  = 1.5
+base--spacing      = (base--line-height)em
+base--body-bg      = color--white
+
+
+//
+// 5. ICONS
+//
+
+
+
+
+//
+// 6. DEBUG STYLING
+// Options are
+// * error: Only critical bugs are shown
+// * warning: Show error and warning bugs
+// * all: Show error and warning bugs, as well as general tips / minor bugs
+//
+
+$debug--mode = false
+$debug--level = 'all'
+
+
+//
+// 7. DEFAULT ENVIRONMENT
+// Projects may optionally pass through an environment variable to dictate
+// whether development specific stylesheets are compiled into the final CSS.
+// Set this variable to anything other than 'development' to manually override.
+//
+
+$environment ?= 'development'

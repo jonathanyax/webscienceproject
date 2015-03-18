@@ -1,0 +1,277 @@
+/*****************
+ * INDEX
+ ****************/
+ 
+main
+	@media screen and (min-width: mq--tablet)
+		margin-left 175px 
+
+div#imagegrid
+	display none
+	@media screen and (min-width: mq--tablet)
+		display block
+
+div#featured_cities
+	margin 2em auto
+	overflow hidden
+	div.city
+		margin-bottom 1em
+		border-radius 10px
+		position relative
+		a
+			display block
+			height 275px
+			span
+				display inline-block
+				color color--white
+				text-stroke 1px color--white
+				position absolute
+				bottom 0
+				background rgba(color--primary, .8)
+				border-radius 0 0 10px 10px
+				width 100%
+				text-align center
+				padding .5em .25em
+				font-size 16px 
+				letter-spacing 1px 
+			&:hover span
+				background color--primary			 
+	#sf
+		background url(../../images/city_thumbs/sf.jpg)
+		background-size cover
+		background-position center
+	#nyc
+		background url(../../images/city_thumbs/nyc.jpg)
+		background-size cover
+		background-position center
+	#bos
+		background url(../../images/city_thumbs/bos.jpg)
+		background-size cover
+		background-position center
+	#alb
+		background url(../../images/city_thumbs/alb.jpg)
+		background-size cover
+		background-position center
+		
+		
+/*****************
+ * REGIONS
+ ****************/
+ 
+div#regions_nav_wrap
+	@media screen and (min-width: mq--phablet)
+		border-bottom 1px solid color--medium-grey
+	ul#regions_nav
+		list-style none
+		text-align center
+		@media screen and (min-width: mq--phablet)
+			margin 0 auto
+			position relative
+			overflow hidden
+		a
+			display block
+			font-size 22px
+			color color--dark-grey
+			padding 5px
+			text-align center
+			word-break break-word
+			hyphens auto
+			text-decoration none
+			&:hover
+				text-decoration none
+		li.city
+			@media screen and (max-width: mq--mobile)
+				margin 3px 0
+			@media screen and (min-width: mq--phablet)
+				display inline
+				text-align center
+		li.city.active a, a:hover
+			background color--primary
+			border-radius 5px
+			color color--white
+			@media screen and (min-width: mq--phablet)
+				background none
+				color color--dark-grey
+		li#magic_line
+			@media screen and (min-width: mq--phablet)
+				position absolute
+				bottom 0
+				left 0
+				height 4px 
+				background color--primary
+				margin-left 0
+			
+div.featured_regions
+	div.featured_region
+		display none
+		.curr_region
+			display block
+		.city
+			background-size cover !important
+			background-position center !important
+	#manhattan
+		background url(../../images/city_thumbs/manhattan.jpg)
+	#longisland
+		background url(../../images/city_thumbs/longisland.jpg)
+	#statenisland
+		background url(../../images/city_thumbs/statenisland.jpg)
+	#queens
+		background url(../../images/city_thumbs/queens.jpg)
+	#brooklyn
+		background url(../../images/city_thumbs/brooklyn.jpg)
+	#bronx
+		background url(../../images/city_thumbs/bronx.jpg)		
+	#lehighvalley
+		background url(../../images/city_thumbs/lehigh.jpg)
+	#poconos
+		background url(../../images/city_thumbs/poconos.jpg)
+	#boston
+		background url(../../images/city_thumbs/bos.jpg)
+	#cambridge
+		background url(../../images/city_thumbs/cambridge.jpg)
+	#framingham
+		background url(../../images/city_thumbs/framingham.jpg)
+	#lexington
+		background url(../../images/city_thumbs/lexington.jpg)
+	#newton
+		background url(../../images/city_thumbs/newton.jpg)
+	#peabody
+		background url(../../images/city_thumbs/peabody.jpg)
+	#quincy
+		background url(../../images/city_thumbs/quincy.jpg)
+	#waltham
+		background url(../../images/city_thumbs/waltham.jpg)
+	#albany
+		background url(../../images/city_thumbs/albany.jpg)
+	#troy
+		background url(../../images/city_thumbs/rpi.jpg)
+	#schenectady
+		background url(../../images/city_thumbs/schnectady.jpg)		
+	#saratogasprings
+		background url(../../images/city_thumbs/saratogasprings.jpg)
+	#hudson
+		background url(../../images/city_thumbs/hudson.jpg)
+	#rensselaer
+		background url(../../images/city_thumbs/rensselaer.jpg)
+	#cohoes
+		background url(../../images/city_thumbs/cohoes.jpg)
+	#watervliet
+		background url(../../images/city_thumbs/watervliet.jpg)
+	#sanfrancisco
+		background url(../../images/city_thumbs/sf.jpg)
+	#sanjose
+		background url(../../images/city_thumbs/sanjose.jpg)
+	#oakland
+		background url(../../images/city_thumbs/oakland.jpg)
+
+/*****************
+ * SEARCH PAGE
+ ****************/
+ 
+section#search_data
+	div.search_meta
+		margin-bottom 2em
+	div.section_title
+		display inline-block
+		width 100%
+		padding 0 0 .25em
+		border-bottom 2px solid color--primary
+		h2
+			font-size 1.7em
+			margin 0
+			float left
+	div#search_history
+		button.delete
+			@media screen and (min-width: mq--desktop)
+				margin-top 0
+				height 34px
+				line-height 1em
+			float right
+			padding 0
+			margin-bottom 0
+			margin-top 10px
+			height 24px
+			line-height .75em
+			span
+				@media screen and (min-width: mq--desktop)
+					font-size 1em
+				padding 0 .5em
+				font-size .75em
+				i
+					font-size 1.25em
+					vertical-align -2px		
+
+ul.points_list
+	margin .5em 0
+	li
+		list-style-type none
+		margin-bottom 1rem
+	div.point_item
+		font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
+		overflow auto
+		background color--light-grey
+		padding .5em
+		color color--dark-grey
+		ul.point_item_metadata
+			list-style-type none
+			margin 0
+			li
+				display inline
+				padding 0 .5em 0 0
+				i
+					padding 0 .25em 0 0
+					text-align middle
+		div.point_item_image
+			 width 30%
+			 float left
+		div.point_item_info
+			width 70%
+			float right
+			padding 0 .5em
+		h2, h3
+			font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
+			letter-spacing normal
+			margin-bottom 5px
+			color color--dark-grey
+		h2
+			font-weight 400
+			font-size 1.25em
+		h3
+			font-weight 200
+			font-size 1em
+
+
+ul.search_list
+	li
+		list-style-type none
+		a
+			text-decoration none
+			color color--dark-grey
+			
+
+/*****************
+ * POINT PAGE
+ ****************/
+ 
+section#point_data
+	color color--black
+	h2, li
+		font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
+	h2
+		font-weight bold
+		font-size 2.6em
+		margin-bottom 10px
+	ul
+		list-style-type none
+	ul.address li
+		font-size 1.5em
+		margin 0
+	div.point_comments
+		border-top 1px solid color--blue-grey
+		padding 1.5em 0
+		li
+			margin 0 0 1em
+			span.author
+				display block
+				text-align right
+				font-style italic
