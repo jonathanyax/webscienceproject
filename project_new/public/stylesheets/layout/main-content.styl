@@ -74,17 +74,17 @@ div#regions_nav_wrap
 			color color--dark-grey
 			padding 5px
 			text-align center
-			word-break break-word
-			hyphens auto
 			text-decoration none
 			&:hover
 				text-decoration none
 		li.city
-			@media screen and (max-width: mq--mobile)
-				margin 3px 0
+			@media screen and (max-width: mq--phablet)
+				margin .25em 0
 			@media screen and (min-width: mq--phablet)
 				display inline
 				text-align center
+			a
+				padding .5em 0
 		li.city.active a, a:hover
 			background color--primary
 			border-radius 5px

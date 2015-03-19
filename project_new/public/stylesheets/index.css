@@ -562,20 +562,14 @@ div#regions_nav_wrap ul#regions_nav a {
   color: #666;
   padding: 5px;
   text-align: center;
-  word-break: break-word;
-  -ms-word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
   text-decoration: none;
 }
 div#regions_nav_wrap ul#regions_nav a:hover {
   text-decoration: none;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
   div#regions_nav_wrap ul#regions_nav li.city {
-    margin: 3px 0;
+    margin: 0.25em 0;
   }
 }
 @media screen and (min-width: 550px) {
@@ -583,6 +577,9 @@ div#regions_nav_wrap ul#regions_nav a:hover {
     display: inline;
     text-align: center;
   }
+}
+div#regions_nav_wrap ul#regions_nav li.city a {
+  padding: 0.5em 0;
 }
 div#regions_nav_wrap ul#regions_nav li.city.active a,
 div#regions_nav_wrap ul#regions_nav a:hover {
