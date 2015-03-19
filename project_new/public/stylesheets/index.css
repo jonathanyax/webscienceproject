@@ -169,7 +169,6 @@ header input#search {
   font-weight: normal;
   text-decoration: inherit;
   border: solid 2px #eaf0ef;
-  margin-bottom: 2em;
 }
 header input#search:focus {
   border-color: #12ca9a;
@@ -475,6 +474,7 @@ div#imagegrid {
 }
 @media screen and (min-width: 750px) {
   div#imagegrid {
+    margin: 1em 0;
     display: block;
   }
 }
