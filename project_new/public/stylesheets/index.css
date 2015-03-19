@@ -89,10 +89,17 @@ td {
 a img {
   border: none;
 }
-* {
+html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 body {
   font-family: lane-narrow, Hevetica Neue, Arial, sans-serif;
