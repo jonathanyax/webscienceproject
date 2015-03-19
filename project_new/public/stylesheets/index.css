@@ -401,13 +401,16 @@ nav ul#settings {
     width: 50%;
     float: left;
     text-align: center;
-    padding: 0.5em 0;
+    padding: 0.75em 0;
     color: #666;
     -webkit-text-stroke: 0.4px;
   }
   nav ul#settings li a:hover {
     -webkit-text-stroke: 1px #12ca9a;
     color: #12ca9a;
+  }
+  nav ul#settings li a span {
+    vertical-align: text-bottom;
   }
 }
 nav div#user {
@@ -699,8 +702,8 @@ div.featured_regions #sanjose {
 div.featured_regions #oakland {
   background: url("../../images/city_thumbs/oakland.jpg");
 }
-section#search_data div.search_meta {
-  margin-bottom: 2em;
+section#search_data {
+  margin-top: 1em;
 }
 section#search_data div.section_title {
   display: inline-block;
