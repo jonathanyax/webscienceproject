@@ -59,35 +59,6 @@ td {
   padding: 0;
   border: 0;
   outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-body {
-  line-height: 1;
-  color: #000;
-  background: #fff;
-}
-ol,
-ul {
-  list-style: none;
-}
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
-}
-caption,
-th,
-td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-a img {
-  border: none;
 }
 html {
   -webkit-box-sizing: border-box;
@@ -409,6 +380,7 @@ nav ul#settings {
     float: left;
     text-align: center;
     padding: 0.75em 0;
+    line-height: 1em;
     color: #666;
     -webkit-text-stroke: 0.4px;
   }

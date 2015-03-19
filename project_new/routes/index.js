@@ -26,5 +26,15 @@ router.get('/discover', function(req, res) {
 	res.render('discover', {title: 'Discover', active: 'discover'})
 })
 
+// define the help page route
+router.get('/help', function(req, res) {
+	res.render('help', {title: 'Help Center', active: 'help'})
+})
+
+// define the settings page route
+router.get('/settings', function(req, res) {
+	res.render('settings', {title: 'Settings', active: 'settings'})
+})
+
 
 module.exports = router
