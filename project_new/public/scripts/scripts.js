@@ -59,8 +59,8 @@ $(function() {
 $(document).ready(function() {
 
 	// highlight main navigation
-	var url = (window.location.href).split("/").pop();
-	$('nav ul#functions a[href="/' + url + '"]').addClass('current');
+	// var url = (window.location.href).split("/").pop();
+	// $('nav ul#functions a[href="/' + url + '"]').addClass('current');
 
 	// show cities corresponding to regions on regions page
 	$('#regions_nav .city').each(function(index, el) {

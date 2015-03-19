@@ -29,11 +29,6 @@ app.use(express.static(__dirname + '/public'))
 
 // run!
 app.use('/', routes)
-// app.get('/', function(req, res) {
-// 	res.render('index',
-// 		{title: 'Home'}
-// 	)
-// })
 
 app.listen(3000, function() {
 	console.log('Server up on port 3000')

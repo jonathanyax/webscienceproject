@@ -14,27 +14,27 @@ nav
 					span.icon-onpoint
 	ul#functions
 		li
-			a(href="/")
+			a(href="/", class=(active === 'home' ? 'current' : ''))
 				span.icon
 					span.icon-home
 				span.icon_title home
 		li
-			a(href="/regions")
+			a(href="/regions", class=(active === 'regions' ? 'current' : ''))
 				span.icon
 					span.icon-regions
 				span.icon_title regions
 		li
-			a(href="/discover")
+			a(href="/discover", class=(active === 'discover' ? 'current' : ''))
 				span.icon
 					span.icon-discover
 				span.icon_title discover
 		li
-			a(href="/search")
+			a(href="/search", class=(active === 'search' ? 'current' : ''))
 				span.icon
 					span.icon-search
 				span.icon_title search
 		li#userprofile
-			a(href="/profile")
+			a(href="/profile", class=(active === 'user' ? 'current' : ''))
 				span.icon
 					span.icon-user
 				span.icon_title user
