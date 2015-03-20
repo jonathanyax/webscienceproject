@@ -162,6 +162,7 @@ header div.addpoint {
   }
 }
 header div.addpoint a {
+  padding: 0;
   display: inline-block;
   float: right;
   font-size: 2.5em;
