@@ -96,7 +96,6 @@ header h1.onpoint_title {
 @media screen and (min-width: 750px) {
   header h1.onpoint_title {
     display: block;
-    margin-bottom: 1rem;
     padding: 0.25em 0;
   }
 }
@@ -147,6 +146,7 @@ header input#search {
   font-weight: normal;
   text-decoration: inherit;
   border: solid 2px #eaf0ef;
+  padding: 1.5em 1em;
 }
 header input#search:focus {
   border-color: #12ca9a;
@@ -697,31 +697,46 @@ section#search_data div.section_title h2 {
 }
 section#search_data div#search_history button.delete {
   float: right;
-  padding: 0;
   margin-bottom: 0;
-  margin-top: 10px;
+  margin-top: 5px;
   height: 24px;
   line-height: 0.75em;
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 550px) {
   section#search_data div#search_history button.delete {
     margin-top: 0;
     height: 34px;
     line-height: 1em;
+    padding: 0;
   }
 }
 section#search_data div#search_history button.delete span {
+  font-size: 1em;
   padding: 0 0.5em;
-  font-size: 0.75em;
+}
+@media screen and (min-width: 550px) {
+  section#search_data div#search_history button.delete span {
+    font-size: 0.75em;
+  }
 }
 @media screen and (min-width: 960px) {
   section#search_data div#search_history button.delete span {
+    padding: 0 0.75em;
     font-size: 1em;
   }
 }
 section#search_data div#search_history button.delete span i {
   font-size: 1.25em;
   vertical-align: -2px;
+  padding: 0 0.25em 0 0;
+}
+section#search_data div#search_history button.delete span i.icon-del {
+  display: none;
+}
+@media screen and (min-width: 960px) {
+  section#search_data div#search_history button.delete span i.icon-del {
+    display: inline;
+  }
 }
 ul.points_list {
   margin: 0.5em 0;
@@ -773,12 +788,21 @@ ul.points_list div.point_item h3 {
   font-weight: 200;
   font-size: 1em;
 }
+ul.points_list div.point_item:hover,
+ul.points_list div.point_item:hover h2,
+ul.points_list div.point_item:hover h3 {
+  color: #12ca9a;
+}
 ul.search_list li {
   list-style-type: none;
+  margin: 0 0 0.5em 0;
 }
 ul.search_list li a {
   text-decoration: none;
   color: #666;
+}
+ul.search_list li a:hover {
+  color: #12ca9a;
 }
 section#point_data {
   color: #222;
@@ -810,4 +834,14 @@ section#point_data div.point_comments li span.author {
   display: block;
   text-align: right;
   font-style: italic;
+}
+section#help {
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+section#help ul {
+  margin: 1em 0;
+}
+section#help ul li {
+  list-style-type: none;
+  margin: 1em 0;
 }

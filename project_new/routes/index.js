@@ -36,5 +36,14 @@ router.get('/settings', function(req, res) {
 	res.render('settings', {title: 'Settings', active: 'settings'})
 })
 
+// define the profile page route
+router.get('/profile', function(req, res) {
+	res.render('profile', {title: 'Profile', active: 'profile'})
+})
+
+// define the sign-in page route
+router.get('/signin', function(req, res) {
+	res.render('signin', {title: 'Sign In'})
+})
 
 module.exports = router
