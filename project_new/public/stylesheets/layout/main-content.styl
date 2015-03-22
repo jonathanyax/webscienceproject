@@ -232,12 +232,12 @@ ul.points_list
 				i.fa-comment
 						vertical-align text-top
 		div.point_item_image
-			 width 30%
-			 float left
+			width 30%
+			float left
 		div.point_item_info
 			width 70%
 			float right
-			padding 0 .5em
+			padding 0 1em
 		h2, h3
 			font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
 			letter-spacing normal
@@ -268,19 +268,23 @@ ul.search_list
  ****************/
 
 section#point_breadcrumbs
-	background-color color--primary
-	margin 0 0 1.5em 0
+	background color--primary
+	margin 0 0 2em 0
 	div#crumbs
 		padding .5em 0
 		ul
-			color #FFF
+			font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
+			font-size 1em
+			color color--white
 			list-style-type none
 			li
 				display inline
 				padding 0 1em 0 0
 				a
-					color #FFF
+					color color--white
 					text-decoration none
+					&:hover
+						color color--white-blue
 section#point_data
 	color color--black
 	padding 0 .5em 0 0
@@ -297,6 +301,15 @@ section#point_data
 	ul.address li
 		font-size 1.5em
 		margin 0
+	div.point_share
+		i
+			padding 0 .25em 0 0
+		ul
+			li
+				margin 0 1em 0 0
+				display inline	
+				a
+					text-decoration none
 	div.point_comments
 		border-top 1px solid color--blue-grey
 		padding 1.25em 0

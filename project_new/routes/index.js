@@ -16,6 +16,11 @@ router.get('/search', function(req, res) {
   res.render('search', {title: 'Search', active: 'search'})
 })
 
+// define the temp search results route
+router.get('/search_results', function(req, res) {
+  res.render('search_results', {title: 'Search Results', active: 'search'})
+})
+
 // define the search route
 router.get('/point', function(req, res) {
   res.render('point', {title: 'Point', active: 'point'})

@@ -778,7 +778,7 @@ ul.points_list div.point_item div.point_item_image {
 ul.points_list div.point_item div.point_item_info {
   width: 70%;
   float: right;
-  padding: 0 0.5em;
+  padding: 0 1em;
 }
 ul.points_list div.point_item h2,
 ul.points_list div.point_item h3 {
@@ -813,13 +813,15 @@ ul.search_list li a:hover {
   color: #12ca9a;
 }
 section#point_breadcrumbs {
-  background-color: #12ca9a;
-  margin: 0 0 1.5em 0;
+  background: #12ca9a;
+  margin: 0 0 2em 0;
 }
 section#point_breadcrumbs div#crumbs {
   padding: 0.5em 0;
 }
 section#point_breadcrumbs div#crumbs ul {
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
   color: #fff;
   list-style-type: none;
 }
@@ -830,6 +832,9 @@ section#point_breadcrumbs div#crumbs ul li {
 section#point_breadcrumbs div#crumbs ul li a {
   color: #fff;
   text-decoration: none;
+}
+section#point_breadcrumbs div#crumbs ul li a:hover {
+  color: #eaf0ef;
 }
 section#point_data {
   color: #222;
@@ -852,6 +857,16 @@ section#point_data ul {
 section#point_data ul.address li {
   font-size: 1.5em;
   margin: 0;
+}
+section#point_data div.point_share i {
+  padding: 0 0.25em 0 0;
+}
+section#point_data div.point_share ul li {
+  margin: 0 1em 0 0;
+  display: inline;
+}
+section#point_data div.point_share ul li a {
+  text-decoration: none;
 }
 section#point_data div.point_comments {
   border-top: 1px solid #879ca6;
