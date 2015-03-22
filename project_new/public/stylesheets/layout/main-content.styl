@@ -218,9 +218,8 @@ ul.points_list
 	div.point_item
 		font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
 		overflow auto
-		background color--light-grey
-		padding .5em
 		color color--dark-grey
+		background color--light-grey
 		ul.point_item_metadata
 			list-style-type none
 			margin 0
@@ -232,12 +231,16 @@ ul.points_list
 				i.fa-comment
 						vertical-align text-top
 		div.point_item_image
-			width 30%
 			float left
+			width 30%
+			img
+				display: block
+				object-fit cover
+				min-height 175px
 		div.point_item_info
-			width 70%
 			float right
-			padding 0 1em
+			width 70%
+			padding 0.25em .75em
 		h2, h3
 			font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
 			letter-spacing normal
@@ -267,10 +270,10 @@ ul.search_list
  * POINT PAGE
  ****************/
 
-section#point_breadcrumbs
+section.point_breadcrumbs
 	background color--primary
 	margin 0 0 2em 0
-	div#crumbs
+	div.crumbs
 		padding .5em 0
 		ul
 			font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif

@@ -1,8 +1,7 @@
 extend layout
 
 block searchbar
-	form
-		input#search.u-full-width(type="search", placeholder!="&#xF002;")
+	include ./includes/searchbar.jade
 
 block content
 	div.container
@@ -284,16 +283,16 @@ block content
 		div#featured_cities
 			div.row
 				div#nyc.six.columns.city
-					a(href="#")
+					a(href="/region")
 						span New York Metropolitan Area
 				div#bos.six.columns.city
-					a(href="#")
+					a(href="/region")
 						span Greater Boston Area
 			div.row
 				div#alb.six.columns.city
-					a(href="#")
+					a(href="/region")
 						span Albany Capital Distict
 				div#sf.six.columns.city
-					a(href="#")
+					a(href="/region")
 						span San Francisco Bay Area
 

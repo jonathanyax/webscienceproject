@@ -96,7 +96,7 @@ header h1.onpoint_title {
 @media screen and (min-width: 750px) {
   header h1.onpoint_title {
     display: block;
-    padding: 0.25em 0;
+    padding: 0.15em 0;
   }
 }
 @media screen and (min-width: 750px) {
@@ -107,15 +107,12 @@ header h1.onpoint_title {
 @media screen and (min-width: 750px) {
   header h1.onpoint_title a span.onpoint_title_text {
     display: inline-block;
-    line-height: 1.4;
-    padding-top: 10px;
-    font-size: 50px;
-    font-weight: normal;
+    line-height: 1.5em;
+    padding: 0 0 0 0;
     -webkit-text-stroke: 1px;
   }
 }
 header a {
-  padding: 0.4em 0;
   text-decoration: none;
   color: #666;
 }
@@ -158,8 +155,8 @@ header div.addpoint {
 @media screen and (min-width: 750px) {
   header div.addpoint {
     position: absolute;
-    right: 1em;
-    top: 1em;
+    right: 0.5em;
+    top: 0.25em;
   }
 }
 header div.addpoint a {
@@ -753,9 +750,8 @@ ul.points_list li {
 ul.points_list div.point_item {
   font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   overflow: auto;
-  background: #f6f9f9;
-  padding: 0.5em;
   color: #666;
+  background: #f6f9f9;
 }
 ul.points_list div.point_item ul.point_item_metadata {
   list-style-type: none;
@@ -772,13 +768,18 @@ ul.points_list div.point_item ul.point_item_metadata li i.fa-comment {
   vertical-align: text-top;
 }
 ul.points_list div.point_item div.point_item_image {
-  width: 30%;
   float: left;
+  width: 30%;
+}
+ul.points_list div.point_item div.point_item_image img {
+  display: block;
+  object-fit: cover;
+  min-height: 175px;
 }
 ul.points_list div.point_item div.point_item_info {
-  width: 70%;
   float: right;
-  padding: 0 1em;
+  width: 70%;
+  padding: 0.25em 0.75em;
 }
 ul.points_list div.point_item h2,
 ul.points_list div.point_item h3 {
@@ -812,28 +813,28 @@ ul.search_list li a {
 ul.search_list li a:hover {
   color: #12ca9a;
 }
-section#point_breadcrumbs {
+section.point_breadcrumbs {
   background: #12ca9a;
   margin: 0 0 2em 0;
 }
-section#point_breadcrumbs div#crumbs {
+section.point_breadcrumbs div.crumbs {
   padding: 0.5em 0;
 }
-section#point_breadcrumbs div#crumbs ul {
+section.point_breadcrumbs div.crumbs ul {
   font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   color: #fff;
   list-style-type: none;
 }
-section#point_breadcrumbs div#crumbs ul li {
+section.point_breadcrumbs div.crumbs ul li {
   display: inline;
   padding: 0 1em 0 0;
 }
-section#point_breadcrumbs div#crumbs ul li a {
+section.point_breadcrumbs div.crumbs ul li a {
   color: #fff;
   text-decoration: none;
 }
-section#point_breadcrumbs div#crumbs ul li a:hover {
+section.point_breadcrumbs div.crumbs ul li a:hover {
   color: #eaf0ef;
 }
 section#point_data {

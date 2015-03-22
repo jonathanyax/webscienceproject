@@ -6,6 +6,11 @@ router.get('/', function(req, res) {
   res.render('index', {title: 'Home', active: 'home'})
 })
 
+// define the region route
+router.get('/region', function(req, res) {
+  res.render('region', {title: 'Region'})
+})
+
 // define the regions route
 router.get('/regions', function(req, res) {
   res.render('regions', {title: 'Regions', active: 'regions'})
