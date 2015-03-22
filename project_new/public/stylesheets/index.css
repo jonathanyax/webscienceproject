@@ -813,6 +813,9 @@ ul.search_list li a {
 ul.search_list li a:hover {
   color: #12ca9a;
 }
+section.region_display div.region_list {
+  margin: 1em 0;
+}
 section.point_breadcrumbs {
   background: #12ca9a;
   margin: 0 0 2em 0;
