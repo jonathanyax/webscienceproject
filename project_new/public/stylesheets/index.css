@@ -142,7 +142,8 @@ header .icon-onpoint {
 header input#search {
   font-family: FontAwesome;
   font-style: normal;
-  font-size: 16px;
+  font-size: 1em;
+  line-height: 1.5em;
   font-weight: normal;
   text-decoration: inherit;
   border: solid 2px #eaf0ef;
@@ -446,6 +447,9 @@ nav div#user {
     text-transform: uppercase;
     margin: 0.5em 0 0 0;
   }
+}
+main {
+  margin: 0 0 2em 0;
 }
 @media screen and (min-width: 750px) {
   main {
@@ -759,11 +763,13 @@ ul.points_list div.point_item ul.point_item_metadata {
 }
 ul.points_list div.point_item ul.point_item_metadata li {
   display: inline;
-  padding: 0 0.5em 0 0;
+  margin: 0 1em 0 0;
 }
 ul.points_list div.point_item ul.point_item_metadata li i {
   padding: 0 0.25em 0 0;
-  text-align: middle;
+}
+ul.points_list div.point_item ul.point_item_metadata li i.fa-comment {
+  vertical-align: text-top;
 }
 ul.points_list div.point_item div.point_item_image {
   width: 30%;
@@ -778,16 +784,17 @@ ul.points_list div.point_item h2,
 ul.points_list div.point_item h3 {
   font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   letter-spacing: normal;
-  margin-bottom: 5px;
   color: #666;
 }
 ul.points_list div.point_item h2 {
   font-weight: 400;
   font-size: 1.25em;
+  margin-bottom: 0.5em;
 }
 ul.points_list div.point_item h3 {
   font-weight: 200;
   font-size: 1em;
+  margin-bottom: 0.25em;
 }
 ul.points_list div.point_item:hover,
 ul.points_list div.point_item:hover h2,
@@ -805,8 +812,29 @@ ul.search_list li a {
 ul.search_list li a:hover {
   color: #12ca9a;
 }
+section#point_breadcrumbs {
+  background-color: #12ca9a;
+  margin: 0 0 1.5em 0;
+}
+section#point_breadcrumbs div#crumbs {
+  padding: 0.5em 0;
+}
+section#point_breadcrumbs div#crumbs ul {
+  color: #fff;
+  list-style-type: none;
+}
+section#point_breadcrumbs div#crumbs ul li {
+  display: inline;
+  padding: 0 1em 0 0;
+}
+section#point_breadcrumbs div#crumbs ul li a {
+  color: #fff;
+  text-decoration: none;
+}
 section#point_data {
   color: #222;
+  padding: 0 0.5em 0 0;
+  word-break: break-word;
 }
 section#point_data h2,
 section#point_data li {
@@ -814,11 +842,12 @@ section#point_data li {
 }
 section#point_data h2 {
   font-weight: bold;
-  font-size: 2.6em;
-  margin-bottom: 10px;
+  font-size: 2.25em;
+  margin-bottom: 0.5em;
 }
 section#point_data ul {
   list-style-type: none;
+  margin: 0 0 1.25em 0;
 }
 section#point_data ul.address li {
   font-size: 1.5em;
@@ -826,7 +855,7 @@ section#point_data ul.address li {
 }
 section#point_data div.point_comments {
   border-top: 1px solid #879ca6;
-  padding: 1.5em 0;
+  padding: 1.25em 0;
 }
 section#point_data div.point_comments li {
   margin: 0 0 1em;

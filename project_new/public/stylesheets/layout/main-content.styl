@@ -3,6 +3,7 @@
  ****************/
  
 main
+	margin 0 0 2em 0
 	@media screen and (min-width: mq--tablet)
 		margin-left 175px 
 
@@ -225,10 +226,11 @@ ul.points_list
 			margin 0
 			li
 				display inline
-				padding 0 .5em 0 0
+				margin 0 1em 0 0
 				i
 					padding 0 .25em 0 0
-					text-align middle
+				i.fa-comment
+						vertical-align text-top
 		div.point_item_image
 			 width 30%
 			 float left
@@ -239,14 +241,15 @@ ul.points_list
 		h2, h3
 			font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
 			letter-spacing normal
-			margin-bottom 5px
 			color color--dark-grey
 		h2
 			font-weight 400
 			font-size 1.25em
+			margin-bottom .5em
 		h3
 			font-weight 200
 			font-size 1em
+			margin-bottom .25em
 		&:hover, &:hover h2, &:hover h3
 			color color--primary
 
@@ -263,23 +266,40 @@ ul.search_list
 /*****************
  * POINT PAGE
  ****************/
- 
+
+section#point_breadcrumbs
+	background-color color--primary
+	margin 0 0 1.5em 0
+	div#crumbs
+		padding .5em 0
+		ul
+			color #FFF
+			list-style-type none
+			li
+				display inline
+				padding 0 1em 0 0
+				a
+					color #FFF
+					text-decoration none
 section#point_data
 	color color--black
+	padding 0 .5em 0 0
+	word-break break-word
 	h2, li
 		font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
 	h2
 		font-weight bold
-		font-size 2.6em
-		margin-bottom 10px
+		font-size 2.25em
+		margin-bottom .5em
 	ul
 		list-style-type none
+		margin 0 0 1.25em 0
 	ul.address li
 		font-size 1.5em
 		margin 0
 	div.point_comments
 		border-top 1px solid color--blue-grey
-		padding 1.5em 0
+		padding 1.25em 0
 		li
 			margin 0 0 1em
 			span.author
