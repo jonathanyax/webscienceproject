@@ -1,0 +1,28 @@
+      html, body {
+        height: 100%;
+        margin: 0px;s
+        padding: 0px
+      }
+
+
+      #map {
+        height: 90%;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      h3 {
+        margin: 10px;
+      }
+
+      #searchbar {
+        margin: 10px;
+      }
+
+      
+      #searchbox {
+        margin: 10px;
+        padding: 0;
+        width: 400px;
+      }
+      
