@@ -830,8 +830,8 @@ section.point_breadcrumbs div.crumbs ul {
   list-style-type: none;
 }
 section.point_breadcrumbs div.crumbs ul li {
-  display: inline;
-  padding: 0 1em 0 0;
+  display: inline-block;
+  padding: 0 0.5em 0 0;
 }
 section.point_breadcrumbs div.crumbs ul li a {
   color: #fff;
@@ -839,6 +839,13 @@ section.point_breadcrumbs div.crumbs ul li a {
 }
 section.point_breadcrumbs div.crumbs ul li a:hover {
   color: #eaf0ef;
+}
+section.point_breadcrumbs div.crumbs ul li:after {
+  padding: 0 0 0 0.5em;
+  content: "→";
+}
+section.point_breadcrumbs div.crumbs ul li:last-child:after {
+  content: none;
 }
 section#point_data {
   color: #222;
@@ -893,4 +900,23 @@ section#help ul {
 section#help ul li {
   list-style-type: none;
   margin: 1em 0;
+}
+section#signin_accounts div#joinus,
+section#signin_accounts div#signin {
+  padding: 0 0 1em;
+}
+section#signin_accounts input[type="text"],
+section#signin_accounts input[type="email"],
+section#signin_accounts input[type="password"],
+section#signin_accounts a {
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  line-height: 1.25em;
+}
+section#signin_accounts input {
+  display: block;
+}
+section#signin_accounts h3 {
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0.15em 0;
+  border-bottom: 3px solid #12ca9a;
 }

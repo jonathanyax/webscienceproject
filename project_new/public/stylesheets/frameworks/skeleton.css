@@ -368,6 +368,9 @@ form {
 .u-full-width {
   width: 100%;
   box-sizing: border-box; }
+.u-half-width {
+	width: 50%;
+	box-sizing: border-box; }
 .u-max-full-width {
   max-width: 100%;
   box-sizing: border-box; }

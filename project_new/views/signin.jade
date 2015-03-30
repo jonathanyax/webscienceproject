@@ -1,5 +1,19 @@
 extend layout
 
 block content
-	section#signin.container
-		h1 Sign-In
+	section#signin_accounts.container
+		div#signin.one-half.column
+			h3 Sign-In
+			form
+				input(type="email", placeholder="E-mail").u-full-width
+				input(type="password", placeholder="Password").u-full-width
+				input(type="submit", value="Sign In")
+			a(href="#") Forgot Password?
+		div#joinus.one-half.column
+			h3 Join Us
+			form
+				input(type="text", placeholder="First Name").six.columns
+				input(type="text", placeholder="Last Name").six.columns
+				input(type="email", placeholder="E-mail").u-full-width
+				input(type="password", placeholder="Password").u-full-width
+				input(type="submit", value="Join Us")

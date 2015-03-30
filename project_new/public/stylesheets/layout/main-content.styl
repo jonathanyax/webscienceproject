@@ -289,13 +289,19 @@ section.point_breadcrumbs
 			color color--white
 			list-style-type none
 			li
-				display inline
-				padding 0 1em 0 0
+				display inline-block
+				padding 0 .5em 0 0
 				a
 					color color--white
 					text-decoration none
 					&:hover
 						color color--white-blue
+				&:after
+					padding 0 0 0 .5em
+					content "→"
+				&:last-child
+					&:after
+						content none
 section#point_data
 	color color--black
 	padding 0 .5em 0 0
@@ -343,4 +349,33 @@ section#help
 			list-style-type none
 			margin 1em 0
 		
+/*****************
+ * SIGN IN PAGE
+ ****************/
+
+section#signin_accounts
+	div#joinus, div#signin
+		padding 0 0 1em
+	input[type="text"], input[type="email"], input[type="password"], a
+		font-family "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
+		line-height 1.25em
+	input
+		display block
+	h3
+		margin 0 0 .5em 0
+		padding 0 0 .15em 0
+		border-bottom 3px solid color--primary
+
+
+
+
+
+
+
+
+
+
+
+
+
 
