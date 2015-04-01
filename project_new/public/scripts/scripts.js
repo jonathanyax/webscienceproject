@@ -92,6 +92,14 @@ $(document).ready(function() {
 			.data('origLeft', $magicLine.position().left)
 			.data('origWidth', $magicLine.width());
 
+		$(window).resize(function() {
+			$magicLine
+				.width($('#regions_nav .active').width())
+				.css('left', $('#regions_nav .active a').position().left)
+				.data('origLeft', $magicLine.position().left)
+				.data('origWidth', $magicLine.width());
+		});
+
 		$('#regions_nav li a').hover(function() {
 			$el = $(this);
 			leftPos = $el.position().left;
