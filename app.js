@@ -1,13 +1,14 @@
 /*
  * Module dependencies
  */
-var express = require('express'),
+var 	express = require('express'),
 		jade    = require('jade'),
 		socket  = require('socket.io'),
 		stylus  = require('stylus'),
 		nib     = require('nib'),
 		routes  = require('./routes'),
-		mongoose = require('mongoose')
+		mongoose= require('mongoose'),
+		passport= require('passport')
 
 // set up express app
 var app = express()
