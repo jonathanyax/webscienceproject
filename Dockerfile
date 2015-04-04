@@ -11,6 +11,10 @@ RUN apt-get -qq update -y
 RUN apt-get install -y nodejs-legacy
 RUN apt-get install -y npm
 
+# Install BSON to fix warning message?
+RUN npm install bson
+RUN npm update
+
 # Install MongoDB.
 RUN \
   apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
