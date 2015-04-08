@@ -12,6 +12,9 @@ RUN apt-get install -y nodejs-legacy
 RUN apt-get install -y npm
 
 # Install BSON to fix warning message?
+# I'll leave this here, but the ELF error is caused by 
+# cross-platform issues. To fix, we would have to delete the
+# node-modules folder and let the local machine download and install.
 RUN npm install bson
 RUN npm update
 
