@@ -11,6 +11,8 @@
 
 
 //$(document).ready(function() {
+
+  
   function init() {
 
     var markers = [];
@@ -18,13 +20,13 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
+    $("#map").hide();
+
     
 
 
 
     var setBounds;
-
-    console.log($("#dropdown").val());
 
     //set bounds based on dropdown box
     if ($("#dropdown").val() == "ny") {
@@ -60,7 +62,7 @@
 
     var searchBox = new google.maps.places.SearchBox(search);
 
-    
+    var placeList = [];
     google.maps.event.addListener(searchBox, 'places_changed', function() {
 
       var places = searchBox.getPlaces();
@@ -73,6 +75,8 @@
       }
 
       markers = [];
+
+      var placeHTML = "";
       var bounds = new google.maps.LatLngBounds();
       for (var i = 0; i<places.length; i++) {
         var image = {
@@ -95,12 +99,25 @@
 
         bounds.extend(places[i].geometry.location);
 
+        placeHTML += "<li>{ place_id : " + places[i].place_id + ", name : " + places[i].name + ", ";
+        placeHTML += "coordinates : " + places[i].geometry.location.toString() + " }</li>\n";
+
+        console.log(placeHTML);
+
+        var placeInfo = {
+          place_id : places[i].place_id,
+          name : places[i].name,
+          coordinates : places[i].geometry.location
+        };
+
+        placeList.push(placeInfo);
 
 
       }
 
       map.fitBounds(bounds);
 
+      $("#placeData").append(placeHTML);
 
     });
 
