@@ -110,6 +110,7 @@ header h1.onpoint_title {
     line-height: 1.5em;
     padding: 0 0 0 0;
     -webkit-text-stroke: 1px;
+    color: #879ca6;
   }
 }
 header a {
@@ -126,7 +127,7 @@ header a:hover {
 }
 @media screen and (min-width: 750px) {
   header a:hover {
-    color: #222;
+    color: #879ca6;
   }
 }
 header .icon-onpoint {
@@ -480,7 +481,7 @@ div#featured_cities div.city a {
 div#featured_cities div.city a span {
   display: inline-block;
   color: #fff;
-  -webkit-text-stroke: 1px #fff;
+  -webkit-text-stroke: 0.5px #fff;
   position: absolute;
   bottom: 0;
   background: rgba(18,202,154,0.8);
@@ -491,7 +492,7 @@ div#featured_cities div.city a span {
   text-align: center;
   padding: 0.5em 0.25em;
   font-size: 16px;
-  letter-spacing: 1px;
+  letter-spacing: 0.6px;
 }
 div#featured_cities div.city a:hover span {
   background: #12ca9a;
