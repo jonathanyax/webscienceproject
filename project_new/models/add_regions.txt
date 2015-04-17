@@ -1,0 +1,36 @@
+// clear out old data
+Region.remove({}, function(err) {
+ if (err) {
+   console.log('ERROR deleting old data.')
+ }
+})
+
+// create new regions
+var newYorkMetropolitan = new Region({
+ name: 'New York Metropolitan',
+ state: 'New York'
+})
+newYorkMetropolitan.save(function(err, newYorkMetropolitan) {
+ if (err) throw err
+})
+var greaterBoston = new Region({
+ name: 'Greater Boston',
+ state: 'Massachusetts'
+})
+greaterBoston.save(function(err, greaterBoston) {
+ if (err) throw err
+})
+var albanyCapital = new Region({
+ name: 'Albany Capital District',
+ state: 'New York'
+})
+albanyCapital.save(function(err, albanyCapital) {
+ if (err) throw err
+})
+var SFBayArea = new Region({
+ name: 'SF Bay Area',
+ state: 'California'
+})
+SFBayArea.save(function(err, SFBayArea) {
+ if (err) throw err
+})

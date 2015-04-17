@@ -1,0 +1,125 @@
+extend layout
+
+block searchbar
+	//- no search bar
+
+block content
+	section.point_breadcrumbs
+		div.crumbs.container
+			ul
+				li
+					a(href="/") Home
+				li
+					a(href="/regions") #{region.name}
+				li
+					a(href="/regions/#{region.name.replace(/\s+/g, '-')}/#{city.name.replace(/\s+/g, '-')}") #{city.name}
+				li
+					a(href="#") #{point.name}
+	section#point_display.container.row
+		h2.point_name #{point.name}
+		section#point_visual.five.columns
+			div.point-grid.ri-grid
+				img(src="/images/loading.gif").ri-loading-image
+				ul
+					li
+						a(href="#")
+							img(src="/images/sample_point/point_001.JPG")
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_002.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_003.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_004.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_005.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_006.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_007.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_008.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_009.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_010.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_011.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_012.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_013.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_014.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_015.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_016.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_017.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_018.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_019.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_020.JPG')
+					li
+						a(href='#')
+							img(src='/images/sample_point/point_021.JPG')
+		section#point_data.seven.columns
+			div.point_social
+				ul
+					li
+						a(href="/favorite/#{point.id}")
+							i.fa.fa-heart-o
+							| Favorite
+					li
+						a(href="/add-photo/#{point.id}")
+							i.fa.fa-camera
+							| Photo
+					li
+						a(href="/comment/#{point.id}")
+							i.fa.fa-edit
+							| Comment
+					li
+						a(href="/share/#{point.id}")
+							i.fa.fa-share-square-o
+							| Share
+			div.point_map
+				| map goes here
+			div.point_address
+				p.container 
+					span.point_address_street #{point.address.street}
+					span.point_address_city #{point.address.city}, #{point.address.state} #{point.address.zip}
+		section#point_comments.container.seven.columns
+			h3 Comments
+			ul
+				li
+					span.author-pic 
+						img(src="http://ohiotheatretoledo.org/wp-content/themes/ohiotheatre/img/profile_placeholder.png")
+					span.author Sally S.
+					span.comment "Highest point in San Francisco"
+				li 
+					span.author-pic
+						img(src="http://ohiotheatretoledo.org/wp-content/themes/ohiotheatre/img/profile_placeholder.png")
+					span.author John S.
+					span.comment "Most photogenic tree in all the land. I love coming here with my girlfriend and taking pictures in the springtime!"
+		

@@ -1,0 +1,50 @@
+//clear out old data
+exports.Point.remove({}, function(err) {
+  if (err) {
+    console.log('ERROR deleting old point data.')
+  }
+})
+
+exports.Point.remove({}, function(err) {
+  if (err) {
+    console.log('ERROR deleting old point data.')
+  }
+})
+
+var SightglassCoffee = new exports.Point({
+  name: 'Sightglass Coffee',
+  address: {
+    street: '270 7th St.',
+    city: 'San Francisco',
+    state: 'California',
+    zip: 94103
+  },
+  cityId: '55232e3353f862d2062e9027',  // city id
+  regionId: '5522f5ae2c7ac4b746915a27', // region id
+  meta: {
+    comments: 0,
+    photos: 0
+  }
+})
+SightglassCoffee.save(function(err, SightglassCoffee) {
+  if (err) throw err
+})
+
+var MtDavidsonPark = new exports.Point({
+  name: 'Mount Davidson Park',
+  address: {
+    street: 'Mount Davidson',
+    city: 'San Francisco',
+    state: 'California',
+    zip: 94127
+  },
+  cityId: '55232e3353f862d2062e9027',  // city id
+  regionId: '5522f5ae2c7ac4b746915a27', // region id
+  meta: {
+    comments: 0,
+    photos: 0
+  }
+})
+MtDavidsonPark.save(function(err, MtDavidsonPark) {
+  if (err) throw err
+})

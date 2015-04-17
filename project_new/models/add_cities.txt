@@ -1,0 +1,214 @@
+// clear out old data
+exports.City.remove({}, function(err) {
+  if (err) {
+    console.log('ERROR deleting old city data.')
+  }
+})
+
+var Manhattan = new exports.City({
+  name: 'Manhattan',
+  region: '5522f5ae2c7ac4b746915a24'
+})
+Manhattan.save(function(err, Manhattan) {
+  if (err) throw err
+})
+
+var LongIsland = new exports.City({
+  name: 'Long Island',
+  region: '5522f5ae2c7ac4b746915a24'
+})
+LongIsland.save(function(err, LongIsland) {
+  if (err) throw err
+})
+
+var StatenIsland = new exports.City({
+  name: 'Staten Island',
+  region: '5522f5ae2c7ac4b746915a24'
+})
+StatenIsland.save(function(err, StatenIsland) {
+  if (err) throw err
+})
+
+var Queens = new exports.City({
+  name: 'Queens',
+  region: '5522f5ae2c7ac4b746915a24'
+})
+Queens.save(function(err, Queens) {
+  if (err) throw err
+})
+
+var Brooklyn = new exports.City({
+  name: 'Brooklyn',
+  region: '5522f5ae2c7ac4b746915a24'
+})
+Brooklyn.save(function(err, Brooklyn) {
+  if (err) throw err
+})
+
+var Bronx = new exports.City({
+  name: 'Bronx',
+  region: '5522f5ae2c7ac4b746915a24'
+})
+Bronx.save(function(err, Bronx) {
+  if (err) throw err
+})
+
+var LehighValley = new exports.City({
+  name: 'Lehigh Valley',
+  region: '5522f5ae2c7ac4b746915a24'
+})
+LehighValley.save(function(err, LehighValley) {
+  if (err) throw err
+})
+
+var Boston = new exports.City({
+  name: 'Boston',
+  region: '5522f5ae2c7ac4b746915a25'
+})
+Boston.save(function(err, Boston) {
+  if (err) throw err
+})
+
+var Cambridge = new exports.City({
+  name: 'Cambridge',
+  region: '5522f5ae2c7ac4b746915a25'
+})
+Cambridge.save(function(err, Cambridge) {
+  if (err) throw err
+})
+
+var Framingham = new exports.City({
+  name: 'Framingham',
+  region: '5522f5ae2c7ac4b746915a25'
+})
+Framingham.save(function(err, Framingham) {
+  if (err) throw err
+})
+
+var Lexington = new exports.City({
+  name: 'Lexington',
+  region: '5522f5ae2c7ac4b746915a25'
+})
+Lexington.save(function(err, Lexington) {
+  if (err) throw err
+})
+
+var Newton = new exports.City({
+  name: 'Newton',
+  region: '5522f5ae2c7ac4b746915a25'
+})
+Newton.save(function(err, Newton) {
+  if (err) throw err
+})
+
+var Peabody = new exports.City({
+  name: 'Peabody',
+  region: '5522f5ae2c7ac4b746915a25'
+})
+Peabody.save(function(err, Peabody) {
+  if (err) throw err
+})
+
+var Quincy = new exports.City({
+  name: 'Quincy',
+  region: '5522f5ae2c7ac4b746915a25'
+})
+Quincy.save(function(err, Quincy) {
+  if (err) throw err
+})
+
+var Waltham = new exports.City({
+  name: 'Waltham',
+  region: '5522f5ae2c7ac4b746915a25'
+})
+Waltham.save(function(err, Waltham) {
+  if (err) throw err
+})
+
+var Albany = new exports.City({
+  name: 'Albany',
+  region: '5522f5ae2c7ac4b746915a26'
+})
+Albany.save(function(err, Albany) {
+  if (err) throw err
+})
+
+var Troy = new exports.City({
+  name: 'Troy',
+  region: '5522f5ae2c7ac4b746915a26'
+})
+Troy.save(function(err, Troy) {
+  if (err) throw err
+})
+
+var Schenectady = new exports.City({
+  name: 'Schenectady',
+  region: '5522f5ae2c7ac4b746915a26'
+})
+Schenectady.save(function(err, Schenectady) {
+  if (err) throw err
+})
+
+var SaratogaSprings = new exports.City({
+  name: 'Saratoga Springs',
+  region: '5522f5ae2c7ac4b746915a26'
+})
+SaratogaSprings.save(function(err, SaratogaSprings) {
+  if (err) throw err
+})
+
+var Hudson = new exports.City({
+  name: 'Hudson',
+  region: '5522f5ae2c7ac4b746915a26'
+})
+Hudson.save(function(err, Hudson) {
+  if (err) throw err
+})
+
+var Rensselaer = new exports.City({
+  name: 'Rensselaer',
+  region: '5522f5ae2c7ac4b746915a26'
+})
+Rensselaer.save(function(err, Rensselaer) {
+  if (err) throw err
+})
+
+var Cohoes = new exports.City({
+  name: 'Cohoes',
+  region: '5522f5ae2c7ac4b746915a26'
+})
+Cohoes.save(function(err, Cohoes) {
+  if (err) throw err
+})
+
+var Watervliet = new exports.City({
+  name: 'Watervliet',
+  region: '5522f5ae2c7ac4b746915a26'
+})
+Watervliet.save(function(err, Watervliet) {
+  if (err) throw err
+})
+
+var SanFrancisco = new exports.City({
+  name: 'San Francisco',
+  region: '5522f5ae2c7ac4b746915a27'
+})
+SanFrancisco.save(function(err, SanFrancisco) {
+  if (err) throw err
+})
+
+var SanJose = new exports.City({
+  name: 'San Jose',
+  region: '5522f5ae2c7ac4b746915a27'
+})
+SanJose.save(function(err, SanJose) {
+  if (err) throw err
+})
+
+var Oakland = new exports.City({
+  name: 'Oakland',
+  region: '5522f5ae2c7ac4b746915a27'
+})
+Oakland.save(function(err, Oakland) {
+  if (err) throw err
+})
