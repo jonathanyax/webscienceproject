@@ -25,24 +25,24 @@ $(function() {
 		}
 	} );
 	$( '.point-grid' ).gridrotator( {
-		rows		: 2,
-		columns		: 2,
+		rows		: 4,
+		columns		: 5,
 		animType	: 'fadeInOut',
 		animSpeed	: 500,
 		interval	: 3000,
 		step		: 1,
 		preventClick: false,
 		w240		: {
-			rows	: 3,
-			columns	: 2
+			rows	: 1,
+			columns	: 5
 		},
 		w320		: {
-			rows	: 4,
-			columns	: 2
+			rows	: 1,
+			columns	: 5
 		},
 		w480		: {
-			rows	: 4,
-			columns	: 3
+			rows	: 1,
+			columns	: 5
 		},
 		w768		: {
 			rows	: 4,
@@ -58,9 +58,18 @@ $(function() {
 
 $(document).ready(function() {
 
-	// highlight main navigation
-	// var url = (window.location.href).split("/").pop();
-	// $('nav ul#functions a[href="/' + url + '"]').addClass('current');
+	// make first region active if none specified
+	var isActiveRegion = false;
+	$('#regions_nav .city').each(function() {
+		if ($(this).hasClass('active')) {
+			isActiveRegion = true;
+		}
+	});
+	if (isActiveRegion == false) {
+		$('#regions_nav .city').first().addClass('active');
+		var showFirstRegion = $('#regions_nav .city').first().children('a').data('show-region');
+		$('#' + showFirstRegion).show();
+	}
 
 	// show cities corresponding to regions on regions page
 	$('#regions_nav .city').each(function(index, el) {
