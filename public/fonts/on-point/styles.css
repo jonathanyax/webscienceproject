@@ -38,6 +38,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-help:before {
+  content: "a";
+}
 .icon-del:before {
   content: "b";
 }
@@ -64,46 +67,4 @@
 }
 .icon-user:before {
   content: "j";
-}
-.icon-lock:before {
-  content: "k";
-}
-.icon-pictures:before {
-  content: "q";
-}
-.icon-picture:before {
-  content: "r";
-}
-.icon-lock-1:before {
-  content: "n";
-}
-.icon-heart-outline:before {
-  content: "t";
-}
-.icon-heart:before {
-  content: "u";
-}
-.icon-bubbles:before {
-  content: "v";
-}
-.icon-pin:before {
-  content: "m";
-}
-.icon-help:before {
-  content: "a";
-}
-.icon-message:before {
-  content: "o";
-}
-.icon-search-1:before {
-  content: "s";
-}
-.icon-compose:before {
-  content: "w";
-}
-.icon-camera:before {
-  content: "x";
-}
-.icon-share:before {
-  content: "y";
 }

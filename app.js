@@ -1,14 +1,13 @@
 /*
  * Module dependencies
  */
-var 	express = require('express'),
-		jade    = require('jade'),
-		socket  = require('socket.io'),
-		stylus  = require('stylus'),
-		nib     = require('nib'),
-		routes  = require('./routes'),
-		mongoose= require('mongoose'),
-		passport= require('passport')
+var express  = require('express'),
+		jade     = require('jade'),
+		socket   = require('socket.io'),
+		stylus   = require('stylus'),
+		nib      = require('nib'),
+		models   = require('./models'),
+		routes   = require('./routes')
 
 // set up express app
 var app = express()
@@ -20,11 +19,7 @@ function compile(str, path) {
 }
 
 // set default node environment variables to development
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
-// connect to mongo db
-var db = mongoose.connection;
-db.on('error', console.error);
+process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
 // use Jade and get views from '/views' directory
 app.set('views', __dirname + '/views')
@@ -40,6 +35,7 @@ app.use(stylus.middleware(
 
 // static files in '/public' directory
 app.use(express.static(__dirname + '/public'))
+app.use('/public/scripts', express.static(__dirname + '/public/scripts'))
 
 // run!
 app.use('/', routes)
