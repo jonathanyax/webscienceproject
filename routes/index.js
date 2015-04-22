@@ -148,8 +148,8 @@ router.post('/register', function(req, res) {
 	Account.register(new Account({username: req.body.username, email: req.body.email, firstName: req.body.firstName, lastName: req.body.lastName}), req.body.password, function (err, account) {
 		if (err) {
 			if (!req.body.username) return res.render('signin', {info: "Please enter a username!"});
-			else if (!req.body.password) return res.render('signin', {user: req.body.username, info: "Please enter a password!"});
-			else return res.render('signin', {user: req.body.username, info:"Sorry! That username is taken."});
+			else if (!req.body.password) return res.render('signin', {join_username: req.body.username, info: "Please enter a password!"});
+			else return res.render('signin', {join_username: req.body.username, info:"Sorry! That username is taken."});
 		}
 		passport.authenticate('local')(req, res, function() {
 			res.redirect('/');
@@ -158,7 +158,7 @@ router.post('/register', function(req, res) {
 })
 
 router.get('/signin', function(req, res) {
-	res.render('signin', {info: req.flash('error'), user : req.body.username});
+	res.render('signin', {info: req.flash('error')});
 })
 
 router.post('/signin',
