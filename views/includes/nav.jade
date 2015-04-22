@@ -1,11 +1,19 @@
 nav
 	div#user
-		a(href="/signin")
-			span.user_icon_wrap
-				span.icon_wrap
-					span.icon
-						i.fa.fa-lock
-					span.icon_title Sign In
+		if (!user)
+			a(href="/signin")
+				span.user_icon_wrap
+					span.icon_wrap
+						span.icon
+							i.fa.fa-lock
+						span.icon_title Sign In
+		if (user)
+			a(href="/logout")
+				span.user_icon_wrap
+					span.icon_wrap
+						span.icon
+							i.fa.fa-lock
+						span.icon_title Log Out
 	ul#logo
 		li 
 			h1.onpoint_title

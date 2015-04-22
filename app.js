@@ -2,12 +2,21 @@
  * Module dependencies
  */
 var express  = require('express'),
-		jade     = require('jade'),
-		socket   = require('socket.io'),
-		stylus   = require('stylus'),
-		nib      = require('nib'),
-		models   = require('./models'),
-		routes   = require('./routes')
+		jade     	= require('jade'),
+		socket   	= require('socket.io'),
+		stylus   	= require('stylus'),
+		nib      	= require('nib'),
+		path	 	= require('path'),
+		favicon	 	= require('serve-favicon'),
+		logger	 	= require('morgan'),
+		cookieParser= require('cookie-parser'),
+		bodyParser	= require('body-parser'),
+		mongoose	= require('mongoose'),
+		passport	= require('passport'),
+		flash		= require('connect-flash'),
+		models		= require('./models'),
+		routes		= require('./routes'),
+		LocalStrategy = require('passport-local').Strategy;
 
 // set up express app
 var app = express()
@@ -37,13 +46,70 @@ app.use(stylus.middleware(
 app.use(express.static(__dirname + '/public'))
 app.use('/public/scripts', express.static(__dirname + '/public/scripts'))
 
-// run!
+// favicon
+// app.use(favicon(__dirname + "/public/images/favicon.ico"));
+
+// passport stuff
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.use(require('express-session')({
+	secret: 'secret cat',
+	resave: false,
+	saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(flash());
 app.use('/', routes)
 
-// app.listen(3000, function() {
-// 	console.log('Server up on port 3000')
+// Mongoose Connection
+mongoose.createConnection('mongodb://localhost/onpoint-users');
+
+// Passport configuration
+var Account = require('./models/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
+// app.listen(app.get('port'), function() {
+//   console.log("OnPoint is running on:" + app.get('port'))
 // })
 
-app.listen(app.get('port'), function() {
-  console.log("OnPoint is running on:" + app.get('port'))
-})
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
+
+
+module.exports = app;

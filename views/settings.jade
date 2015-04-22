@@ -3,4 +3,17 @@ extend layout
 block content
 	section#settings.container
 		h1 Settings
-		
+		if (user)
+			ul
+				li
+					strong Username: 
+					span #{user.username}
+				li
+					strong First Name: 
+					span #{user.firstName}
+				li
+					strong Last Name: 
+					span #{user.lastName}
+				li
+					strong E-mail: 
+					span #{user.email}
