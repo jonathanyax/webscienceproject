@@ -132,7 +132,9 @@ router.get('/help', function(req, res) {
 
 // define the settings page route
 router.get('/settings', function(req, res) {
-	if(req.user) res.render('settings', {title: 'Settings', active: 'settings', user: req.user})
+	if(req.user) {
+		res.render('settings', {title: 'Settings', active: 'settings', user: req.user});
+	}
 	else res.redirect('/signin');
 })
 

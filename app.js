@@ -80,7 +80,7 @@ passport.use(new FacebookStrategy({
 	clientID: config.facebook.clientID,
 	clientSecret: config.facebook.clientSecret,
 	callbackURL: config.facebook.callbackURL,
-	profileFields: ['id', 'displayName', 'emails']
+	profileFields: ['id', 'displayName', 'emails', 'photos']
 },
 function (accessToken, refreshToken, profile, done) {
 	process.nextTick(function() {
@@ -91,7 +91,7 @@ function (accessToken, refreshToken, profile, done) {
 				var newAccount = new Account();
 				newAccount.oauthID = profile.id;
 				newAccount.fullName = profile.displayName;
-				newAccount.email = profile.emails[0][0].value;
+				newAccount.email = profile.emails[0].value;
 
 				newAccount.save(function(err) {
 					if (err) throw err;
