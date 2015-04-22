@@ -16,10 +16,12 @@ var express  = require('express'),
 		flash		= require('connect-flash'),
 		models		= require('./models'),
 		routes		= require('./routes'),
+		config		= require('./oauth.js'),
+		FacebookStrategy = require('passport-facebook').Strategy;
 		LocalStrategy = require('passport-local').Strategy;
-
+		
 // set up express app
-var app = express()
+var app = express();
 
 function compile(str, path) {
 	return stylus(str)
@@ -54,7 +56,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 app.use(require('express-session')({
 	secret: 'secret cat',
 	resave: false,
@@ -72,9 +73,49 @@ mongoose.createConnection('mongodb://localhost/onpoint-users');
 
 // Passport configuration
 var Account = require('./models/account');
+// Local Authentication Strategy
 passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
+// FB Auth Strategy
+passport.use(new FacebookStrategy({
+	clientID: config.facebook.clientID,
+	clientSecret: config.facebook.clientSecret,
+	callbackURL: config.facebook.callbackURL,
+	profileFields: ['id', 'displayName', 'emails']
+},
+function (accessToken, refreshToken, profile, done) {
+	process.nextTick(function() {
+		Account.findOne( {'oauthID' : profile.id}, function(err, user) {
+			if (err) return done(err);
+			if (user) return done(null, user);
+			else {
+				var newAccount = new Account();
+				newAccount.oauthID = profile.id;
+				newAccount.fullName = profile.displayName;
+				newAccount.email = profile.emails[0][0].value;
+
+				newAccount.save(function(err) {
+					if (err) throw err;
+					return done(null, newAccount);
+				});
+			}
+		});
+	});
+}
+));
+
+// passport.serializeUser(Account.serializeUser());
+// passport.deserializeUser(Account.deserializeUser());
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
+
+// Passport Port
+app.listen(1337);
 
 // app.listen(app.get('port'), function() {
 //   console.log("OnPoint is running on:" + app.get('port'))

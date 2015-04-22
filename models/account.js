@@ -6,8 +6,8 @@ var Account = new Schema({
 	username: String,
 	password: String,
 	email: String,
-	firstName: String,
-	lastName: String
+	fullName: String,
+	oauthID: Number
 });
 
 Account.plugin(passportLocalMongoose);

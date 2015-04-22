@@ -145,7 +145,7 @@ router.get('/profile', function(req, res) {
 // Need more error checking for firstname/lastname/email-validation
 // For register, you can send it vars to auto-fill given info after error like username-taken
 router.post('/register', function(req, res) {
-	Account.register(new Account({username: req.body.username, email: req.body.email, firstName: req.body.firstName, lastName: req.body.lastName}), req.body.password, function (err, account) {
+	Account.register(new Account({username: req.body.username, email: req.body.email, fullName: req.body.fullName}), req.body.password, function (err, account) {
 		if (err) {
 			if (!req.body.username) return res.render('signin', {info: "Please enter a username!"});
 			else if (!req.body.password) return res.render('signin', {join_username: req.body.username, info: "Please enter a password!"});
@@ -166,6 +166,15 @@ router.post('/signin',
                                    failureRedirect: '/signin',
                                    failureFlash: true })
 )
+
+// FB Redirection
+router.get('/auth/facebook', passport.authenticate('facebook', {scope:['email']}));
+router.get('/auth/facebook/callback', passport.authenticate('facebook', {
+	successRedirect : '/',
+	failureRedirect: '/signin'}),
+	function(req,res) {
+		res.redirect('/');
+});
 
 router.get('/logout', function(req, res) {
 	req.logout();

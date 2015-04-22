@@ -15,9 +15,9 @@ block content
 		div#joinus.one-half.column
 			h3 Join Us
 			form(action="/register", method="post")
-				input(type="text", name="firstName", placeholder="First Name").six.columns
-				input(type="text", name="lastName", placeholder="Last Name").six.columns
+				input(type="text", name="fullName", placeholder="Full Name").u-full-width
 				input(type="text", name="username", placeholder="Username", value=join_username).u-full-width
 				input(type="email", name="email", placeholder="E-mail").u-full-width
 				input(type="password", name="password", placeholder="Password").u-full-width
 				input(type="submit", value="Join Us")
+			a(href="/auth/facebook") Login via Facebook
