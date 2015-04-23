@@ -35,4 +35,4 @@ EXPOSE 28017
 
 CMD ["mongod"]
 
-CMD cd /data; npm install; node app.js;
+CMD cd /data; npm install; npm start;
