@@ -8,8 +8,9 @@ RUN apt-get update -y
 RUN apt-get -qq update -y
 
 # Install Node things
-RUN apt-get install -y nodejs-legacy
-RUN apt-get install -y npm
+RUN sudo apt-get install -y nodejs nodejs-legacy
+RUN sudo apt-get install -y npm
+RUN sudo npm install -g npm@latest
 
 # Install MongoDB.
 RUN \
