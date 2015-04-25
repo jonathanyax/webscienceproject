@@ -7,6 +7,7 @@ var Account = new Schema({
 	password: String,
 	email: String,
 	fullName: String,
+	picture: String,
 	oauthID: Number
 });
 

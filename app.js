@@ -90,8 +90,9 @@ function (accessToken, refreshToken, profile, done) {
 				var newAccount = new Account();
 				newAccount.oauthID = profile.id;
 				newAccount.fullName = profile.displayName;
-				newAccount.email = profile.emails;
-
+				newAccount.email = profile.emails[0].value;
+				newAccount.picture = "https://graph.facebook.com/" + profile.id + "/picture?width=250&height=250";
+				
 				newAccount.save(function(err) {
 					if (err) throw err;
 					return done(null, newAccount);
