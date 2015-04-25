@@ -84,7 +84,7 @@ block content
 					li
 						a(href='#')
 							img(src='/images/sample_point/point_021.JPG')
-		section#point_data.seven.columns
+		section#point_data.seven.columns.container
 			div.point_social
 				ul
 					li
@@ -106,7 +106,7 @@ block content
 			div.point_map
 				| map goes here
 			div.point_address
-				p.container 
+				p
 					span.point_address_street #{point.address.street}
 					span.point_address_city #{point.address.city}, #{point.address.state} #{point.address.zip}
 		section#point_comments.container.seven.columns

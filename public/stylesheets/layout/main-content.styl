@@ -341,11 +341,11 @@ section#point_display
 		@media screen and (min-width: mq--phablet)
 			float right
 	section#point_data
+		padding: 1em 0
 		@media screen and (min-width: mq--phablet)
 			margin-left 0
 			background color--light-grey
 		div.point_social
-			margin -20px 0
 			@media screen and (min-width: mq--phablet)
 				margin 0 0 -20px 0
 				float right
@@ -396,6 +396,8 @@ section#point_display
 						text-stroke 0
 						@media screen and (min-width: mq--tablet)
 							font-size 2em
+				a:hover
+					background color--dark-green
 		div.point_map
 			background color--medium-grey
 			height 120px
@@ -412,7 +414,6 @@ section#point_display
 			text-stroke .03em color--dark-grey
 			font-size .7em 
 			letter-spacing .04em
-			padding 8px 0
 			span.point_address_street:after
 				content: ", "
 			@media screen and (min-width: mq--phablet)

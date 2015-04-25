@@ -915,14 +915,14 @@ section#point_display ul {
     float: right;
   }
 }
+section#point_display section#point_data {
+  padding: 1em 0;
+}
 @media screen and (min-width: 550px) {
   section#point_display section#point_data {
     margin-left: 0;
     background: #f6f9f9;
   }
-}
-section#point_display section#point_data div.point_social {
-  margin: -20px 0;
 }
 @media screen and (min-width: 550px) {
   section#point_display section#point_data div.point_social {
@@ -1003,6 +1003,9 @@ section#point_display section#point_data div.point_social li a i {
     font-size: 2em;
   }
 }
+section#point_display section#point_data div.point_social li a:hover {
+  background: #00ac85;
+}
 section#point_display section#point_data div.point_map {
   background: #8b9da8;
   height: 120px;
@@ -1026,7 +1029,6 @@ section#point_display section#point_data div.point_address {
   -webkit-text-stroke: 0.03em #666;
   font-size: 0.7em;
   letter-spacing: 0.04em;
-  padding: 8px 0;
 }
 section#point_display section#point_data div.point_address span.point_address_street:after {
   content: ", ";
