@@ -5,5 +5,13 @@ extend layout
 
 block content
 	section#profile.container
-		h1 Profile
-	
+		h1 Hi, #{user.fullName}!
+		if (user)
+			ul
+				if(!user.oauthID)
+					li
+						strong Username: 
+						span #{user.username}
+				li
+					strong E-mail: 
+					span #{user.email}

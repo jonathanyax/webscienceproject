@@ -1,5 +1,8 @@
 head
-	title #{title} | On Point
+	if (title)
+		title #{title} | On Point
+	if (!title)
+		title On Point
 
 	//- Meta elements
 	meta(charset="utf-8")

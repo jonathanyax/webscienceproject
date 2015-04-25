@@ -132,15 +132,14 @@ router.get('/help', function(req, res) {
 
 // define the settings page route
 router.get('/settings', function(req, res) {
-	if(req.user) {
-		res.render('settings', {title: 'Settings', active: 'settings', user: req.user});
-	}
+	if (req.user) res.render('settings', {title: 'Settings', active: 'settings', user: req.user});
 	else res.redirect('/signin');
 })
 
 // define the profile page route
 router.get('/profile', function(req, res) {
-	res.render('profile', {title: 'Profile', active: 'profile', user: req.user})
+	if (req.user) res.render('profile', {title: 'Profile', active: 'profile', user: req.user});
+	else res.redirect('/signin');
 })
 
 // Register Handling
@@ -160,7 +159,7 @@ router.post('/register', function(req, res) {
 })
 
 router.get('/signin', function(req, res) {
-	res.render('signin', {info: req.flash('error')});
+	res.render('signin', {info: req.flash('error'), title: 'Sign In'});
 })
 
 router.post('/signin',
