@@ -8,9 +8,12 @@ RUN apt-get update -y
 RUN apt-get -qq update -y
 
 # Install Node things
-RUN sudo apt-get install -y nodejs nodejs-legacy
+RUN sudo apt-get install -y nodejs-legacy
+RUN echo "export PATH=$PATH:/opt/nodejs/bin" >> ~/.bashrc
+RUN . ~/.bashrc
 RUN sudo apt-get install -y npm
-RUN sudo npm install -g npm@latest
+RUN sudo npm config set registry http://registry.npmjs.org/
+# RUN sudo rm -rf node_modules
 
 # Install MongoDB.
 RUN \
@@ -36,4 +39,12 @@ EXPOSE 28017
 
 CMD ["mongod"]
 
-CMD cd /data; npm cache clean; npm install; npm start;
+CMD cd /data
+RUN sudo npm install
+RUN sudo npm cache clean
+RUN sudo npm update
+RUN sudo npm install jade
+RUN sudo npm install crc
+RUN sudo npm install mongoose
+RUN npm start
+

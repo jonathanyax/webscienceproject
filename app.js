@@ -3,7 +3,6 @@
  */
 var express  = require('express'),
 		jade     	= require('jade'),
-		socket   	= require('socket.io'),
 		stylus   	= require('stylus'),
 		nib      	= require('nib'),
 		path	 	= require('path'),
@@ -49,7 +48,7 @@ app.use(express.static(__dirname + '/public'))
 app.use('/public/scripts', express.static(__dirname + '/public/scripts'))
 
 // favicon
-// app.use(favicon(__dirname + "/public/images/favicon.ico"));
+app.use(favicon(__dirname + "/public/images/favicon.ico"));
 
 // passport stuff
 app.use(logger('dev'));
