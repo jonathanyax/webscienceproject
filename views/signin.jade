@@ -20,4 +20,6 @@ block content
 				input(type="email", name="email", placeholder="E-mail").u-full-width
 				input(type="password", name="password", placeholder="Password").u-full-width
 				input(type="submit", value="Join Us")
-			a(href="/auth/facebook") Login via Facebook
+			hr
+			form(action="/auth/facebook")
+				button Login via Facebook
