@@ -991,7 +991,7 @@ section#point_display section#point_data div.point_social li a {
   section#point_display section#point_data div.point_social li a {
     border-right: none;
     padding: 0.7em 0.1em;
-    font-size: 0.67em;
+    font-size: 0.65em;
   }
 }
 @media screen and (min-width: 750px) {
