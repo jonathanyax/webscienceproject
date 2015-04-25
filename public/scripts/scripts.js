@@ -7,26 +7,11 @@ $(function() {
 		interval	: 2000,
 		step		: 1,
 		preventClick: false,
-		w320		: {
-			rows	: 2,
-			columns	: 2
-		},
-		w480		: {
-			rows	: 2,
-			columns	: 4
-		},
-		w768		: {
-			rows	: 3,
-			columns	: 5
-		},
-		w1024		: {
-			rows	: 3,
-			columns	: 9
-		}
+
 	} );
 	$( '.point-grid' ).gridrotator( {
-		rows		: 4,
-		columns		: 5,
+		rows		: 5,
+		columns		: 3,
 		animType	: 'fadeInOut',
 		animSpeed	: 500,
 		interval	: 3000,
@@ -36,21 +21,21 @@ $(function() {
 			rows	: 1,
 			columns	: 5
 		},
-		w320		: {
+		w400		: {
 			rows	: 1,
 			columns	: 5
 		},
-		w480		: {
+		w550		: {
 			rows	: 1,
 			columns	: 5
 		},
-		w768		: {
-			rows	: 4,
-			columns	: 3
+		w750		: {
+			rows	: 5,
+			columns	: 2
 		},
-		w1024		: {
-			rows	: 4,
-			columns	: 3
+		w1000		: {
+			rows	: 5,
+			columns	: 2
 		}
 	} );
 	

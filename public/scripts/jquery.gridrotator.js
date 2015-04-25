@@ -117,10 +117,10 @@
 		rows : 4,
 		// number of columns 
 		columns : 10,
-		w1024 : { rows : 3, columns : 8 },
-		w768 : {rows : 3,columns : 7 },
-		w480 : {rows : 3,columns : 5 },
-		w320 : {rows : 2,columns : 4 },
+		w1000 : { rows : 3, columns : 8 },
+		w750 : {rows : 3,columns : 7 },
+		w550 : {rows : 3,columns : 5 },
+		w400 : {rows : 2,columns : 4 },
 		w240 : {rows : 2,columns : 3 },
 		// step: number of items that are replaced at the same time
 		// random || [some number]
@@ -322,15 +322,17 @@
 		_setGridDim	 : function() {
 
 			// container's width
-			var c_w = this.$el.width();
+			// var c_w = this.$el.width();
+			// we want to check window's width instead
+			var c_w = $(window).width();
 
 			// we will choose the number of rows/columns according to the container's width and the values set in the plugin options 
 			switch( true ) {
 				case ( c_w < 240 ) : this.rows = this.options.w240.rows; this.columns = this.options.w240.columns; break;
-				case ( c_w < 320 ) : this.rows = this.options.w320.rows; this.columns = this.options.w320.columns; break;
-				case ( c_w < 480 ) : this.rows = this.options.w480.rows; this.columns = this.options.w480.columns; break;
-				case ( c_w < 768 ) : this.rows = this.options.w768.rows; this.columns = this.options.w768.columns; break;
-				case ( c_w < 1024 ) : this.rows = this.options.w1024.rows; this.columns = this.options.w1024.columns; break;
+				case ( c_w < 400 ) : this.rows = this.options.w400.rows; this.columns = this.options.w400.columns; break;
+				case ( c_w < 550 ) : this.rows = this.options.w550.rows; this.columns = this.options.w550.columns; break;
+				case ( c_w < 750 ) : this.rows = this.options.w750.rows; this.columns = this.options.w750.columns; break;
+				case ( c_w < 1000 ) : this.rows = this.options.w1000.rows; this.columns = this.options.w1000.columns; break;
 				default : this.rows = this.options.rows; this.columns = this.options.columns; break;
 			}
 

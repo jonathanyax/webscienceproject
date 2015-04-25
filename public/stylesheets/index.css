@@ -145,6 +145,7 @@ header input#search {
   text-decoration: inherit;
   border: solid 2px #eaf0ef;
   padding: 1.5em 1em;
+  margin: 1em 0 0 0;
 }
 header input#search:focus {
   border-color: #12ca9a;
@@ -917,6 +918,11 @@ section#point_display ul {
 }
 section#point_display section#point_data {
   padding: 1em 0;
+}
+@media screen and (max-width: 550px) {
+  section#point_display section#point_data {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 550px) {
   section#point_display section#point_data {
