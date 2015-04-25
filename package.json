@@ -27,7 +27,7 @@
   "private" : true,
   "devDependencies": {},
   "scripts": {
-    "start": "nodejs ./bin/www"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",

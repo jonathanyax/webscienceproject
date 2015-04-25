@@ -1,0 +1,524 @@
+/*****************
+ * INDEX
+ ****************/
+ 
+main
+	margin 0 0 2em 0
+	@media screen and (min-width: mq--tablet)
+		margin-left 175px 
+
+div#imagegrid
+	display none
+	@media screen and (min-width: mq--tablet)
+		margin 1em 0
+		display block
+
+div#featured_cities
+	margin 2em auto
+	overflow hidden
+	div.city
+		margin-bottom 1em
+		border-radius 10px
+		position relative
+		a
+			display block
+			height 275px
+			span
+				display inline-block
+				color color--white
+				text-stroke 1px color--white
+				position absolute
+				bottom 0
+				background rgba(color--primary, .8)
+				border-radius 0 0 10px 10px
+				width 100%
+				text-align center
+				padding .5em .25em
+				font-size 16px 
+				letter-spacing 1px 
+			&:hover span
+				background color--primary			 
+	#sf
+		background url(../../images/city_thumbs/sf.jpg)
+		background-size cover
+		background-position center
+	#nyc
+		background url(../../images/city_thumbs/nyc.jpg)
+		background-size cover
+		background-position center
+	#bos
+		background url(../../images/city_thumbs/bos.jpg)
+		background-size cover
+		background-position center
+	#alb
+		background url(../../images/city_thumbs/alb.jpg)
+		background-size cover
+		background-position center
+		
+		
+/*****************
+ * REGIONS
+ ****************/
+ 
+div#regions_nav_wrap
+	@media screen and (min-width: mq--phablet)
+		border-bottom 1px solid color--medium-grey
+	ul#regions_nav
+		list-style none
+		text-align center
+		@media screen and (min-width: mq--phablet)
+			margin 0 auto
+			position relative
+			overflow hidden
+		a
+			display block
+			font-size 22px
+			color color--dark-grey
+			padding 5px
+			text-align center
+			text-decoration none
+			&:hover
+				text-decoration none
+		li.city
+			@media screen and (max-width: mq--phablet)
+				margin .25em 0
+			@media screen and (min-width: mq--phablet)
+				display inline
+				text-align center
+			a
+				padding .5em 0
+		li.city.active a, a:hover
+			background color--primary
+			border-radius 5px
+			color color--white
+			@media screen and (min-width: mq--phablet)
+				background none
+				color color--dark-grey
+		li#magic_line
+			@media screen and (min-width: mq--phablet)
+				position absolute
+				bottom 0
+				left 0
+				height 4px 
+				background color--primary
+				margin-left 0
+			
+div.featured_regions
+	div.featured_region
+		display none
+		.curr_region
+			display block
+		.city
+			background-size cover !important
+			background-position center !important
+	#manhattan
+		background url(../../images/city_thumbs/manhattan.jpg)
+	#longisland
+		background url(../../images/city_thumbs/longisland.jpg)
+	#statenisland
+		background url(../../images/city_thumbs/statenisland.jpg)
+	#queens
+		background url(../../images/city_thumbs/queens.jpg)
+	#brooklyn
+		background url(../../images/city_thumbs/brooklyn.jpg)
+	#bronx
+		background url(../../images/city_thumbs/bronx.jpg)		
+	#lehighvalley
+		background url(../../images/city_thumbs/lehigh.jpg)
+	#poconos
+		background url(../../images/city_thumbs/poconos.jpg)
+	#boston
+		background url(../../images/city_thumbs/bos.jpg)
+	#cambridge
+		background url(../../images/city_thumbs/cambridge.jpg)
+	#framingham
+		background url(../../images/city_thumbs/framingham.jpg)
+	#lexington
+		background url(../../images/city_thumbs/lexington.jpg)
+	#newton
+		background url(../../images/city_thumbs/newton.jpg)
+	#peabody
+		background url(../../images/city_thumbs/peabody.jpg)
+	#quincy
+		background url(../../images/city_thumbs/quincy.jpg)
+	#waltham
+		background url(../../images/city_thumbs/waltham.jpg)
+	#albany
+		background url(../../images/city_thumbs/albany.jpg)
+	#troy
+		background url(../../images/city_thumbs/rpi.jpg)
+	#schenectady
+		background url(../../images/city_thumbs/schnectady.jpg)		
+	#saratogasprings
+		background url(../../images/city_thumbs/saratogasprings.jpg)
+	#hudson
+		background url(../../images/city_thumbs/hudson.jpg)
+	#rensselaer
+		background url(../../images/city_thumbs/rensselaer.jpg)
+	#cohoes
+		background url(../../images/city_thumbs/cohoes.jpg)
+	#watervliet
+		background url(../../images/city_thumbs/watervliet.jpg)
+	#sanfrancisco
+		background url(../../images/city_thumbs/sf.jpg)
+	#sanjose
+		background url(../../images/city_thumbs/sanjose.jpg)
+	#oakland
+		background url(../../images/city_thumbs/oakland.jpg)
+
+/*****************
+ * SEARCH PAGE
+ ****************/
+ 
+section#search_data
+	margin-top 1em
+	div.section_title
+		display inline-block
+		width 100%
+		padding 0 0 .25em
+		border-bottom 2px solid color--primary
+		h2
+			font-size 1.7em
+			margin 0
+			float left
+	div#search_history
+		button.delete
+			@media screen and (min-width: mq--phablet)
+				margin-top 0
+				height 34px
+				line-height 1em
+				padding 0
+			float right
+			margin-bottom 0
+			margin-top 5px
+			height 24px
+			line-height .75em
+			span
+				font-size 1em
+				padding 0 .5em
+				@media screen and (min-width: mq--phablet)
+					font-size: .75em
+				@media screen and (min-width: mq--desktop)
+					padding 0 .75em
+					font-size 1em
+				i
+					font-size 1.25em
+					vertical-align -2px
+					padding 0 .25em 0 0
+				i.icon-del
+					@media screen and (min-width: mq--desktop)
+						display inline
+					display none
+
+ul.points_list
+	margin .5em 0
+	li
+		list-style-type none
+		margin-bottom 1rem
+	div.point_item
+		font-family font--helvetica-neue
+		overflow auto
+		color color--dark-grey
+		background color--light-grey
+		ul.point_item_metadata
+			list-style-type none
+			margin 0
+			li
+				display inline
+				margin 0 1em 0 0
+				i
+					padding 0 .25em 0 0
+				i.fa-comment
+						vertical-align text-top
+		div.point_item_image
+			float left
+			width 30%
+			img
+				display: block
+				object-fit cover
+				min-height 175px
+		div.point_item_info
+			float right
+			width 70%
+			padding 0.25em .75em
+		h2, h3
+			font-family font--helvetica-neue
+			letter-spacing normal
+			color color--dark-grey
+		h2
+			font-weight 400
+			font-size 1.25em
+			margin-bottom .5em
+		h3
+			font-weight 200
+			font-size 1em
+			margin-bottom .25em
+		&:hover, &:hover h2, &:hover h3
+			color color--primary
+
+ul.search_list
+	li
+		list-style-type none
+		margin 0 0 .5em 0
+		a
+			text-decoration none
+			color color--dark-grey
+			&:hover
+				color color--primary
+
+/*****************
+ * REGION PAGE
+ ****************/
+
+section.region_display
+	div.region_list
+		margin 1em 0
+
+/*****************
+ * POINT PAGE
+ ****************/
+
+section.point_breadcrumbs
+	background color--light-grey
+	margin 0 0 1em 0
+	@media screen and (min-width: mq--tablet)
+		background transparent
+		border-top 1px solid darken(color--light-grey, 10%)
+		border-bottom 1px solid darken(color--light-grey, 10%)
+	div.crumbs
+		padding .5em 0
+		ul
+			font-family font--helvetica-neue
+			font-size .65em
+			color color--white
+			list-style-type none
+			@media screen and (min-width: mq--tablet)
+				font-size .8em
+				font-family font--lane-narrow
+				text-stroke .03em color--primary
+			@media screen and (min-width: mq--tablet)
+				font-size 1em
+			li
+				display inline-block
+				padding 0 .5em 0 0
+				a
+					color color--primary
+					text-decoration none
+					&:hover
+						color color--primary-dark
+				&:after
+					padding 0 0 0 .5em
+					content "/"
+					color color--medium-grey
+					@media screen and (min-width: mq--phablet)
+							text-stroke 0em
+				&:last-child
+					a
+						color color--medium-grey
+						@media screen and (min-width: mq--phablet)
+							text-stroke .04em color--medium-grey
+					&:after
+						content none
+section#point_display
+	color color--medium-grey
+	padding 0
+	word-break break-word
+	h2
+		font-weight normal
+		font-size 1.6em
+		margin-bottom .5em
+		text-align center
+		text-stroke .02em color--medium-grey
+		@media screen and (min-width: mq--phablet)
+			text-align left
+			font-size 2em 
+		@media screen and (min-width: mq--tablet)
+			font-size 2.5em
+	ul
+		list-style-type none
+		margin 0 0 1.25em 0
+	section#point_visual
+		@media screen and (min-width: mq--phablet)
+			float right
+	section#point_data
+		@media screen and (min-width: mq--phablet)
+			margin-left 0
+			background color--light-grey
+		div.point_social
+			margin -20px 0
+			@media screen and (min-width: mq--phablet)
+				margin 0 0 -20px 0
+				float right
+			ul
+				list-style-type none
+				@media screen and (min-width: mq--phablet)
+					background color--primary
+					width 56px
+					padding 0 .3em
+				@media screen and (min-width: mq--tablet)
+					width 86px
+			li
+				display inline-block
+				width 25%
+				vertical-align top
+				padding .4em 0
+				background color--primary
+				@media screen and (min-width: mq--phablet)
+					display block
+					width 100%
+					height 55px
+					border-bottom color--primary-dark 1px solid
+					&:last-of-type
+						border none
+				@media screen and (min-width: mq--tablet)
+					height 86px
+					padding .8em 0
+				a
+					text-align center
+					font-size .7em 
+					background color--primary
+					display inline-block
+					padding .7em 
+					color color--white
+					text-decoration none
+					border-right color--primary-dark 1px solid
+					width 100%
+					text-stroke .05em color--white
+					@media screen and (min-width: mq--phablet)
+						border-right none
+						padding .7em .1em
+						font-size .67em
+					@media screen and (min-width: mq--tablet)
+						font-size .8em
+					i
+						display block
+						font-size 1.5em
+						text-stroke 0
+						@media screen and (min-width: mq--tablet)
+							font-size 2em
+		div.point_map
+			background color--medium-grey
+			height 120px
+			@media screen and (min-width: mq--phablet)
+				border 10px solid color--light-grey
+				margin-right 56px
+			@media screen and (min-width: mq--tablet)
+				height 290px
+				border 20px solid color--light-grey
+				margin-right 86px
+		div.point_address
+			background color--light-grey
+			color color--dark-grey
+			text-stroke .03em color--dark-grey
+			font-size .7em 
+			letter-spacing .04em
+			padding 8px 0
+			span.point_address_street:after
+				content: ", "
+			@media screen and (min-width: mq--phablet)
+				height 50px
+				line-height 1.2
+				font-size .8em  
+				p
+					width 100%
+					padding 0 10px
+					margin-right 60px
+					span.point_address_city
+						display block
+				span.point_address_street:after
+					content: ""
+			@media screen and (min-width: mq--tablet)
+				padding 0 0 0 10px
+				font-size 1em 
+	section#point_comments
+		margin-top 22px
+		@media screen and (min-width: mq--phablet)
+			margin 22px 0 0 0
+		h3
+			font-size 16px
+			border-bottom 1px solid darken(color--light-grey, 10%)
+			color color--dark-grey
+			text-stroke .02em color--dark-grey
+			@media screen and (min-width: mq--tablet)
+				font-size 22px
+		li
+			margin 1em 0
+			span.author-pic img
+				width 30px
+				height 30px
+				border-radius 15px
+				float left
+				@media screen and (min-width: mq--tablet)
+					width 38px
+					height 38px
+					border-radius 19px
+			span.author, span.comment
+				display block
+				margin-left 45px
+				@media screen and (min-width: mq--tablet)
+					margin-left 50px
+			span.author
+				font-size 14px
+				text-stroke .02em color--medium-grey
+				@media screen and (min-width: mq--tablet)
+					font-size 17px
+			span.comment
+				font-size 12px
+				color color--dark-grey
+				font-family font--helvetica-neue
+				line-height 1.3 
+				@media screen and (min-width: mq--tablet)
+					font-size 13px
+
+/*****************
+ * HELP PAGE
+ ****************/
+
+section#help
+	font-family font--helvetica-neue
+	ul
+		margin 1em 0
+		li
+			list-style-type none
+			margin 1em 0
+		
+/*****************
+ * SIGN IN PAGE
+ ****************/
+
+section#signin_accounts
+	div#joinus, div#signin
+		padding 0 0 1em
+	input[type="text"], input[type="email"], input[type="password"], a
+		font-family font--helvetica-neue
+		line-height 1.25em
+	input
+		display block
+	h3
+		margin 0 0 .5em 0
+		padding 0 0 .15em 0
+		border-bottom 3px solid color--primary
+
+/*****************
+ * SETTINGS PAGE
+ ****************/
+
+section#settings
+	ul
+		font-family font--helvetica-neue
+		list-style-type none
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
