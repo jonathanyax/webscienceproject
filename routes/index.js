@@ -45,22 +45,31 @@ router.get('/regions/:regionName', function(req, res) {
       return
     }
     // console.log(regions)
-    City.find({}, function(err2, cities) {
-      if (err2) {
-        // res.send('{"msg:"No data"}')
-		res.render('error', {error: err2});
-        return
-      }
-      // console.log(cities)
-      Region.findOne({name: regionName}, function(err3, selectedRegion) {
-        if (err3) {
-          // res.send('{"msg:"No data"}')
-         res.render('error', {error: err3});
-		return
-        }
-        res.render('regions', {title: 'Regions', active: 'regions', regions: regions, cities: cities, selectedRegion: selectedRegion, user: req.user})
-      })
-    })
+    if(regions) {
+		City.find({}, function(err2, cities) {
+			if(cities) {
+				if (err2) {
+		        // res.send('{"msg:"No data"}')
+				res.render('error', {error: err2});
+		        return
+		      }
+		      // console.log(cities)
+		      Region.findOne({name: regionName}, function(err3, selectedRegion) {
+		        if (err3) {
+		          // res.send('{"msg:"No data"}')
+		         res.render('error', {error: err3});
+				return
+		        }
+		        if(selectedRegion) res.render('regions', {title: 'Regions', active: 'regions', regions: regions, cities: cities, selectedRegion: selectedRegion, user: req.user});
+				else return res.render('error', {message: "Could not find selected region."});
+		      })
+			}
+			else return res.render('error', {message: "Could not find cities"});
+	    })
+	}
+	else {
+		return res.render('error', {message: "Could not find region"});
+	}
   })
 })
 
@@ -74,23 +83,32 @@ router.get('/regions/:regionName/:cityName', function(req, res) {
 		res.render('error', {error: err});
       return
     }
-    City.findOne({name: cityName}, function(err2, city) {
-      if (err2) {
-        // res.send('{"msg:"No data"}')
-		res.render('error', {error: err2});
-        return
-      }
-      // console.log(city)
-      Point.find({cityId: city.id}, function(err3, points) {
-        if (err3) {
-			res.render('error', {error: err3});
-          // res.send('{"msg:"No data"}')
-          return
-        }
-        // console.log(points)
-        return res.render('city', {title: cityName, region: region, city: city, points: points, user: req.user})
-      })
-    })
+    if(region) {
+		City.findOne({name: cityName}, function(err2, city) {
+	      if (err2) {
+	        // res.send('{"msg:"No data"}')
+			res.render('error', {error: err2});
+	        return
+	      }
+		if (city) {
+			// console.log(city)
+	      Point.find({cityId: city.id}, function(err3, points) {
+	        if (err3) {
+				res.render('error', {error: err3});
+	          // res.send('{"msg:"No data"}')
+	          return
+	        }
+	        // console.log(points)
+	        return res.render('city', {title: cityName, region: region, city: city, points: points, user: req.user})
+	      })
+		}
+		else return res.render('error', {message: "Could not find city"});
+	    })
+	}
+	else {
+		res.render('error', {message: "Could not find region"});
+		return;
+	}
   })
 })
 
@@ -104,21 +122,35 @@ router.get('/point/:pointId', function(req, res) {
     }
 	// console.log(req.params);    
 	// console.log(point)
-    Region.findOne({_id: point.regionId}, function(err2, region) {
-      if (err2) {
-		res.render('error', {error: err2});
-        // res.send('{"msg:"No data"}')
-        return
-      }
-      City.findOne({_id: point.cityId}, function(err3, city) {
-        if (err3) {
-			res.render('error', {error: err3});
-          // res.send('{"msg:"No data"}')
-          return
-        }
-        res.render('point', {title: point.name, active: 'point', point: point, city: city, region: region, user: req.user})
-      })
-    })
+    if (point) {
+		Region.findOne({_id: point.regionId}, function(err2, region) {
+	      if (err2) {
+			res.render('error', {error: err2});
+	        // res.send('{"msg:"No data"}')
+	        return
+	      }
+	      if (region) {
+			City.findOne({_id: point.cityId}, function(err3, city) {
+		        if (err3) {
+					res.render('error', {error: err3});
+		          // res.send('{"msg:"No data"}')
+		          return
+		        }
+		        if (city) res.render('point', {title: point.name, active: 'point', point: point, city: city, region: region, user: req.user});
+				else {
+					res.render('error', {messsage: "Could not find city."});
+				}
+		      })
+	  }
+		else {
+			res.render('error', {message: "Could not find region."});
+		}
+	    })
+	}
+	else {
+		res.render('error', {message: "Could not find point."});
+		return;
+	}
   })
 })
 
