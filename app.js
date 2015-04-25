@@ -90,7 +90,7 @@ function (accessToken, refreshToken, profile, done) {
 				var newAccount = new Account();
 				newAccount.oauthID = profile.id;
 				newAccount.fullName = profile.displayName;
-				newAccount.email = profile.emails[0].value;
+				newAccount.email = profile.emails;
 
 				newAccount.save(function(err) {
 					if (err) throw err;
