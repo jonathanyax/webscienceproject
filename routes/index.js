@@ -142,9 +142,7 @@ router.get('/point/:pointId', function(req, res) {
 				}
 		      })
 	  }
-		else {
-			res.render('error', {message: "Could not find region."});
-		}
+		else res.render('error', {message: "Could not find region."});
 	    })
 	}
 	else {
@@ -156,7 +154,11 @@ router.get('/point/:pointId', function(req, res) {
 
 // define the search route
 router.get('/search', function(req, res) {
-  res.render('search', {title: 'Search', active: 'search', user: req.user});
+	Point.find({}, function(err, points) {
+		if (err) return res.render('search', {title: 'Search', active: 'search', user: req.user});
+		if (points) return res.render('search', {title: 'Search', active: 'search', user: req.user, points: points});
+		else return res.render('search', {title: 'Search', active: 'search', user: req.user});
+	})
 })
 
 // define the temp search results route
