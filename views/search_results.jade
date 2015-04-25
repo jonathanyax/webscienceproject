@@ -1,27 +1,34 @@
 extend layout
 
 block searchbar
-	form
-		input#search.u-full-width(type="search", placeholder!="&#xF002;")
-
+	include ./includes/searchbar.jade
+	
 block content
 	section#search_results.container
-		h3 Search Results for "boston"
-		ul.points_list.two-thirds.column
-			li
-				a(href="/point")
-					div.point_item
-						div.point_item_image
-							img(src="images/sample_grid/sample_068.JPG").u-max-full-width
-						div.point_item_info
-							h2 Boston Public Library
-							h3 700 Boylston St.
-							h3 Boston, MA
-							ul.point_item_metadata
-								li
-									i.fa.fa-comment 
-									| 5
-								li
-									i.fa.fa-camera 
-									| 10
-			
+		if (searchterm)
+			h3 Search Results for "#{searchterm}"
+			if points.length == 0
+				h4 No points found for "#{searchterm}"
+			else
+				ul.points_list.two-thirds.column
+					for point in points
+						li
+							a(href="/point/#{point.id}")
+								div.point_item
+									div.point_item_image
+										img(src="/images/sample_grid/sample_053.JPG").u-max-full-width
+									div.point_item_info
+										h2 #{point.name}
+										h3 #{point.address.street}
+										h3 #{point.address.city}, #{point.address.state}
+										ul.point_item_metadata
+											li
+												i.fa.fa-comment 
+												| #{point.meta.comments}
+											li
+												i.fa.fa-camera 
+												| #{point.meta.photos}
+				
+		if (!searchterm)
+			h3 No search term specified!
+		

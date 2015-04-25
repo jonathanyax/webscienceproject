@@ -1,2 +1,2 @@
-form
-	input#search.u-full-width(type="search", placeholder!="&#xF002;")
+form(action="/search", method="POST")
+	input#search.u-full-width(type="search", placeholder!="&#xF002;", name="searchterm")

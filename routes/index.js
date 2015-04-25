@@ -112,7 +112,7 @@ router.get('/regions/:regionName/:cityName', function(req, res) {
   })
 })
 
-// define the search route
+// define the point ID route
 router.get('/point/:pointId', function(req, res) {
   Point.findOne({_id: req.params.pointId}, function(err, point) {
     if (err) {
@@ -156,12 +156,27 @@ router.get('/point/:pointId', function(req, res) {
 
 // define the search route
 router.get('/search', function(req, res) {
-  res.render('search', {title: 'Search', active: 'search', user: req.user})
+  res.render('search', {title: 'Search', active: 'search', user: req.user});
 })
 
 // define the temp search results route
-router.get('/search_results', function(req, res) {
-  res.render('search_results', {title: 'Search Results', active: 'search', user: req.user})
+router.get('/search/:searchterm', function(req, res) {
+	var searchterm = req.params.searchterm;
+	Point.find({"name": new RegExp(searchterm, 'i')}, function(err, points) {
+		if (err) return res.render('error', {message: "No search results for: " + req.params.searchterm});
+		if (points) {
+			res.render('search_results', {title: 'Search Results', active: 'search', user: req.user, searchterm: searchterm, points: points});
+		}
+		else {
+			return res.render('error', {message: "Could not search for: " + searchterm});
+		}
+	}
+)})
+
+router.post('/search', function(req, res) {
+	var searchterm = req.body.searchterm;
+	if (searchterm) res.redirect('/search/' + searchterm);
+	else return res.render('error', {message: searchterm});	
 })
 
 // define the discover route
