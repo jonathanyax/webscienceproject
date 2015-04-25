@@ -18,13 +18,15 @@ var Point = mongoose.model('Point')
 router.get('/regions', function(req, res) {
   Region.find({}, function(err, regions) {
     if (err) {
-      res.send('{"msg:"No data"}')
+      // res.send('{"msg:"No data"}')
+	  res.render('error', {error: err});
       return
     }
     // console.log(regions)
     City.find({}, function(err2, cities) {
       if (err) {
-        res.send('{"msg:"No data"}')
+        // res.send('{"msg:"No data"}')
+		res.render('error', {error: err2});
         return
       }
       // console.log(cities)
@@ -38,20 +40,23 @@ router.get('/regions/:regionName', function(req, res) {
   var regionName = req.params.regionName.replace(/-/g, ' ')
   Region.find({}, function(err, regions) {
     if (err) {
-      res.send('{"msg:"No data"}')
+      // res.send('{"msg:"No data"}')
+		res.render('error', {error: err});
       return
     }
     // console.log(regions)
     City.find({}, function(err2, cities) {
       if (err2) {
-        res.send('{"msg:"No data"}')
+        // res.send('{"msg:"No data"}')
+		res.render('error', {error: err2});
         return
       }
       // console.log(cities)
       Region.findOne({name: regionName}, function(err3, selectedRegion) {
         if (err3) {
-          res.send('{"msg:"No data"}')
-          return
+          // res.send('{"msg:"No data"}')
+         res.render('error', {error: err3});
+		return
         }
         res.render('regions', {title: 'Regions', active: 'regions', regions: regions, cities: cities, selectedRegion: selectedRegion, user: req.user})
       })
@@ -65,18 +70,21 @@ router.get('/regions/:regionName/:cityName', function(req, res) {
   var cityName = req.params.cityName.replace(/-/g, ' ')
   Region.findOne({name: regionName}, function(err, region) {
     if (err) {
-      res.send('{"msg:"No data"}')
+      // res.send('{"msg:"No data"}')
+		res.render('error', {error: err});
       return
     }
     City.findOne({name: cityName}, function(err2, city) {
       if (err2) {
-        res.send('{"msg:"No data"}')
+        // res.send('{"msg:"No data"}')
+		res.render('error', {error: err2});
         return
       }
       // console.log(city)
       Point.find({cityId: city.id}, function(err3, points) {
         if (err3) {
-          res.send('{"msg:"No data"}')
+			res.render('error', {error: err3});
+          // res.send('{"msg:"No data"}')
           return
         }
         // console.log(points)
@@ -90,18 +98,22 @@ router.get('/regions/:regionName/:cityName', function(req, res) {
 router.get('/point/:pointId', function(req, res) {
   Point.findOne({_id: req.params.pointId}, function(err, point) {
     if (err) {
-      res.send('{"msg:"No data"}')
+		res.render('error', {error: err});
+      // res.send('{"msg:"No data"}')
       return
     }
-    // console.log(point)
+	// console.log(req.params);    
+	// console.log(point)
     Region.findOne({_id: point.regionId}, function(err2, region) {
       if (err2) {
-        res.send('{"msg:"No data"}')
+		res.render('error', {error: err2});
+        // res.send('{"msg:"No data"}')
         return
       }
       City.findOne({_id: point.cityId}, function(err3, city) {
         if (err3) {
-          res.send('{"msg:"No data"}')
+			res.render('error', {error: err3});
+          // res.send('{"msg:"No data"}')
           return
         }
         res.render('point', {title: point.name, active: 'point', point: point, city: city, region: region, user: req.user})
