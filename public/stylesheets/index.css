@@ -606,6 +606,9 @@ div.featured_regions div.featured_region .city {
   background-size: cover !important;
   background-position: center !important;
 }
+div.featured_regions div.featured_region .city:nth-of-type(3n+1) {
+  margin-left: 0;
+}
 div.featured_regions #manhattan {
   background: url("../../images/city_thumbs/manhattan.jpg");
 }
