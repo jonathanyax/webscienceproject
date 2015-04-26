@@ -1,4 +1,4 @@
-// Model file for region data
+// Model file for point data
 
 var mongoose = require('mongoose')
 
@@ -17,10 +17,18 @@ var PointSchema = new Schema({
   },
   cityId: String,  // city id
   regionId: String, // region id
-  meta: {
-    comments: {type: Number, default: 0, min: 0},
-    photos: {type: Number, default: 0, min: 0}
-  }
+  images: {
+    mainImage: String,
+    userImages: [{
+      type: String
+    }]
+  },
+  comments: [{
+    message: String,
+    userId: String,
+    userName: String,
+    userImage: String
+  }]
 })
 
 module.exports = mongoose.model('Point', PointSchema, 'point')

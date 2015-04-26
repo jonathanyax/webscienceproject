@@ -1,17 +1,17 @@
 //clear out old data
-exports.Point.remove({}, function(err) {
+Point.remove({}, function(err) {
   if (err) {
     console.log('ERROR deleting old point data.')
   }
 })
 
-exports.Point.remove({}, function(err) {
+Point.remove({}, function(err) {
   if (err) {
     console.log('ERROR deleting old point data.')
   }
 })
 
-var SightglassCoffee = new exports.Point({
+var SightglassCoffee = new Point({
   name: 'Sightglass Coffee',
   address: {
     street: '270 7th St.',
@@ -21,16 +21,30 @@ var SightglassCoffee = new exports.Point({
   },
   cityId: '55232e3353f862d2062e9027',  // city id
   regionId: '5522f5ae2c7ac4b746915a27', // region id
-  meta: {
-    comments: 0,
-    photos: 0
-  }
+  coordinates: {
+    latitude: 37.774929,
+    longitude: -122.419416
+  },
+  images: {
+    mainImage: '/images/sample_grid/sample_053.JPG',
+    userImages: [
+      '/images/sample_point/point_001.JPG',
+      '/images/sample_point/point_002.JPG',
+      '/images/sample_point/point_003.JPG'
+    ]
+  },
+  comments: [{
+    message: 'Nam euismod et odio nec rutrum. Duis in nibh suscipit, interdum velit sit amet, lacinia est. Nullam sed ipsum in sem sodales interdum eu in nulla. Cras faucibus justo magna, sed iaculis urna consequat id. ',
+    userId: '553d1bddbb1509d15dd3f74e',
+    userName: 'Emily Roth',
+    userImage: 'http://ohiotheatretoledo.org/wp-content/themes/ohiotheatre/img/profile_placeholder.png'
+  }]
 })
 SightglassCoffee.save(function(err, SightglassCoffee) {
   if (err) throw err
 })
 
-var MtDavidsonPark = new exports.Point({
+var MtDavidsonPark = new Point({
   name: 'Mount Davidson Park',
   address: {
     street: 'Mount Davidson',
@@ -40,10 +54,34 @@ var MtDavidsonPark = new exports.Point({
   },
   cityId: '55232e3353f862d2062e9027',  // city id
   regionId: '5522f5ae2c7ac4b746915a27', // region id
-  meta: {
-    comments: 0,
-    photos: 0
-  }
+  coordinates: {
+    latitude: 37.739265,
+    longitude: -122.454509
+  },
+  images: {
+    mainImage: '/images/sample_point/point_020.JPG',
+     userImages: [
+      '/images/sample_point/point_004.JPG',
+      '/images/sample_point/point_005.JPG',
+      '/images/sample_point/point_006.JPG',
+      '/images/sample_point/point_007.JPG',
+      '/images/sample_point/point_008.JPG'
+    ]
+  },
+  comments: [
+    {
+      message: 'Nam euismod et odio nec rutrum. Duis in nibh suscipit, interdum velit sit amet, lacinia est. Nullam sed ipsum in sem sodales interdum eu in nulla. Cras faucibus justo magna, sed iaculis urna consequat id. ',
+      userId: '553d1bddbb1509d15dd3f74e',
+      userName: 'Emily Roth',
+      userImage: 'http://ohiotheatretoledo.org/wp-content/themes/ohiotheatre/img/profile_placeholder.png'
+    },
+    {
+      message: 'Curabitur nisl lacus, sagittis at nisi quis, consectetur consequat erat.',
+      userId: '553d1bddbb1509d15dd3f74e',
+      userName: 'Emily Roth',
+      userImage: 'http://ohiotheatretoledo.org/wp-content/themes/ohiotheatre/img/profile_placeholder.png'
+    },
+  ]
 })
 MtDavidsonPark.save(function(err, MtDavidsonPark) {
   if (err) throw err
