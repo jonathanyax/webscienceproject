@@ -6,10 +6,10 @@ block searchbar
 block content
 	section#search_results.container
 		if (searchterm)
-			h3 Search Results for "#{searchterm}"
 			if points.length == 0
 				h4 No points found for "#{searchterm}"
 			else
+				h3 Search Results for "#{searchterm}"
 				ul.points_list.two-thirds.column
 					for point in points
 						li
@@ -28,5 +28,7 @@ block content
 											li
 												i.fa.fa-camera 
 												| #{point.images.userImages.length}
-		if (!searchterm)
+		if (message)
+			h3= message
+		else if (!searchterm)
 			h3 No search term specified!
