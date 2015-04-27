@@ -43,6 +43,24 @@ $(function() {
 
 $(document).ready(function() {
 
+	$('.addpoint a').click(function(e) {
+		e.preventDefault();
+		var popup = $('.addpoint_modal');
+		if (popup.css('display') == 'none') {
+			popup.fadeIn(500);
+		} else {
+			popup.fadeOut(500);
+		}
+	});
+
+	// hide add point modal if click anywhere else on page
+	$(document).mouseup(function(e) {
+		var popup = $('.addpoint_modal');
+		if (!$('.addpoint a').is(e.target) && !popup.is(e.target) && popup.has(e.target).length == 0) {
+			popup.fadeOut(500);
+		}
+	});
+
 	// make first region active if none specified
 	var isActiveRegion = false;
 	$('#regions_nav .city').each(function() {

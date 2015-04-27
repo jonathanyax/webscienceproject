@@ -2,6 +2,30 @@ header.container
 	div.addpoint
 		a(href="#")
 			span.icon-newpoint
+		div.addpoint_modal
+			if (user)
+				form(action="/point", method="POST", enctype="multipart/form-data")
+					input#point_name.u-full-width(type="text", placeholder!="Point Name", name="point_name", required)
+					input#point_address.u-full-width(type="text", placeholder="Address", name="point_address", required)
+					div.row
+						input#point_city.nine.columns(type="text", placeholder="City", name="point_city", required)
+						input#point_state.three.columns(type="text", placeholder="State", name="point_state", required)
+					div.row
+						input#point_image.three.columns(type="file", name="point_image", accept="image/*", required)
+						textarea#point_comment.nine.columns(type="text", placeholder="Enter comment here...", name="point_comment")
+					input#point_submit.u-full-width(type="submit", name="point_submit", value="Save Point")
+			else
+				div.addpoint_modal_disabled
+				form(action="/point", method="POST", enctype="multipart/form-data")
+					input#point_name.u-full-width(type="text", placeholder!="Point Name", name="point_name", required, disabled)
+					input#point_address.u-full-width(type="text", placeholder="Address", name="point_address", required, disabled)
+					div.row
+						input#point_city.nine.columns(type="text", placeholder="City", name="point_city", required, disabled)
+						input#point_state.three.columns(type="text", placeholder="State", name="point_state", required, disabled)
+					div.row
+						input#point_image.three.columns(type="file", placeholder="Upload Photo", name="point_image", accept="image/*", required, disabled)
+						textarea#point_comment.nine.columns(type="text", placeholder="Enter comment here...", name="point_comment", disabled)
+					input#point_submit.u-full-width(type="submit", name="point_submit", value="Save Point", disabled)
 	div.row
 		h1.onpoint_title
 			a(href="/")

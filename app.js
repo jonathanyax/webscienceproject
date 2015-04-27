@@ -1,23 +1,23 @@
 /*
  * Module dependencies
  */
-var express  = require('express'),
-		jade     	= require('jade'),
-		stylus   	= require('stylus'),
-		nib      	= require('nib'),
-		path	 	= require('path'),
-		favicon	 	= require('serve-favicon'),
-		logger	 	= require('morgan'),
-		cookieParser= require('cookie-parser'),
-		bodyParser	= require('body-parser'),
-		mongoose	= require('mongoose'),
-		passport	= require('passport'),
-		flash		= require('connect-flash'),
-		models		= require('./models'),
-		routes		= require('./routes'),
-		config		= require('./oauth.js'),
-		FacebookStrategy = require('passport-facebook').Strategy;
-		LocalStrategy = require('passport-local').Strategy;
+  var express      = require('express'),
+  		jade     	   = require('jade'),
+  		stylus   	   = require('stylus'),
+  		nib      	   = require('nib'),
+  		path	 	     = require('path'),
+  		favicon	 	   = require('serve-favicon'),
+  		logger	 	   = require('morgan'),
+  		cookieParser = require('cookie-parser'),
+  		bodyParser	 = require('body-parser'),
+  		mongoose	   = require('mongoose'),
+  		passport	   = require('passport'),
+  		flash		     = require('connect-flash'),
+  		models		   = require('./models'),
+  		routes		   = require('./routes'),
+  		config		   = require('./oauth.js'),
+  		FacebookStrategy = require('passport-facebook').Strategy,
+  		LocalStrategy    = require('passport-local').Strategy
 		
 // set up express app
 var app = express();

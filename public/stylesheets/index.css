@@ -169,15 +169,167 @@ header div.addpoint a {
   float: right;
   font-size: 2.5em;
   color: #12ca9a;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 @media screen and (min-width: 750px) {
   header div.addpoint a {
     padding: 0.5em 0 0.5em 0.5em;
+    position: relative;
   }
 }
-header div.addpoint a:hover {
+header div.addpoint a:hover,
+header div.addpoint a.addpoint_open {
   color: #879ca6;
   text-decoration: none;
+}
+header div.addpoint div.addpoint_modal {
+  display: none;
+  position: relative;
+  margin: 0 50px 4px 6px;
+  background: #fff;
+  padding: 10px;
+  -webkit-box-shadow: 0 0 4px #dce6e4;
+  box-shadow: 0 0 4px #dce6e4;
+  border: 1px solid #dce6e4;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+@media screen and (min-width: 750px) {
+  header div.addpoint div.addpoint_modal {
+    margin: 20px 60px 0 auto;
+  }
+}
+header div.addpoint div.addpoint_modal:after,
+header div.addpoint div.addpoint_modal:before {
+  position: absolute;
+  content: " ";
+  left: 100%;
+  bottom: 28px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border: solid transparent;
+}
+@media screen and (min-width: 750px) {
+  header div.addpoint div.addpoint_modal:after,
+  header div.addpoint div.addpoint_modal:before {
+    top: 28px;
+    bottom: auto;
+  }
+}
+header div.addpoint div.addpoint_modal:after {
+  border-color: rgba(255,255,255,0);
+  border-left-color: #fff;
+  border-width: 10px;
+  margin-top: -10px;
+}
+header div.addpoint div.addpoint_modal:before {
+  border-color: rgba(220,230,228,0);
+  border-left-color: #dce6e4;
+  border-width: 12px;
+  margin-top: -12px;
+}
+header div.addpoint div.addpoint_modal .addpoint_modal_disabled {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(234,240,239,0.7);
+}
+header div.addpoint div.addpoint_modal .addpoint_modal_disabled:after {
+  content: "Sign in to add point!";
+  display: block;
+  color: #12ca9a;
+  -webkit-text-stroke: 1px #12ca9a;
+  margin-top: 10%;
+  font-size: 2em;
+}
+header div.addpoint div.addpoint_modal input,
+header div.addpoint div.addpoint_modal textarea {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+  border: 1px solid #dce2e5;
+}
+header div.addpoint div.addpoint_modal input:focus,
+header div.addpoint div.addpoint_modal textarea:focus {
+  border-color: #12ca9a;
+}
+header div.addpoint div.addpoint_modal #point_city {
+  width: 70%;
+}
+@media screen and (min-width: 750px) {
+  header div.addpoint div.addpoint_modal #point_city {
+    width: 82%;
+  }
+}
+header div.addpoint div.addpoint_modal #point_state {
+  width: 25%;
+  float: right;
+}
+@media screen and (min-width: 750px) {
+  header div.addpoint div.addpoint_modal #point_state {
+    width: 14%;
+  }
+}
+header div.addpoint div.addpoint_modal #point_image {
+  color: transparent;
+  border: none;
+  margin-bottom: 0;
+}
+header div.addpoint div.addpoint_modal #point_image::-webkit-file-upload-button {
+  visibility: hidden;
+}
+header div.addpoint div.addpoint_modal #point_image::before {
+  content: "Upload Photo";
+  color: #12ca9a;
+  display: inline-block;
+  background: url("../../images/favicon.png") no-repeat 10px 50% transparent;
+  border: 1px solid #dce2e5;
+  padding: 10px 0 10px 50px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  width: 100%;
+}
+@media screen and (min-width: 750px) {
+  header div.addpoint div.addpoint_modal #point_image::before {
+    text-align: center;
+    background: url("../../images/favicon.png") no-repeat 50% 34% transparent;
+    padding: 58px 0 24px 0;
+    font-size: 0.9em;
+  }
+}
+header div.addpoint div.addpoint_modal #point_comment {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 750px) {
+  header div.addpoint div.addpoint_modal #point_comment {
+    margin-top: 0;
+    min-height: 100px;
+  }
+}
+header div.addpoint div.addpoint_modal #point_submit {
+  margin-top: -10px;
+  margin-bottom: 0;
+  border: none;
+  background: #12ca9a;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 1em;
+  letter-spacing: -0.02em;
 }
 nav {
   background: #12ca9a;
@@ -825,7 +977,7 @@ section.region_display div.region_list {
 }
 section.point_breadcrumbs {
   background: #f6f9f9;
-  margin: 0 0 1em 0;
+  margin: -2px 0 1em 0;
 }
 @media screen and (min-width: 750px) {
   section.point_breadcrumbs {
@@ -835,7 +987,7 @@ section.point_breadcrumbs {
   }
 }
 section.point_breadcrumbs div.crumbs {
-  padding: 0.5em 0;
+  padding: 0.5em 0.3em;
 }
 section.point_breadcrumbs div.crumbs ul {
   font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
