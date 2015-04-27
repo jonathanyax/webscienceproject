@@ -251,5 +251,13 @@ router.get('/logout', function(req, res) {
 	return res.render('index', {title: 'Home', active: 'home', user: null})
 })
 
+// Point Favoriting
+router.get('/favorite/:pointID', function(req, res) {
+	if (!req.user) res.redirect('/signin');
+	else {
+		console.log(req.user.fullName);
+	}
+});
+
 
 module.exports = router

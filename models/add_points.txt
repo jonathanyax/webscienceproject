@@ -61,11 +61,27 @@ var MtDavidsonPark = new Point({
   images: {
     mainImage: '/images/sample_point/point_020.JPG',
      userImages: [
+	  '/images/sample_point/point_001.JPG',
+	  '/images/sample_point/point_002.JPG',
+	  '/images/sample_point/point_003.JPG',
       '/images/sample_point/point_004.JPG',
       '/images/sample_point/point_005.JPG',
       '/images/sample_point/point_006.JPG',
       '/images/sample_point/point_007.JPG',
-      '/images/sample_point/point_008.JPG'
+      '/images/sample_point/point_008.JPG',
+	  '/images/sample_point/point_009.JPG',
+	  '/images/sample_point/point_010.JPG',
+	  '/images/sample_point/point_011.JPG',
+	  '/images/sample_point/point_012.JPG',
+	  '/images/sample_point/point_013.JPG',
+	  '/images/sample_point/point_014.JPG',
+	  '/images/sample_point/point_015.JPG',
+	  '/images/sample_point/point_016.JPG',
+	  '/images/sample_point/point_017.JPG',
+	  '/images/sample_point/point_018.JPG',
+	  '/images/sample_point/point_019.JPG',
+	  '/images/sample_point/point_020.JPG',
+	  '/images/sample_point/point_021.JPG'
     ]
   },
   comments: [
