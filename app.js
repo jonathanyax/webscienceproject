@@ -72,7 +72,7 @@ app.use(flash());
 app.use('/', routes)
 
 // Mongoose Connection
-mongoose.createConnection('mongodb://localhost/onpoint-users');
+mongoose.createConnection('mongodb://localhost/onpoint-dev');
 
 // Passport configuration
 var Account = require('./models/account');

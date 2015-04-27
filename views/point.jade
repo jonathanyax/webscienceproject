@@ -30,7 +30,10 @@ block content
 				ul
 					li
 						a(href="/favorite/#{point.id}")
-							i.fa.fa-heart-o
+							if(haspoint)
+								i.fa.fa-heart
+							else
+								i.fa.fa-heart-o
 							| Favorite
 					li
 						a(href="/add-photo/#{point.id}")

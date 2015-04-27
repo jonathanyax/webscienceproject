@@ -1,8 +1,13 @@
 var express  = require('express'),
 	passport = require('passport'),
 	Account = require('../models/account'),
-    mongoose = require('mongoose')
-    router   = express.Router(),
+    mongoose = require('mongoose'),
+	mongo	= require('mongodb'),
+	router   = express.Router();
+
+var db = mongoose.createConnection('mongodb://localhost/onpoint-dev');
+var accounts = db.collection('accounts');
+var ObjectId = mongo.ObjectId;
 
 // define the home page route
 router.get('/', function(req, res) {
@@ -136,7 +141,13 @@ router.get('/point/:pointId', function(req, res) {
 		          // res.send('{"msg:"No data"}')
 		          return
 		        }
-		        if (city) res.render('point', {title: point.name, active: 'point', point: point, city: city, region: region, user: req.user});
+		        if (city) {
+					// See if user has this point in My Points
+					var mypoints = req.user.points;
+					var haspoint = false;
+					if(mypoints.indexOf(req.params.pointId) >= 0) haspoint = true;
+		        	res.render('point', {title: point.name, active: 'point', point: point, city: city, region: region, user: req.user, haspoint: haspoint});
+		        }
 				else {
 					res.render('error', {messsage: "Could not find city.", user: req.user});
 				}
@@ -253,9 +264,24 @@ router.get('/logout', function(req, res) {
 
 // Point Favoriting
 router.get('/favorite/:pointID', function(req, res) {
-	if (!req.user) res.redirect('/signin');
+	if (!req.user) return res.redirect('/signin');
 	else {
-		console.log(req.user.fullName);
+		var mypoints = req.user.points;
+		var account = accounts.find({_id: ObjectId(req.user._id)}, function(err, account) {
+			if (err) res.redirect('/point/' + req.params.pointID);
+			else {
+				// If already have point, remove point
+				
+				
+				if(mypoints.indexOf(req.params.pointID) < 0) {
+					mypoints.push(req.params.pointID);			
+					accounts.update( {_id: ObjectId(req.user._id)}, { $set : {points: mypoints} })
+					// return res.redirect('/point/' + req.params.pointID);
+					return res.redirect('/point/' + req.params.pointID, {user: req.user, haspoint: true});
+				}
+				else return res.redirect('/point/' + req.params.pointID);
+			}
+		});
 	}
 });
 
