@@ -26,11 +26,11 @@ var SightglassCoffee = new Point({
     longitude: -122.419416
   },
   images: {
-    mainImage: '/images/sample_grid/sample_053.JPG',
+    mainImage: 'point_014.JPG',
     userImages: [
-      '/images/sample_point/point_001.JPG',
-      '/images/sample_point/point_002.JPG',
-      '/images/sample_point/point_003.JPG'
+      'point_001.JPG',
+      'point_002.JPG',
+      'point_003.JPG'
     ]
   },
   comments: [{
@@ -59,29 +59,29 @@ var MtDavidsonPark = new Point({
     longitude: -122.454509
   },
   images: {
-    mainImage: '/images/sample_point/point_020.JPG',
+    mainImage: 'point_020.JPG',
      userImages: [
-	  '/images/sample_point/point_001.JPG',
-	  '/images/sample_point/point_002.JPG',
-	  '/images/sample_point/point_003.JPG',
-      '/images/sample_point/point_004.JPG',
-      '/images/sample_point/point_005.JPG',
-      '/images/sample_point/point_006.JPG',
-      '/images/sample_point/point_007.JPG',
-      '/images/sample_point/point_008.JPG',
-	  '/images/sample_point/point_009.JPG',
-	  '/images/sample_point/point_010.JPG',
-	  '/images/sample_point/point_011.JPG',
-	  '/images/sample_point/point_012.JPG',
-	  '/images/sample_point/point_013.JPG',
-	  '/images/sample_point/point_014.JPG',
-	  '/images/sample_point/point_015.JPG',
-	  '/images/sample_point/point_016.JPG',
-	  '/images/sample_point/point_017.JPG',
-	  '/images/sample_point/point_018.JPG',
-	  '/images/sample_point/point_019.JPG',
-	  '/images/sample_point/point_020.JPG',
-	  '/images/sample_point/point_021.JPG'
+	  'point_001.JPG',
+	  'point_002.JPG',
+	  'point_003.JPG',
+      'point_004.JPG',
+      'point_005.JPG',
+      'point_006.JPG',
+      'point_007.JPG',
+      'point_008.JPG',
+	  'point_009.JPG',
+	  'point_010.JPG',
+	  'point_011.JPG',
+	  'point_012.JPG',
+	  'point_013.JPG',
+	  'point_014.JPG',
+	  'point_015.JPG',
+	  'point_016.JPG',
+	  'point_017.JPG',
+	  'point_018.JPG',
+	  'point_019.JPG',
+	  'point_020.JPG',
+	  'point_021.JPG'
     ]
   },
   comments: [
