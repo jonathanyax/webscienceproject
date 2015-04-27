@@ -270,16 +270,19 @@ router.get('/favorite/:pointID', function(req, res) {
 		var account = accounts.find({_id: ObjectId(req.user._id)}, function(err, account) {
 			if (err) res.redirect('/point/' + req.params.pointID);
 			else {
-				// If already have point, remove point
-				
-				
+				// If we don't have the point, add it as a favorite
 				if(mypoints.indexOf(req.params.pointID) < 0) {
 					mypoints.push(req.params.pointID);			
-					accounts.update( {_id: ObjectId(req.user._id)}, { $set : {points: mypoints} })
-					// return res.redirect('/point/' + req.params.pointID);
-					return res.redirect('/point/' + req.params.pointID, {user: req.user, haspoint: true});
+					accounts.update( {_id: ObjectId(req.user._id)}, { $set : {points: mypoints} });
+					return res.redirect('/point/' + req.params.pointID);
 				}
-				else return res.redirect('/point/' + req.params.pointID);
+				// Otherwise, remove the point
+				else {
+					var index_remove = mypoints.indexOf(req.params.pointID);
+					if (index_remove > -1) mypoints.splice(index_remove, 1);
+					accounts.update({_id: ObjectId(req.user._id)}, {$set : {points: mypoints}}); 
+					return res.redirect('/point/' + req.params.pointID);
+				}
 			}
 		});
 	}
