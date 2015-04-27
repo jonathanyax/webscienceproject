@@ -11,6 +11,8 @@
   		cookieParser = require('cookie-parser'),
   		bodyParser	 = require('body-parser'),
   		mongoose	   = require('mongoose'),
+      session   = require('express-session'),
+      MongoStore  = require('connect-mongo')(session),
   		passport	   = require('passport'),
   		flash		     = require('connect-flash'),
   		models		   = require('./models'),
@@ -55,10 +57,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('express-session')({
+app.use((session)({
 	secret: 'secret cat',
 	resave: false,
-	saveUninitialized: false
+	maxAge : new Date(Date.now() + 3600000),
+	saveUninitialized: false,
+	store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -68,7 +72,7 @@ app.use(flash());
 app.use('/', routes)
 
 // Mongoose Connection
-mongoose.createConnection('mongodb://localhost/onpoint-users');
+mongoose.createConnection('mongodb://localhost/onpoint-dev');
 
 // Passport configuration
 var Account = require('./models/account');

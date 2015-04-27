@@ -2,9 +2,14 @@ var express    = require('express'),
 	  passport   = require('passport'),
 	  Account    = require('../models/account'),
 		mongoose   = require('mongoose'),
+		mongo      = require('mongodb'),
 		router     = express.Router(),
 		multer     = require('multer'),
 		uploadDone = false
+
+var db = mongoose.createConnection('mongodb://localhost/onpoint-dev');
+var accounts = db.collection('accounts');
+var ObjectId = mongo.ObjectId;
 
 // define the home page route
 router.all('/', function(req, res) {
@@ -250,19 +255,27 @@ router.get('/search', function(req, res) {
 router.get('/search/:searchterm', function(req, res) {
 	var searchterm = req.params.searchterm
 	Point.find({"name": new RegExp(searchterm, 'i')}, function(err, points) {
-		if (err) return res.render('error', {message: "No search results for: " + req.params.searchterm});
-		if (points) {
+		if (err) return res.render('search_results', {message: "No search results for: " + req.params.searchterm, user: req.user})
+		if (!points.length == 0) {
 			res.render('search_results', {title: 'Search Results', active: 'search', user: req.user, searchterm: searchterm, points: points})
-		} else {
-			return res.render('error', {message: "Could not search for: " + searchterm})
 		}
-	})
-})
+		else if (points.length == 0) {
+			// Try searching the city name!
+			Point.find({"address.city": new RegExp(searchterm, 'i')}, function (err, points) {
+				if (err) return res.render('search_results', {message: "No search results for: " + req.params.searchterm, user: req.user})
+				if (!points.length == 0) return res.render('search_results', {title: 'Search Results', active: 'search', user: req.user, searchterm: searchterm, points: points})
+				else return res.render('search_results', {message: "No search results for: " + searchterm, user: req.user})
+			})	
+		} else {
+			return res.render('search_results', {message: "No search results for: " + searchterm, user: req.user})
+		}
+	}
+)})
 
 router.post('/search', function(req, res) {
 	var searchterm = req.body.searchterm
 	if (searchterm) res.redirect('/search/' + searchterm)
-	else return res.render('error', {message: searchterm})
+	else return res.render('search_results', {user: req.user})
 })
 
 // define the discover route
@@ -333,6 +346,32 @@ router.get('/logout', function(req, res) {
 	// res.redirect('/');
 	return res.render('index', {title: 'Home', active: 'home', user: null})
 })
+
+// Point Favoriting
+router.get('/favorite/:pointID', function(req, res) {
+	if (!req.user) return res.redirect('/signin');
+	else {
+		var mypoints = req.user.points;
+		var account = accounts.find({_id: ObjectId(req.user._id)}, function(err, account) {
+			if (err) res.redirect('/point/' + req.params.pointID);
+			else {
+				// If we don't have the point, add it as a favorite
+				if(mypoints.indexOf(req.params.pointID) < 0) {
+					mypoints.push(req.params.pointID);			
+					accounts.update( {_id: ObjectId(req.user._id)}, { $set : {points: mypoints} });
+					return res.redirect('/point/' + req.params.pointID);
+				}
+				// Otherwise, remove the point
+				else {
+					var index_remove = mypoints.indexOf(req.params.pointID);
+					if (index_remove > -1) mypoints.splice(index_remove, 1);
+					accounts.update({_id: ObjectId(req.user._id)}, {$set : {points: mypoints}}); 
+					return res.redirect('/point/' + req.params.pointID);
+				}
+			}
+		});
+	}
+});
 
 
 module.exports = router
