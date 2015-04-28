@@ -31,21 +31,17 @@ nav
 				span.icon
 					span.icon-regions
 				span.icon_title regions
-		li
-			a(href="/discover", class=(active === 'discover' ? 'current' : ''))
+		li#userprofile
+			a(href="/profile", class=(active === 'profile' ? 'current' : ''))
 				span.icon
-					span.icon-discover
-				span.icon_title discover
+					span.icon-user
+				span.icon_title My profile
 		li
 			a(href="/search", class=(active === 'search' ? 'current' : ''))
 				span.icon
 					span.icon-search
 				span.icon_title search
-		li#userprofile
-			a(href="/profile", class=(active === 'profile' ? 'current' : ''))
-				span.icon
-					span.icon-user
-				span.icon_title user
+
 	ul#settings
 		li
 			a(href="/settings")

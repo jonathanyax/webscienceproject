@@ -499,11 +499,6 @@ nav ul#functions li {
   flex-grow: 1;
   -webkit-flex-grow: 1;
 }
-@media screen and (min-width: 750px) {
-  nav ul#functions li#userprofile {
-    display: none;
-  }
-}
 nav ul#functions a {
   padding: 0 0.35em;
 }
