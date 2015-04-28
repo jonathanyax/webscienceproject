@@ -4,20 +4,10 @@
 extend layout
 
 block content
-	section#profile.container
-		h1 Hi, #{user.fullName}!
-		if (user)
-			ul
-				if(!user.oauthID)
-					li
-						strong Username: 
-						span #{user.username}
-				li
-					strong E-mail: 
-					span #{user.email}
 	section#points.container
+		h1 My Points
 		if points.length == 0
-			p No saved points yet
+			h4 You don't have any saved points yet!
 		else
 			ul.points_list
 				for point_arr in points

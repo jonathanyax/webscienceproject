@@ -3,3 +3,15 @@ extend layout
 block content
 	section#settings.container
 		h1 Settings
+		if (user)
+			ul
+				li
+					strong Full Name: 
+					span #{user.fullName}
+				if(!user.oauthID)
+					li
+						strong Username: 
+						span #{user.username}
+				li
+					strong E-mail: 
+					span #{user.email}

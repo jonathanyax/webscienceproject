@@ -127,7 +127,6 @@ router.get('/regions/:regionName/:cityName', function(req, res) {
 
 // Define Point ID Route
 router.get('/point/:pointId', function(req, res) {
-	var mypoints = req.user.points;
 	var point_id = req.params.pointId;
 	Point.findOne({_id : point_id}, function(err, point) {
 		if (err) {return res.render('error', {error: err, user: req.user});}
@@ -140,7 +139,7 @@ router.get('/point/:pointId', function(req, res) {
 							if (city) {
 								// See if user has point to display
 								var haspoint = false;
-								if (req.user && mypoints.indexOf(point_id) >=0) {haspoint = true;}
+								if (req.user && req.user.points.indexOf(point_id) >=0) {haspoint = true;}
 								res.render('point', {title: point.name, active: 'point', point: point, city: city, region:region, user: req.user, haspoint: haspoint});
 							}
 							else {return res.render ('error', {message: "Could not find city.", user: req.user});}
@@ -240,7 +239,7 @@ router.get('/search', function(req, res) {
 		if (err) return res.render('search', {title: 'Search', active: 'search', user: req.user})
 		if (points) return res.render('search', {title: 'Search', active: 'search', user: req.user, points: points})
 		else return res.render('search', {title: 'Search', active: 'search', user: req.user})
-	})
+	}).limit(5)
 })
 
 // define the temp search results route
