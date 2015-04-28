@@ -212,19 +212,34 @@ section#search_data
 						display inline
 					display none
 
+ul.search_list
+	li
+		list-style-type none
+		margin 0 0 .5em 0
+		a
+			text-decoration none
+			color color--dark-grey
+			&:hover
+				color color--primary
+				
+/*****************
+ * CITY + SEARCH PAGE
+ ****************/
+
 ul.points_list
 	margin .5em 0
 	li
 		list-style-type none
 		margin-bottom 1rem
 	div.point_item
-		font-family font--helvetica-neue
 		overflow auto
 		color color--dark-grey
 		background color--light-grey
 		ul.point_item_metadata
+			text-stroke .05em color--medium-grey
+			color color--medium-grey
 			list-style-type none
-			margin 0
+			margin .9em 0 0
 			li
 				display inline
 				margin 0 1em 0 0
@@ -238,35 +253,50 @@ ul.points_list
 			img
 				display: block
 				object-fit cover
-				min-height 175px
+				min-height 150px
 		div.point_item_info
 			float right
 			width 70%
-			padding 0.25em .75em
+			padding 0.6em .75em
 		h2, h3
-			font-family font--helvetica-neue
 			letter-spacing normal
-			color color--dark-grey
 		h2
+			color color--primary
+			text-stroke .04em color--primary
 			font-weight 400
 			font-size 1.25em
-			margin-bottom .5em
+			margin-bottom .6em
+			@media screen and (min-width: mq--tablet)
+				font-size 1.56em 
 		h3
+			font-family font--helvetica-neue
 			font-weight 200
-			font-size 1em
-			margin-bottom .25em
+			font-size .9em
+			margin-bottom 0
+			color color--dark-grey
+			@media screen and (min-width: mq--tablet)
+				font-size 1em 
 		&:hover, &:hover h2, &:hover h3
 			color color--primary
 
-ul.search_list
-	li
-		list-style-type none
-		margin 0 0 .5em 0
-		a
-			text-decoration none
-			color color--dark-grey
-			&:hover
-				color color--primary
+/*****************
+ * CITY PAGE
+ ****************/
+ 
+.region_map
+	height 300px
+	margin-top 20px
+	@media screen and (min-width: mq--phablet)
+		height 500px
+		margin-top 10px
+		
+section.region_display
+	>h3
+		color color--medium-grey
+		font-size 2.5em
+		text-stroke .02em color--medium-grey
+		
+	
 
 /*****************
  * REGION PAGE
@@ -282,13 +312,13 @@ section.region_display
 
 section.point_breadcrumbs
 	background color--light-grey
-	margin 0 0 1em 0
+	margin -2px 0 1em 0
 	@media screen and (min-width: mq--tablet)
 		background transparent
 		border-top 1px solid darken(color--light-grey, 10%)
 		border-bottom 1px solid darken(color--light-grey, 10%)
 	div.crumbs
-		padding .5em 0
+		padding .5em .3em
 		ul
 			font-family font--helvetica-neue
 			font-size .65em

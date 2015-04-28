@@ -58,12 +58,135 @@ header
 		a
 			padding 0
 			display inline-block
-			float: right
+			float right
 			font-size 2.5em
 			color color--primary
+			position absolute
+			bottom 0
+			right 0
 			@media screen and (min-width: mq--tablet)
 				padding .5em 0 .5em .5em
-			&:hover
+				position relative
+			&:hover, &.addpoint_open
 				color color--blue-grey
 				text-decoration none
+		div.addpoint_modal
+			display none
+			position relative
+			margin 0 50px 4px 6px
+			background color--white
+			padding 10px
+			box-shadow 0 0 4px darken(color--white-blue, 5%)
+			border 1px solid darken(color--white-blue, 5%)
+			border-radius 10px
+			@media screen and (min-width: mq--tablet)
+				margin 20px 60px 0 auto
+			&:after, &:before
+				position absolute
+				content " "
+				left 100%
+				bottom 28px
+				width 0
+				height 0
+				pointer-events none
+				border solid transparent
+				@media screen and (min-width: mq--tablet)
+					top 28px
+					bottom auto
+			&:after
+				border-color rgba(color--white, 0)
+				border-left-color color--white
+				border-width 10px
+				margin-top -10px
+			&:before
+				border-color rgba(darken(color--white-blue, 5%), 0)
+				border-left-color darken(color--white-blue, 5%)
+				border-width 12px 
+				margin-top -12px 
+			.addpoint_modal_disabled
+				border-radius 10px
+				width 100%
+				height 100% 
+				display block
+				position absolute
+				top 0
+				left 0
+				background rgba(color--white-blue, .7)
+				&:after
+					content "Sign in to add point!"
+					display block
+					color color--primary
+					text-stroke 1px color--primary
+					margin-top 10%
+					font-size 2em
+			input, textarea
+				border-radius 0
+				font-family font--helvetica-neue
+				font-size .9em
+				border 1px solid lighten(color--medium-grey, 70%)
+				&:focus
+					border-color color--primary
+			#point_name
+				background url(../../images/PointName.png) no-repeat 10px center
+				background-size 22px 22px
+				padding-left 40px
+				width calc(100%-40px)
+			#point_address
+				background url(../../images/Address.png) no-repeat 10px center
+				background-size 22px 22px
+				padding-left 40px
+				width calc(100%-40px)
+			#point_city
+				background url(../../images/City.png) no-repeat 10px center
+				background-size 22px 22px
+				padding-left 40px
+				width 70%
+				@media screen and (min-width: mq--tablet)
+					width 82%
+			#point_state
+				width 25%
+				float right
+				@media screen and (min-width: mq--tablet)
+					width 14%
+			#point_image
+				color transparent
+				border none
+				margin-bottom 0
+				&::-webkit-file-upload-button
+					visibility hidden
+				&::before
+					content "Upload Photo"
+					color color--primary
+					display inline-block
+					background url(../../images/favicon.png) no-repeat 10px 50% transparent
+					border 1px solid lighten(color--medium-grey, 70%)
+					padding 10px 0 10px 50px
+					white-space nowrap
+					-webkit-user-select none
+					cursor pointer
+					width 100%
+					@media screen and (min-width: mq--tablet)
+						text-align center
+						background url(../../images/favicon.png) no-repeat 50% 34% transparent
+						padding 58px 0 24px 0
+						font-size .9em
+			#point_comment
+				margin-top -10px
+				margin-bottom 10px
+				@media screen and (min-width: mq--tablet)
+					margin-top 0
+					min-height 100px
+			#point_submit
+				margin-top -10px
+				margin-bottom 0
+				border none
+				background color--primary
+				color color--white
+				text-transform capitalize
+				font-weight 300 
+				font-size 1em
+				letter-spacing -0.02em 
+
+
+			
 	
