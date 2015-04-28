@@ -265,7 +265,28 @@ header div.addpoint div.addpoint_modal input:focus,
 header div.addpoint div.addpoint_modal textarea:focus {
   border-color: #12ca9a;
 }
+header div.addpoint div.addpoint_modal #point_name {
+  background: url("../../images/PointName.png") no-repeat 10px center;
+  -webkit-background-size: 22px 22px;
+  -moz-background-size: 22px 22px;
+  background-size: 22px 22px;
+  padding-left: 40px;
+  width: calc(100% -40px);
+}
+header div.addpoint div.addpoint_modal #point_address {
+  background: url("../../images/Address.png") no-repeat 10px center;
+  -webkit-background-size: 22px 22px;
+  -moz-background-size: 22px 22px;
+  background-size: 22px 22px;
+  padding-left: 40px;
+  width: calc(100% -40px);
+}
 header div.addpoint div.addpoint_modal #point_city {
+  background: url("../../images/City.png") no-repeat 10px center;
+  -webkit-background-size: 22px 22px;
+  -moz-background-size: 22px 22px;
+  background-size: 22px 22px;
+  padding-left: 40px;
   width: 70%;
 }
 @media screen and (min-width: 750px) {
@@ -899,6 +920,17 @@ section#search_data div#search_history button.delete span i.icon-del {
     display: inline;
   }
 }
+ul.search_list li {
+  list-style-type: none;
+  margin: 0 0 0.5em 0;
+}
+ul.search_list li a {
+  text-decoration: none;
+  color: #666;
+}
+ul.search_list li a:hover {
+  color: #12ca9a;
+}
 ul.points_list {
   margin: 0.5em 0;
 }
@@ -907,14 +939,15 @@ ul.points_list li {
   margin-bottom: 1rem;
 }
 ul.points_list div.point_item {
-  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
   overflow: auto;
   color: #666;
   background: #f6f9f9;
 }
 ul.points_list div.point_item ul.point_item_metadata {
+  -webkit-text-stroke: 0.05em #8b9da8;
+  color: #8b9da8;
   list-style-type: none;
-  margin: 0;
+  margin: 0.9em 0 0;
 }
 ul.points_list div.point_item ul.point_item_metadata li {
   display: inline;
@@ -933,44 +966,60 @@ ul.points_list div.point_item div.point_item_image {
 ul.points_list div.point_item div.point_item_image img {
   display: block;
   object-fit: cover;
-  min-height: 175px;
+  min-height: 150px;
 }
 ul.points_list div.point_item div.point_item_info {
   float: right;
   width: 70%;
-  padding: 0.25em 0.75em;
+  padding: 0.6em 0.75em;
 }
 ul.points_list div.point_item h2,
 ul.points_list div.point_item h3 {
-  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
   letter-spacing: normal;
-  color: #666;
 }
 ul.points_list div.point_item h2 {
+  color: #12ca9a;
+  -webkit-text-stroke: 0.04em #12ca9a;
   font-weight: 400;
   font-size: 1.25em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.6em;
+}
+@media screen and (min-width: 750px) {
+  ul.points_list div.point_item h2 {
+    font-size: 1.56em;
+  }
 }
 ul.points_list div.point_item h3 {
+  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
   font-weight: 200;
-  font-size: 1em;
-  margin-bottom: 0.25em;
+  font-size: 0.9em;
+  margin-bottom: 0;
+  color: #666;
+}
+@media screen and (min-width: 750px) {
+  ul.points_list div.point_item h3 {
+    font-size: 1em;
+  }
 }
 ul.points_list div.point_item:hover,
 ul.points_list div.point_item:hover h2,
 ul.points_list div.point_item:hover h3 {
   color: #12ca9a;
 }
-ul.search_list li {
-  list-style-type: none;
-  margin: 0 0 0.5em 0;
+.region_map {
+  height: 300px;
+  margin-top: 20px;
 }
-ul.search_list li a {
-  text-decoration: none;
-  color: #666;
+@media screen and (min-width: 550px) {
+  .region_map {
+    height: 500px;
+    margin-top: 10px;
+  }
 }
-ul.search_list li a:hover {
-  color: #12ca9a;
+section.region_display >h3 {
+  color: #8b9da8;
+  font-size: 2.5em;
+  -webkit-text-stroke: 0.02em #8b9da8;
 }
 section.region_display div.region_list {
   margin: 1em 0;

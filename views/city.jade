@@ -13,7 +13,7 @@ block content
 	section.region_display.container
 		h3 #{city.name}
 		div.region_list
-			div.region_points.two-thirds.column
+			div.region_points.seven.columns
 				if points.length == 0
 					p There are not points for this city yet :(
 				else
@@ -27,7 +27,7 @@ block content
 										div.point_item_info
 											h2 #{point.name}
 											h3 #{point.address.street}
-											h3 #{point.address.city}, #{point.address.state}
+											h3 #{point.address.city}, #{point.address.state} #{point.address.zip}
 											ul.point_item_metadata
 												li
 													i.fa.fa-comment 
@@ -35,5 +35,5 @@ block content
 												li
 													i.fa.fa-camera 
 													| #{point.images.userImages.length}
-			div.region_map.one-third.column
-				p Maybe a Map goes here
+			div.region_map.five.columns
+				iframe(width="100%", height="100%", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?q=#{city.name}%20#{region.state}&key=AIzaSyC_NFXVm3SFHd0zodubgqvghOLepWrmEz0")
