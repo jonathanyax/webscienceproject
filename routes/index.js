@@ -125,49 +125,31 @@ router.get('/regions/:regionName/:cityName', function(req, res) {
 	}) // end Region.findOne()
 })
 
-// define the point ID route
+// Define Point ID Route
 router.get('/point/:pointId', function(req, res) {
-<<<<<<< HEAD
-  Point.findOne({_id: req.params.pointId}, function(err, point) {
-    if (err) {
-		res.render('error', {error: err, user: req.user});
-      // res.send('{"msg:"No data"}')
-      return
-    }
-	// console.log(req.params);    
-	// console.log(point)
-    if (point) {
-		Region.findOne({_id: point.regionId}, function(err2, region) {
-	      if (err2) {
-			res.render('error', {error: err2, user: req.user});
-	        // res.send('{"msg:"No data"}')
-	        return
-	      }
-	      if (region) {
-			City.findOne({_id: point.cityId}, function(err3, city) {
-		        if (err3) {
-					res.render('error', {error: err3, user: req.user});
-		          // res.send('{"msg:"No data"}')
-		          return
-		        }
-		        if (city) {
-					// See if user has this point in My Points
-					var haspoint = false;
-					if(req.user) {
-						var mypoints = req.user.points;
-						if(mypoints.indexOf(req.params.pointId) >= 0) haspoint = true;
+	var mypoints = req.user.points;
+	var point_id = req.params.pointId;
+	Point.findOne({_id : point_id}, function(err, point) {
+		if (err) {return res.render('error', {error: err, user: req.user});}
+			if(point) {
+				Region.findOne({_id: point.regionId}, function(err2, region) {
+					if(err2) {return res.render('error', {error: err2, user: req.user});}
+					if (region) {
+						City.findOne({_id : point.cityId}, function(err3, city) {
+							if (err3) return res.render('error', {error: err3, user: req.user});
+							if (city) {
+								// See if user has point to display
+								var haspoint = false;
+								if (req.user && mypoints.indexOf(point_id) >=0) {haspoint = true;}
+								res.render('point', {title: point.name, active: 'point', point: point, city: city, region:region, user: req.user, haspoint: haspoint});
+							}
+							else {return res.render ('error', {message: "Could not find city.", user: req.user});}
+						})
 					}
-		        	res.render('point', {title: point.name, active: 'point', point: point, city: city, region: region, user: req.user, haspoint: haspoint});
-		        }
-				else {
-					res.render('error', {messsage: "Could not find city.", user: req.user});
-				}
-			}) // end Region.findOne()
-		} else { // if (!point)
-			res.render('error', {message: "Could not find point."})
-			return
-		}
-	}) // end Point.findOne()
+					else {return res.render('error', {message: "Could not find point.", user: req.user});}
+				})
+			}
+	})
 })
 
 // add new point
@@ -306,7 +288,6 @@ router.get('/settings', function(req, res) {
 
 // define the profile page route
 router.get('/profile', function(req, res) {
-<<<<<<< HEAD
 	if (req.user) {
 		var mypoints = req.user.points;
 		var final_points = [];
