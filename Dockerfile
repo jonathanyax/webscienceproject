@@ -39,12 +39,11 @@ EXPOSE 28017
 
 CMD ["mongod"]
 
-CMD cd /data
 RUN sudo npm install
 RUN sudo npm cache clean
-RUN sudo npm update
-RUN sudo npm install jade
-RUN sudo npm install crc
-RUN sudo npm install mongoose
+# RUN sudo npm install jade
+# RUN sudo npm install crc
+# RUN sudo npm install mongoose
+CMD cd /data
 RUN npm start
 
