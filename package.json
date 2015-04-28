@@ -4,6 +4,7 @@
   "description": "# Project Summary This project, called “On Point,” is a social travel platform that allows people to share their insider knowledge of cities around the world, showcasing their picks of everything from the classic must-do’s to the up-and-coming hidden alleyways.  On Point’s target users are curious travelers who visit cities and want to wander like a local as well as people who enjoy traveling and sharing their recommendations.",
   "main": "app.js",
   "dependencies": {
+    "async": "^0.9.0",
     "body-parser": "^1.12.3",
     "chai": "^1.10.0",
     "connect-flash": "^0.1.1",

@@ -3,6 +3,7 @@ var express  = require('express'),
 	Account = require('../models/account'),
     mongoose = require('mongoose'),
 	mongo	= require('mongodb'),
+	async	= require('async'),
 	router   = express.Router();
 
 var db = mongoose.createConnection('mongodb://localhost/onpoint-dev');
@@ -143,9 +144,11 @@ router.get('/point/:pointId', function(req, res) {
 		        }
 		        if (city) {
 					// See if user has this point in My Points
-					var mypoints = req.user.points;
 					var haspoint = false;
-					if(mypoints.indexOf(req.params.pointId) >= 0) haspoint = true;
+					if(req.user) {
+						var mypoints = req.user.points;
+						if(mypoints.indexOf(req.params.pointId) >= 0) haspoint = true;
+					}
 		        	res.render('point', {title: point.name, active: 'point', point: point, city: city, region: region, user: req.user, haspoint: haspoint});
 		        }
 				else {
@@ -216,7 +219,36 @@ router.get('/settings', function(req, res) {
 
 // define the profile page route
 router.get('/profile', function(req, res) {
-	if (req.user) res.render('profile', {title: 'Profile', active: 'profile', user: req.user});
+	if (req.user) {
+		var mypoints = req.user.points;
+		var final_points = [];
+		var points_to_check = [];
+		
+		for (each in mypoints) {points_to_check.push(each);}
+		
+		var queue = [
+			function(callback) {callback(null, points_to_check, 0)}
+		];
+		
+		// for every dynamic query
+		var callbackfunc = function (prev, current, callback) {
+			Point.find({_id: ObjectId(mypoints[current])}, function(err, res) {
+				if (err) console.log(err);
+				else {
+					final_points.push(res);
+					callback(null, res, current+1);
+				}
+			})
+		}
+		
+		for (each in points_to_check) {queue.push(callbackfunc);}
+		
+		async.waterfall(queue, function (err, finalres) {
+			res.render('profile', {title: 'Profile', active: 'profile', user: req.user, points: final_points});
+		})
+		
+		// return res.render('profile', {title: 'Profile', active: 'profile', user: req.user, points: final_points});
+	}
 	else res.redirect('/signin');
 })
 
@@ -256,9 +288,9 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook', {
 		res.redirect('/');
 });
 
+// Logout Route
 router.get('/logout', function(req, res) {
 	req.logout();
-	// res.redirect('/');
 	return res.render('index', {title: 'Home', active: 'home', user: null})
 })
 

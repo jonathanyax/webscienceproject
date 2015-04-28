@@ -15,3 +15,26 @@ block content
 				li
 					strong E-mail: 
 					span #{user.email}
+	section#points.container
+		if points.length == 0
+			p No saved points yet
+		else
+			ul.points_list
+				for point_arr in points
+					for point in point_arr
+						li
+							a(href="/point/#{point.id}")
+								div.point_item
+									div.point_item_image
+										img(src="#{point.images.mainImage}").u-max-full-width
+									div.point_item_info
+										h2 #{point.name}
+										h3 #{point.address.street}
+										h3 #{point.address.city}, #{point.address.state}
+										ul.point_item_metadata
+											li
+												i.fa.fa-comment
+												| #{point.comments.length}
+											li
+												i.fa.fa-camera
+												| #{point.images.userImages.length}
