@@ -111,8 +111,17 @@ router.get('/regions/:regionName/:cityName', function(req, res) {
 							res.render('error', {error: err3})
 							return
 						}
+						var my_points = {}
+						for (point in points) {
+							var currPointId = points[point].id
+							if (req.user && req.user.points.indexOf(currPointId) >= 0) {
+								my_points[currPointId] = true
+							} else {
+								my_points[currPointId] = false
+							}
+						}
 						// render city page even if there are no points
-						return res.render('city', {title: cityName, region: region, city: city, points: points, user: req.user})
+						return res.render('city', {title: cityName, region: region, city: city, points: points, user: req.user, mypoints: my_points})
 					})
 				} else {
 					return res.render('error', {message: "Could not find city"})

@@ -43,6 +43,7 @@ $(function() {
 
 $(document).ready(function() {
 
+	// show add point modal
 	$('.addpoint a').click(function(e) {
 		e.preventDefault();
 		var popup = $('.addpoint_modal');

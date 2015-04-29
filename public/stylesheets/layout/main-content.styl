@@ -232,6 +232,7 @@ ul.points_list
 		list-style-type none
 		margin-bottom 1rem
 	div.point_item
+		transition all .2s ease-in-out
 		overflow auto
 		color color--dark-grey
 		background color--light-grey
@@ -248,10 +249,11 @@ ul.points_list
 				i.fa-comment
 						vertical-align text-top
 		div.point_item_image
+			position relative
 			float left
 			width 30%
 			img
-				display: block
+				display block
 				object-fit cover
 				min-height 150px
 		div.point_item_info
@@ -276,8 +278,19 @@ ul.points_list
 			color color--dark-grey
 			@media screen and (min-width: mq--tablet)
 				font-size 1em 
-		&:hover, &:hover h2, &:hover h3
-			color color--primary
+		&:hover
+			transform scale(1.05)
+		.favorite
+			position absolute
+			top 6px
+			right 6px
+			line-height 1.0
+			font-size 1.5em
+			color rgba(color--dark-grey, .8)
+			text-stroke .06em color--white
+			&:hover, .favorited
+				color rgba(color--primary, .8)
+
 
 /*****************
  * CITY PAGE

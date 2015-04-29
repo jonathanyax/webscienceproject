@@ -937,6 +937,11 @@ ul.points_list li {
   margin-bottom: 1rem;
 }
 ul.points_list div.point_item {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   overflow: auto;
   color: #666;
   background: #f6f9f9;
@@ -958,6 +963,7 @@ ul.points_list div.point_item ul.point_item_metadata li i.fa-comment {
   vertical-align: text-top;
 }
 ul.points_list div.point_item div.point_item_image {
+  position: relative;
   float: left;
   width: 30%;
 }
@@ -999,10 +1005,25 @@ ul.points_list div.point_item h3 {
     font-size: 1em;
   }
 }
-ul.points_list div.point_item:hover,
-ul.points_list div.point_item:hover h2,
-ul.points_list div.point_item:hover h3 {
-  color: #12ca9a;
+ul.points_list div.point_item:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+ul.points_list div.point_item .favorite {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  line-height: 1;
+  font-size: 1.5em;
+  color: rgba(102,102,102,0.8);
+  -webkit-text-stroke: 0.06em #fff;
+}
+ul.points_list div.point_item .favorite:hover,
+ul.points_list div.point_item .favorite .favorited {
+  color: rgba(18,202,154,0.8);
 }
 .region_map {
   height: 300px;
