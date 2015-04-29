@@ -1,1 +1,1 @@
-{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"onpoint-dev.point"}]}
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "onpoint-dev.point", "name" : "_id_" } ] }
