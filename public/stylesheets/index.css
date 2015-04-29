@@ -315,7 +315,7 @@ header div.addpoint div.addpoint_modal #point_image::before {
   content: "Upload Photo";
   color: #12ca9a;
   display: inline-block;
-  background: url("../../images/favicon.png") no-repeat 10px 50% transparent;
+  background: url("../../images/camera.png") no-repeat 10px 50% transparent;
   border: 1px solid #dce2e5;
   padding: 10px 0 10px 50px;
   white-space: nowrap;
