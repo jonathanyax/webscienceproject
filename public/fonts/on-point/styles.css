@@ -86,5 +86,19 @@
 .icon-image:before {
   content: "r";
 }
-
+.icon-heart-o:before {
+  content: "t";
+}
+.icon-heart:before {
+  content: "u";
+}
+.icon-comment:before {
+  content: "w";
+}
+.icon-camera:before {
+  content: "x";
+}
+.icon-share:before {
+  content: "y";
+}
 

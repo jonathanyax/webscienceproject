@@ -387,12 +387,14 @@ section#point_display
 			font-size 2.5em
 	ul
 		list-style-type none
-		margin 0 0 1.25em 0
+		margin 0
+		@media screen and (min-width: mq--phablet)
+			margin 0 0 1.25em 0
 	section#point_visual
 		@media screen and (min-width: mq--phablet)
 			float right
 	section#point_data
-		padding 1em 0
+		padding 0
 		@media screen and (max-width: mq--phablet)
 			width 100%
 		@media screen and (min-width: mq--phablet)
@@ -419,8 +421,9 @@ section#point_display
 				@media screen and (min-width: mq--phablet)
 					display block
 					width 100%
-					height 55px
+					height 60px
 					border-bottom color--primary-dark 1px solid
+					padding 0
 					&:last-of-type
 						border none
 				@media screen and (min-width: mq--tablet)
@@ -443,14 +446,15 @@ section#point_display
 						font-size .65em
 					@media screen and (min-width: mq--tablet)
 						font-size .8em
-					i
+					span
 						display block
-						font-size 1.5em
-						text-stroke 0
-						@media screen and (min-width: mq--tablet)
-							font-size 2em
-				a:hover
-					background color--dark-green
+						font-size 2.5em
+						text-stroke .01em color--white
+						line-height 1
+					&:hover
+						color color--dark-green
+						span
+							text-stroke .01em color--dark-green
 		div.point_map
 			background color--medium-grey
 			height 120px
@@ -467,12 +471,14 @@ section#point_display
 			text-stroke .03em color--dark-grey
 			font-size .7em 
 			letter-spacing .04em
+			padding 5px
 			span.point_address_street:after
 				content: ", "
 			@media screen and (min-width: mq--phablet)
 				height 50px
 				line-height 1.2
 				font-size .8em  
+				padding 0
 				p
 					width 100%
 					padding 0 10px
@@ -505,14 +511,14 @@ section#point_display
 		li
 			margin 1em 0
 			span.author-pic img
-				width 30px
-				height 30px
-				border-radius 15px
+				width 38px
+				height 38px
+				border-radius 50%
 				float left
 				@media screen and (min-width: mq--tablet)
-					width 38px
-					height 38px
-					border-radius 19px
+					width 42px
+					height 42px
+					border-radius 50%
 			span.author, span.comment
 				display block
 				margin-left 45px
