@@ -956,6 +956,9 @@ ul.points_list li {
   list-style-type: none;
   margin-bottom: 1rem;
 }
+ul.points_list li:nth-child(odd) {
+  margin-left: 0;
+}
 ul.points_list div.point_item {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
