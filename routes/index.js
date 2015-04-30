@@ -235,8 +235,11 @@ router.post('/point', function(req, res) {
 						mainImage: imageFileName,
 						userImages: [imageFileName]
 					},
-					comments: [comment]
+					comments: []
 				})
+				if (comment !== null) {
+					point.comments = [comment]
+				}
 				point.save(function(err3, point) {
 					if (err3) res.render('error', {error: err3})
 					return res.redirect('/point/' + point.id)

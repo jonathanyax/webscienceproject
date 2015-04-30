@@ -59,16 +59,16 @@ block content
 			ul
 				if (point.comments == '')
 					li 
-						span.comment 
+						p.no_comments 
 							| There are currently no comments for this point :(
 							br 
 							| You can be the 
-							a(href="/comment/#{point.id}") first!
+							a(href="/comment/#{point.id}") first
+							| !
 				for comment in point.comments
-					if (comment != null)
-						li
-							span.author-pic 
-								img(src="#{comment.userImage}")
-							span.author #{comment.userName}
-							span.comment "#{comment.message}"
+					li
+						span.author-pic 
+							img(src="#{comment.userImage}")
+						span.author #{comment.userName}
+						span.comment "#{comment.message}"
 		
