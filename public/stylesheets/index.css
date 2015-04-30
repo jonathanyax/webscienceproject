@@ -956,11 +956,11 @@ ul.points_list div.point_item ul.point_item_metadata li {
   display: inline;
   margin: 0 1em 0 0;
 }
-ul.points_list div.point_item ul.point_item_metadata li i {
+ul.points_list div.point_item ul.point_item_metadata li span {
   padding: 0 0.25em 0 0;
-}
-ul.points_list div.point_item ul.point_item_metadata li i.fa-comment {
-  vertical-align: text-top;
+  vertical-align: middle;
+  font-size: 1.3em;
+  -webkit-text-stroke: 0;
 }
 ul.points_list div.point_item div.point_item_image {
   position: relative;

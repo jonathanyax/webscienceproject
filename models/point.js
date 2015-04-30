@@ -15,6 +15,7 @@ var PointSchema = new Schema({
     latitude: Number,
     longitude: Number
   },
+  googlePlaceId: String,
   cityId: String,  // city id
   regionId: String, // region id
   images: {

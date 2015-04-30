@@ -164,6 +164,7 @@ router.get('/point/:pointId', function(req, res) {
 router.post('/point', function(req, res) {
 	var point, 
 			imageFileName,
+			comment,
 			pointInfo        = req.body,
 			goecoderProvider = 'google',
 			httpAdapter      = 'https',
@@ -180,8 +181,6 @@ router.post('/point', function(req, res) {
 	var fullAddress = pointInfo.point_name + ' ' + pointInfo.point_address + ' ' + pointInfo.point_city + ' ' + pointInfo.point_state;
 
 	if (uploadDone == true) {
-		console.log('uploaded!!!!!')
-		console.log(req.files.point_image.name)
 		imageFileName = req.files.point_image.name
 	}
 
@@ -191,12 +190,24 @@ router.post('/point', function(req, res) {
 			res.render('error', {error: err})
 			return
 		}
-		var lat    = geoRes[0].latitude,
-				lon    = geoRes[0].longitude,
-				street = geoRes[0].streetNumber + ' ' + geoRes[0].streetName,
-				city   = geoRes[0].city,
-				state  = geoRes[0].stateCode,
-				zip    = geoRes[0].zipcode
+		var lat     = geoRes[0].latitude,
+				lon     = geoRes[0].longitude,
+				street  = geoRes[0].streetNumber + ' ' + geoRes[0].streetName,
+				city    = geoRes[0].city,
+				state   = geoRes[0].stateCode,
+				zip     = geoRes[0].zipcode,
+				placeId = geoRes[0].extra.googlePlaceId
+
+		if (pointInfo.point_comment == undefined) {
+			comment = null
+		} else {
+			comment = {
+							    message: pointInfo.point_comment,
+							    userId: user._id,
+							    userName: user.fullName,
+							    userImage: user.picture
+							  }
+		}
 
 		City.findOne({name: city}, function(err2, pointCity) {
 			if (err2) {
@@ -213,6 +224,7 @@ router.post('/point', function(req, res) {
 						state: state,
 						zip: zip
 					},
+					googlePlaceId: placeId,
 					cityId:  pointCity.id,  // city id
 					regionId: pointCity.region, // region id
 					coordinates: {
@@ -223,12 +235,7 @@ router.post('/point', function(req, res) {
 						mainImage: imageFileName,
 						userImages: [imageFileName]
 					},
-					comments: [{
-				    message: pointInfo.point_comment,
-				    userId: user._id,
-				    userName: user.fullName,
-				    userImage: user.picture
-				  }]
+					comments: [comment]
 				})
 				point.save(function(err3, point) {
 					if (err3) res.render('error', {error: err3})

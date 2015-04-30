@@ -68,3 +68,23 @@
 .icon-user:before {
   content: "j";
 }
+.icon-lock-round-o:before {
+  content: "k";
+}
+.icon-location:before {
+  content: "m";
+}
+.icon-lock-square-o:before {
+  content: "n";
+}
+.icon-comments:before {
+  content: "o";
+}
+.icon-images:before {
+  content: "q";
+}
+.icon-image:before {
+  content: "r";
+}
+
+
