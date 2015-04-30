@@ -152,12 +152,26 @@ nav
 				&:hover span.user_icon_wrap
 					background color--dark-grey
 				span.user_icon_wrap
-					 background color--blue-grey
-					 display block
-					 width 100px
-					 height 100px
-					 border-radius 50%
-					 transition background 300ms ease-in-out
+					background color--blue-grey
+					display block
+					width 100px
+					height 100px
+					border-radius 50%
+					transition background 300ms ease-in-out
+					overflow hidden
+					position relative
+					&.user_loggedin
+						z-index 10
+						background color--black
+					&.user_loggedin:hover
+						background color--dark-grey
+					img
+						width 100px
+						height 100px
+						position absolute
+						top 0
+						left 0
+						opacity .7
 				span.icon_wrap
 					display block
 					padding .75em 0 0 0
@@ -169,5 +183,6 @@ nav
 					display block
 					text-transform uppercase
 					margin .5em 0 0 0
+					text-stroke .06em color--white
 			
 			

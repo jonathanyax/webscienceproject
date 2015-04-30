@@ -604,6 +604,25 @@ nav div#user {
     -ms-transition: background 300ms ease-in-out;
     -o-transition: background 300ms ease-in-out;
     transition: background 300ms ease-in-out;
+    overflow: hidden;
+    position: relative;
+  }
+  nav div#user a span.user_icon_wrap.user_loggedin {
+    z-index: 10;
+    background: #222;
+  }
+  nav div#user a span.user_icon_wrap.user_loggedin:hover {
+    background: #666;
+  }
+  nav div#user a span.user_icon_wrap img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
   }
   nav div#user a span.icon_wrap {
     display: block;
@@ -618,6 +637,7 @@ nav div#user {
     display: block;
     text-transform: uppercase;
     margin: 0.5em 0 0 0;
+    -webkit-text-stroke: 0.06em #fff;
   }
 }
 main {
@@ -959,8 +979,13 @@ ul.points_list div.point_item ul.point_item_metadata li {
 ul.points_list div.point_item ul.point_item_metadata li span {
   padding: 0 0.25em 0 0;
   vertical-align: middle;
-  font-size: 1.3em;
+  font-size: 1.1em;
   -webkit-text-stroke: 0;
+}
+@media screen and (min-width: 960px) {
+  ul.points_list div.point_item ul.point_item_metadata li span {
+    font-size: 1.3em;
+  }
 }
 ul.points_list div.point_item div.point_item_image {
   position: relative;
@@ -971,6 +996,7 @@ ul.points_list div.point_item div.point_item_image img {
   display: block;
   object-fit: cover;
   min-height: 150px;
+  width: 100%;
 }
 ul.points_list div.point_item div.point_item_info {
   float: right;
@@ -1017,9 +1043,14 @@ ul.points_list div.point_item .favorite {
   top: 6px;
   right: 6px;
   line-height: 1;
-  font-size: 1.5em;
+  font-size: 1em;
   color: rgba(102,102,102,0.8);
   -webkit-text-stroke: 0.06em #fff;
+}
+@media screen and (min-width: 960px) {
+  ul.points_list div.point_item .favorite {
+    font-size: 1.5em;
+  }
 }
 ul.points_list div.point_item .favorite:hover,
 ul.points_list div.point_item .favorite .favorited {
@@ -1384,6 +1415,36 @@ section#signin_accounts h3 {
   margin: 0 0 0.5em 0;
   padding: 0 0 0.15em 0;
   border-bottom: 3px solid #12ca9a;
+}
+section#signin_accounts button.fb_login {
+  background: #3b5998;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+  border-color: #3b5998;
+  text-align: left;
+  padding: 4px 10px;
+  line-height: 1.1;
+  font-size: 0.8em;
+  letter-spacing: 0.12em;
+  -webkit-text-stroke: 0.02em #fff;
+  text-transform: none;
+}
+section#signin_accounts button.fb_login i {
+  vertical-align: middle;
+  font-size: 1.5em;
+  padding-right: 1em;
+  -webkit-text-stroke: 0;
+}
+section#signin_accounts button.fb_login:hover {
+  border-color: #355089;
+  background: #3f5fa3;
+}
+#joinus p {
+  margin: -25px 0 5px 0;
+  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
 }
 section#settings ul {
   font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;

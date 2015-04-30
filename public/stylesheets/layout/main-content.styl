@@ -247,8 +247,10 @@ ul.points_list
 				span
 					padding 0 .25em 0 0
 					vertical-align middle
-					font-size 1.3em
+					font-size 1.1em
 					text-stroke 0 
+					@media screen and  (min-width: mq--desktop)
+						font-size 1.3em
 		div.point_item_image
 			position relative
 			float left
@@ -257,6 +259,7 @@ ul.points_list
 				display block
 				object-fit cover
 				min-height 150px
+				width 100%
 		div.point_item_info
 			float right
 			width 70%
@@ -286,9 +289,11 @@ ul.points_list
 			top 6px
 			right 6px
 			line-height 1.0
-			font-size 1.5em
+			font-size 1em
 			color rgba(color--dark-grey, .8)
 			text-stroke .06em color--white
+			@media screen and (min-width: mq--desktop)
+				font-size 1.5em
 			&:hover, .favorited
 				color rgba(color--primary, .8)
 
@@ -547,6 +552,32 @@ section#signin_accounts
 		margin 0 0 .5em 0
 		padding 0 0 .15em 0
 		border-bottom 3px solid color--primary
+	button.fb_login
+		background color--facebook
+		border-radius 5px
+		color color--white
+		border-color color--facebook
+		text-align left
+		padding 4px 10px
+		line-height 1.1 
+		font-size 0.8em
+		letter-spacing .12em
+		text-stroke .02em color--white
+		text-transform none
+		i
+			vertical-align middle
+			font-size 1.5em
+			padding-right 1em
+			text-stroke 0
+		&:hover
+			border-color darken(color--facebook, 10%)
+			background lighten(color--facebook, 5%)
+			
+#joinus
+	p
+		margin -25px 0 5px 0
+		font-family font--helvetica-neue
+		font-size .8em 
 
 /*****************
  * SETTINGS PAGE

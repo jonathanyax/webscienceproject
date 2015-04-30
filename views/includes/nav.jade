@@ -9,7 +9,8 @@ nav
 						span.icon_title Sign In
 		if (user)
 			a(href="/logout")
-				span.user_icon_wrap
+				span.user_icon_wrap.user_loggedin
+					img(src="#{user.picture}")
 					span.icon_wrap
 						span.icon
 							i.fa.fa-lock
