@@ -344,11 +344,11 @@ router.get('/profile', function(req, res) {
 // For register, you can send it vars to auto-fill given info after error like username-taken
 router.post('/register', function(req, res) {
 	var username = req.body.username,
-		  password = req.body.password,
+		password = req.body.password,
 	    email    = req.body.email,
 	    fullName = req.body.fullName
 
-	Account.register(new Account({username: username, email: email, fullName: fullName}), password, function (err, account) {
+	Account.register(new Account({username: username, email: email, fullName: fullName, picture: "/images/profile.png"}), password, function (err, account) {
 		if (err) {
 			if (!username) return res.render('signin', {info: "Please enter a username!"})
 			else if (!password) return res.render('signin', {join_username: username, info: "Please enter a password!"})
