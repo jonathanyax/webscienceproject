@@ -201,8 +201,8 @@ router.post('/point', function(req, res) {
 		}
 		var lat     = geoRes[0].latitude,
 				lon     = geoRes[0].longitude,
-				street  = geoRes[0].streetNumber + ' ' + geoRes[0].streetName,
-				city    = geoRes[0].city,
+				street  = (geoRes[0].streetNumber === null) ? pointInfo.point_address : geoRes[0].streetNumber + ' ' + geoRes[0].streetName,
+				city    = pointInfo.point_city,
 				state   = geoRes[0].stateCode,
 				zip     = geoRes[0].zipcode,
 				placeId = geoRes[0].extra.googlePlaceId
@@ -254,7 +254,7 @@ router.post('/point', function(req, res) {
 					return res.redirect('/point/' + point.id)
 				})
 			} else {
-				return res.render('error', {message: "Could not find city", user: req.user})
+				return res.render('error', {message: "Could not find city " + city, user: req.user})
 			}
 		})
 	})
