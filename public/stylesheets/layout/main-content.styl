@@ -392,6 +392,11 @@ section#point_display
 		margin 0
 		@media screen and (min-width: mq--phablet)
 			margin 0 0 1.25em 0
+	section#urlcopy
+		input
+			width 100%
+			color color--black
+			display none
 	section#point_visual
 		@media screen and (min-width: mq--phablet)
 			float right
@@ -442,8 +447,6 @@ section#point_display
 					border-right color--primary-dark 1px solid
 					width 100%
 					text-stroke .05em color--white
-					input, select, textarea
-						color color--black
 					@media screen and (min-width: mq--phablet)
 						border-right none
 						padding .7em .1em

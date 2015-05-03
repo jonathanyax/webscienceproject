@@ -143,6 +143,8 @@ $(document).ready(function() {
 		});
 	}
 	
-
+	$("div.point_social ul li a.share").click(function() {
+		$("section#urlcopy input").toggle();
+	});
 
 });

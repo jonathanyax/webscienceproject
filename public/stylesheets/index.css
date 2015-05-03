@@ -1173,6 +1173,11 @@ section#point_display ul {
     margin: 0 0 1.25em 0;
   }
 }
+section#point_display section#urlcopy input {
+  width: 100%;
+  color: #222;
+  display: none;
+}
 @media screen and (min-width: 550px) {
   section#point_display section#point_visual {
     float: right;
@@ -1249,11 +1254,6 @@ section#point_display section#point_data div.point_social li a {
   border-right: #00ac85 1px solid;
   width: 100%;
   -webkit-text-stroke: 0.05em #fff;
-}
-section#point_display section#point_data div.point_social li a input,
-section#point_display section#point_data div.point_social li a select,
-section#point_display section#point_data div.point_social li a textarea {
-  color: #222;
 }
 @media screen and (min-width: 550px) {
   section#point_display section#point_data div.point_social li a {

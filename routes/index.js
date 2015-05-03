@@ -6,6 +6,7 @@ var express		= require('express'),
 	async		= require('async'),
 	router		= express.Router(),
 	multer		= require('multer'),
+	path		= require('path'),
 	uploadDone	= false;
 
 var db = mongoose.createConnection('mongodb://localhost/onpoint-dev');
@@ -148,8 +149,9 @@ router.get('/point/:pointId', function(req, res) {
 							if (city) {
 								// See if user has point to display
 								var haspoint = false;
+								var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
 								if (req.user && req.user.points.indexOf(point_id) >=0) {haspoint = true;}
-								res.render('point', {title: point.name, active: 'point', point: point, city: city, region:region, user: req.user, haspoint: haspoint});
+								res.render('point', {title: point.name, active: 'point', point: point, city: city, region:region, user: req.user, haspoint: haspoint, url:fullUrl});
 							}
 							else {return res.render ('error', {message: "Could not find city.", user: req.user});}
 						})

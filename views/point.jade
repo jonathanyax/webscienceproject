@@ -17,6 +17,8 @@ block content
 					a(href="#") #{point.name}
 	section#point_display.container.row
 		h2.point_name #{point.name}
+		section#urlcopy 
+			input(type="text", value="#{url}", class="url", readonly, autofocus)
 		section#point_visual.five.columns
 			div.point-grid.ri-grid
 				img(src="/images/loading.gif").ri-loading-image
@@ -44,13 +46,12 @@ block content
 							span.icon-comment
 							| Comment
 					li
-						a(href="/share/#{point.id}")
-							input(type="text", value="#{point.id}", readonly)
+						a(href="#", class="share")
 							span.icon-share
 							| Share
 			div.point_map
 				iframe(width="100%", height="100%", frameborder="0", style="border:0", src="https://www.google.com/maps/embed/v1/place?q=#{point.name}%20#{point.address.street}%20#{point.address.city}%20#{point.address.state}%20#{point.address.zip}&key=AIzaSyC_NFXVm3SFHd0zodubgqvghOLepWrmEz0")
-				
+
 			div.point_address
 				p
 					span.point_address_street #{point.address.street}
