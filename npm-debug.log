@@ -18,7 +18,7 @@
 10 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:810:5)
 11 verbose pkgid webscienceproject@1.0.0
 12 verbose cwd /var/www/onpoint/webscienceproject
-13 error Linux 3.13.0-46-generic
+13 error Linux 3.13.0-49-generic
 14 error argv "node" "/usr/bin/npm" "start"
 15 error node v0.10.25
 16 error npm  v2.1.8

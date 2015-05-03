@@ -79,6 +79,183 @@ body {
   overflow: scroll;
   overflow-x: hidden;
 }
+div.modal_full_wrapper {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(34,34,34,0.9);
+  z-index: 20;
+  top: 0;
+}
+@media screen and (min-width: 750px) {
+  div.modal_full_wrapper {
+    margin-left: -175px;
+  }
+}
+div.modal {
+  display: none;
+  position: relative;
+  margin: 0 50px 4px 6px;
+  background: #fff;
+  padding: 10px;
+  -webkit-box-shadow: 0 0 4px #dce6e4;
+  box-shadow: 0 0 4px #dce6e4;
+  border: 1px solid #dce6e4;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+@media screen and (min-width: 750px) {
+  div.modal {
+    margin: 20px 60px 0 auto;
+  }
+}
+div.modal:after,
+div.modal:before {
+  position: absolute;
+  content: " ";
+  left: 100%;
+  bottom: 28px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border: solid transparent;
+}
+@media screen and (min-width: 750px) {
+  div.modal:after,
+  div.modal:before {
+    top: 28px;
+    bottom: auto;
+  }
+}
+div.modal:after {
+  border-color: rgba(255,255,255,0);
+  border-left-color: #fff;
+  border-width: 10px;
+  margin-top: -10px;
+}
+div.modal:before {
+  border-color: rgba(220,230,228,0);
+  border-left-color: #dce6e4;
+  border-width: 12px;
+  margin-top: -12px;
+}
+div.modal .modal_disabled {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(234,240,239,0.7);
+}
+div.modal .modal_disabled:after {
+  content: "You must sign in first!";
+  display: block;
+  color: #12ca9a;
+  -webkit-text-stroke: 1px #12ca9a;
+  margin-top: 10%;
+  font-size: 2em;
+  text-align: center;
+}
+div.modal input,
+div.modal textarea {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+  border: 1px solid #dce2e5;
+}
+div.modal input:focus,
+div.modal textarea:focus {
+  border-color: #12ca9a;
+}
+div.modal .upload-image {
+  color: transparent;
+  border: none;
+  margin-bottom: 0;
+}
+div.modal .upload-image::-webkit-file-upload-button {
+  visibility: hidden;
+}
+div.modal .upload-image::before {
+  content: "Upload Photo";
+  color: #12ca9a;
+  display: inline-block;
+  background: url("../../images/camera.png") no-repeat 10px 50% transparent;
+  -webkit-background-size: 30px;
+  -moz-background-size: 30px;
+  background-size: 30px;
+  border: 1px solid #dce2e5;
+  padding: 10px 0 10px 50px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  width: 100%;
+}
+@media screen and (min-width: 750px) {
+  div.modal:not(.modal_full) .upload-image::before {
+    text-align: center;
+    background: url("../../images/camera.png") no-repeat 50% 34% transparent;
+    -webkit-background-size: 40px;
+    -moz-background-size: 40px;
+    background-size: 40px;
+    padding: 58px 0 24px 0;
+    font-size: 0.9em;
+  }
+}
+div.modal_full {
+  display: block;
+  margin: 150px auto 0 auto;
+}
+@media screen and (min-width: 750px) {
+  div.modal_full {
+    margin-left: 1;
+  }
+}
+div.modal_full span.upload_text {
+  display: block;
+  font-size: 12px;
+  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+div.modal_full span.upload_text span {
+  color: #12ca9a;
+  font-weight: normal;
+}
+div.modal_full::before,
+div.modal_full::after {
+  border: none;
+}
+div.modal_full #point_submit {
+  margin-top: -10px;
+  margin-bottom: 0;
+  border: none;
+  background: #12ca9a;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 1em;
+  letter-spacing: -0.02em;
+}
+div.modal_full .upload-image::before {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background: url("../../images/camera.png") no-repeat 50% 34% transparent;
+  -webkit-background-size: 40px;
+  -moz-background-size: 40px;
+  background-size: 40px;
+  padding: 58px 0 24px 0;
+  font-size: 0.9em;
+}
 span[class^="icon-"] {
   font-family: "on-point";
 }
@@ -184,88 +361,7 @@ header div.addpoint a.addpoint_open {
   color: #879ca6;
   text-decoration: none;
 }
-header div.addpoint div.addpoint_modal {
-  display: none;
-  position: relative;
-  margin: 0 50px 4px 6px;
-  background: #fff;
-  padding: 10px;
-  -webkit-box-shadow: 0 0 4px #dce6e4;
-  box-shadow: 0 0 4px #dce6e4;
-  border: 1px solid #dce6e4;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-@media screen and (min-width: 750px) {
-  header div.addpoint div.addpoint_modal {
-    margin: 20px 60px 0 auto;
-  }
-}
-header div.addpoint div.addpoint_modal:after,
-header div.addpoint div.addpoint_modal:before {
-  position: absolute;
-  content: " ";
-  left: 100%;
-  bottom: 28px;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  border: solid transparent;
-}
-@media screen and (min-width: 750px) {
-  header div.addpoint div.addpoint_modal:after,
-  header div.addpoint div.addpoint_modal:before {
-    top: 28px;
-    bottom: auto;
-  }
-}
-header div.addpoint div.addpoint_modal:after {
-  border-color: rgba(255,255,255,0);
-  border-left-color: #fff;
-  border-width: 10px;
-  margin-top: -10px;
-}
-header div.addpoint div.addpoint_modal:before {
-  border-color: rgba(220,230,228,0);
-  border-left-color: #dce6e4;
-  border-width: 12px;
-  margin-top: -12px;
-}
-header div.addpoint div.addpoint_modal .addpoint_modal_disabled {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(234,240,239,0.7);
-}
-header div.addpoint div.addpoint_modal .addpoint_modal_disabled:after {
-  content: "Sign in to add point!";
-  display: block;
-  color: #12ca9a;
-  -webkit-text-stroke: 1px #12ca9a;
-  margin-top: 10%;
-  font-size: 2em;
-}
-header div.addpoint div.addpoint_modal input,
-header div.addpoint div.addpoint_modal textarea {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-  font-size: 0.9em;
-  border: 1px solid #dce2e5;
-}
-header div.addpoint div.addpoint_modal input:focus,
-header div.addpoint div.addpoint_modal textarea:focus {
-  border-color: #12ca9a;
-}
-header div.addpoint div.addpoint_modal #point_name {
+div.addpoint_modal #point_name {
   background: url("../../images/PointName.png") no-repeat 10px center;
   -webkit-background-size: 22px 22px;
   -moz-background-size: 22px 22px;
@@ -273,7 +369,7 @@ header div.addpoint div.addpoint_modal #point_name {
   padding-left: 40px;
   width: calc(100% -40px);
 }
-header div.addpoint div.addpoint_modal #point_address {
+div.addpoint_modal #point_address {
   background: url("../../images/Address.png") no-repeat 10px center;
   -webkit-background-size: 22px 22px;
   -moz-background-size: 22px 22px;
@@ -281,7 +377,7 @@ header div.addpoint div.addpoint_modal #point_address {
   padding-left: 40px;
   width: calc(100% -40px);
 }
-header div.addpoint div.addpoint_modal #point_city {
+div.addpoint_modal #point_city {
   background: url("../../images/City.png") no-repeat 10px center;
   -webkit-background-size: 22px 22px;
   -moz-background-size: 22px 22px;
@@ -290,61 +386,30 @@ header div.addpoint div.addpoint_modal #point_city {
   width: 70%;
 }
 @media screen and (min-width: 750px) {
-  header div.addpoint div.addpoint_modal #point_city {
+  div.addpoint_modal #point_city {
     width: 82%;
   }
 }
-header div.addpoint div.addpoint_modal #point_state {
+div.addpoint_modal #point_state {
   width: 25%;
   float: right;
 }
 @media screen and (min-width: 750px) {
-  header div.addpoint div.addpoint_modal #point_state {
+  div.addpoint_modal #point_state {
     width: 14%;
   }
 }
-header div.addpoint div.addpoint_modal #point_image {
-  color: transparent;
-  border: none;
-  margin-bottom: 0;
-}
-header div.addpoint div.addpoint_modal #point_image::-webkit-file-upload-button {
-  visibility: hidden;
-}
-header div.addpoint div.addpoint_modal #point_image::before {
-  content: "Upload Photo";
-  color: #12ca9a;
-  display: inline-block;
-  background: url("../../images/camera.png") no-repeat 10px 50% transparent;
-  border: 1px solid #dce2e5;
-  padding: 10px 0 10px 50px;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-  width: 100%;
-}
-@media screen and (min-width: 750px) {
-  header div.addpoint div.addpoint_modal #point_image::before {
-    text-align: center;
-    background: url("../../images/camera.png") no-repeat 50% 34% transparent;
-    -webkit-background-size: 40px;
-    -moz-background-size: 40px;
-    background-size: 40px;
-    padding: 58px 0 24px 0;
-    font-size: 0.9em;
-  }
-}
-header div.addpoint div.addpoint_modal #point_comment {
+div.addpoint_modal #point_comment {
   margin-top: -10px;
   margin-bottom: 10px;
 }
 @media screen and (min-width: 750px) {
-  header div.addpoint div.addpoint_modal #point_comment {
+  div.addpoint_modal #point_comment {
     margin-top: 0;
     min-height: 100px;
   }
 }
-header div.addpoint div.addpoint_modal #point_submit {
+div.addpoint_modal #point_submit {
   margin-top: -10px;
   margin-bottom: 0;
   border: none;
@@ -1402,6 +1467,17 @@ section#point_display section#point_comments li span.comment {
   section#point_display section#point_comments li span.comment {
     font-size: 13px;
   }
+}
+.addphoto_modal.modal {
+  width: 60%;
+  max-width: 300px;
+}
+.addcomment_modal.modal {
+  width: 90%;
+  max-width: 700px;
+}
+.addcomment_modal.modal #point_comment {
+  height: 150px;
 }
 section#help {
   font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
