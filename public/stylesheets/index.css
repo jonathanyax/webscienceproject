@@ -1250,6 +1250,11 @@ section#point_display section#point_data div.point_social li a {
   width: 100%;
   -webkit-text-stroke: 0.05em #fff;
 }
+section#point_display section#point_data div.point_social li a input,
+section#point_display section#point_data div.point_social li a select,
+section#point_display section#point_data div.point_social li a textarea {
+  color: #222;
+}
 @media screen and (min-width: 550px) {
   section#point_display section#point_data div.point_social li a {
     border-right: none;

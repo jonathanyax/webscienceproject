@@ -45,6 +45,7 @@ block content
 							| Comment
 					li
 						a(href="/share/#{point.id}")
+							input(type="text", value="#{point.id}", readonly)
 							span.icon-share
 							| Share
 			div.point_map
