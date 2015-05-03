@@ -15,6 +15,36 @@ block content
 					a(href="/regions/#{region.name.replace(/\s+/g, '-')}/#{city.name.replace(/\s+/g, '-')}") #{city.name}
 				li
 					a(href="#") #{point.name}
+	div.addphoto_modal_wrapper.modal_full_wrapper
+		div.addphoto_modal.modal.modal_full
+			span.upload_text Upload a Photo to: 
+				span #{point.name}
+			if (user)
+				form(action="/add-photo/#{point.id}", method="POST", enctype="multipart/form-data")
+					div.row
+						input#point_image.upload-image.u-full-width(type="file", name="point_image", accept="image/*", required)
+					input#point_submit.u-full-width(type="submit", name="point_submit", value="Save Photo")
+			else
+				div.modal_disabled
+				form(action="/add-photo/#{point.id}", method="POST", enctype="multipart/form-data")
+					div.row
+						input#point_image.upload-image.u-full-width(type="file", name="point_image", accept="image/*", required)
+					input#point_submit.u-full-width(type="submit", name="point_submit", value="Save Photo")
+	div.addcomment_modal_wrapper.modal_full_wrapper
+		div.addcomment_modal.modal.modal_full
+			span.upload_text Add comment to: 
+				span #{point.name}
+			if (user)
+				form(action="/comment/#{point.id}", method="POST")
+					div.row
+						textarea#point_comment.u-full-width(type="text", placeholder="Enter comment here...", name="point_comment")
+					input#point_submit.u-full-width(type="submit", name="point_submit", value="Save Comment")
+			else
+				div.modal_disabled
+				form(action="/comment/#{point.id}", method="POST")
+					div.row
+						textarea#point_comment.u-full-width(type="text", placeholder="Enter comment here...", name="point_comment")
+					input#point_submit.u-full-width(type="submit", name="point_submit", value="Save Comment")
 	section#point_display.container.row
 		h2.point_name #{point.name}
 		section#urlcopy 
@@ -38,11 +68,11 @@ block content
 								span.icon-heart-o
 							| Favorite
 					li
-						a(href="/add-photo/#{point.id}")
+						a(href="#").add_photo
 							span.icon-camera
 							| Photo
 					li
-						a(href="/comment/#{point.id}")
+						a(href="#").add_comment
 							span.icon-comment
 							| Comment
 					li

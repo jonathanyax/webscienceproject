@@ -1,17 +1,17 @@
-var express		= require('express'),
-	passport	= require('passport'),
-	Account		= require('../models/account'),
-    mongoose	= require('mongoose'),
-	mongo		= require('mongodb'),
-	async		= require('async'),
-	router		= express.Router(),
-	multer		= require('multer'),
-	path		= require('path'),
-	uploadDone	= false;
+var 	express		 	= require('express'),
+		passport	 	= require('passport'),
+		Account		 	= require('../models/account'),
+		mongoose	 	= require('mongoose'),
+		mongo		   	= require('mongodb'),
+		async		   	= require('async'),
+		router		 	= express.Router(),
+		multer		 	= require('multer'),
+		fs          = require('fs'),
+		uploadDone	= false
 
-var db = mongoose.createConnection('mongodb://localhost/onpoint-dev');
-var accounts = db.collection('accounts');
-var ObjectId = mongo.ObjectId;
+var db = mongoose.createConnection('mongodb://localhost/onpoint-dev'),
+		accounts = db.collection('accounts'),
+		ObjectId = mongo.ObjectId
 
 // define the home page route
 router.all('/', function(req, res) {
@@ -20,16 +20,23 @@ router.all('/', function(req, res) {
 
 // middleware to configure multer
 router.use(multer({dest: './public/images/uploads/',
-  rename: function(fieldname, filename) {
-    return filename + Date.now()
-  },
-  onFileUploadStart: function(file) {
-    console.log(file.originalname + ' is starting...')
-  },
-  onFileUploadComplete: function(file) {
-    console.log(file.fieldname + ' uploaded to ' + file.path)
-    uploadDone = true
-  }
+	rename: function(fieldname, filename) {
+		return filename + Date.now()
+	},
+	onFileUploadStart: function(file) {
+		console.log(file.originalname + ' is starting...')
+	},
+	onFileUploadComplete: function(file) {
+		console.log(file.fieldname + ' uploaded to ' + file.path)
+		uploadDone = true
+	},
+	limits: {
+		fileSize: 100000
+	},
+	onFileSizeLimit: function (file) {
+	  console.log('>> ERROR image file too big: ', file.originalname)
+	  fs.unlink('./' + file.path) // delete the partially written file
+	}
 }))
 
 // define the regions route
@@ -165,8 +172,8 @@ router.get('/point/:pointId', function(req, res) {
 // add new point
 router.post('/point', function(req, res) {
 	var point, 
-			imageFileName,
 			comment,
+			imageFileName    = null
 			pointInfo        = req.body,
 			goecoderProvider = 'google',
 			httpAdapter      = 'https',
@@ -204,11 +211,11 @@ router.post('/point', function(req, res) {
 			comment = null
 		} else {
 			comment = {
-							    message: pointInfo.point_comment,
-							    userId: user._id,
-							    userName: user.fullName,
-							    userImage: user.picture
-							  }
+									message: pointInfo.point_comment,
+									userId: user._id,
+									userName: user.fullName,
+									userImage: user.picture
+								}
 		}
 
 		City.findOne({name: city}, function(err2, pointCity) {
@@ -252,6 +259,54 @@ router.post('/point', function(req, res) {
 		})
 	})
 
+})
+
+// add new photo to point
+router.post('/add-photo/:pointId', function(req, res) {
+	var point_id      = req.params.pointId,
+	    imageFileName = null
+
+	if (uploadDone == true) {
+		imageFileName = req.files.point_image.name
+	}
+
+	Point.findOne({_id : point_id}, function(err, point) {
+		if (err) {return res.render('error', {error: err, user: req.user});}
+			if(point) {
+				point.images.userImages.push(imageFileName)
+				point.save(function(err, point) {
+					if (err) res.render('error', {error: err})
+					return res.redirect('/point/' + point_id)
+				})
+			} else {
+				return res.render('error', {message: "Could not find point"})
+			}
+	})
+})
+
+// add new comment to point
+router.post('/comment/:pointId', function(req, res) {
+	var point_id = req.params.pointId,
+			user     = req.user,
+			comment  = 	{
+										message: req.body.point_comment,
+										userId: user._id,
+										userName: user.fullName,
+										userImage: user.picture
+									}
+
+	Point.findOne({_id : point_id}, function(err, point) {
+		if (err) {return res.render('error', {error: err, user: req.user});}
+			if(point) {
+				point.comments.push(comment)
+				point.save(function(err, point) {
+					if (err) res.render('error', {error: err})
+					return res.redirect('/point/' + point_id)
+				})
+			} else {
+				return res.render('error', {message: "Could not find point"})
+			}
+	})
 })
 
 // define the search route
@@ -346,9 +401,9 @@ router.get('/profile', function(req, res) {
 // For register, you can send it vars to auto-fill given info after error like username-taken
 router.post('/register', function(req, res) {
 	var username = req.body.username,
-		password = req.body.password,
-	    email    = req.body.email,
-	    fullName = req.body.fullName
+			password = req.body.password,
+			email    = req.body.email,
+			fullName = req.body.fullName
 
 	Account.register(new Account({username: username, email: email, fullName: fullName, picture: "/images/profile.png"}), password, function (err, account) {
 		if (err) {

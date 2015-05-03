@@ -62,6 +62,46 @@ $(document).ready(function() {
 		}
 	});
 
+	// show add photo modal
+	$('.add_photo').click(function(e) {
+		e.preventDefault();
+		var popup = $('.addphoto_modal_wrapper');
+		if (popup.css('display') == 'none') {
+			popup.fadeIn(500);
+		} else {
+			popup.fadeOut(500);
+		}
+	});
+
+	// hide add photo modal if click anywhere else on page
+	$(document).mouseup(function(e) {
+		var popup = $('.addphoto_modal');
+		var popup_wrapper = $('.addphoto_modal_wrapper');
+		if (!$('.add_photo').is(e.target) && !popup.is(e.target) && popup.has(e.target).length == 0) {
+			popup_wrapper.fadeOut(500);
+		}
+	});
+
+	// show add comment modal
+	$('.add_comment').click(function(e) {
+		e.preventDefault();
+		var popup = $('.addcomment_modal_wrapper');
+		if (popup.css('display') == 'none') {
+			popup.fadeIn(500);
+		} else {
+			popup.fadeOut(500);
+		}
+	});
+
+	// hide add comment modal if click anywhere else on page
+	$(document).mouseup(function(e) {
+		var popup = $('.addcomment_modal');
+		var popup_wrapper = $('.addcomment_modal_wrapper');
+		if (!$('.add_comment').is(e.target) && !popup.is(e.target) && popup.has(e.target).length == 0) {
+			popup_wrapper.fadeOut(500);
+		}
+	});
+
 	// make first region active if none specified
 	var isActiveRegion = false;
 	$('#regions_nav .city').each(function() {
