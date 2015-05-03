@@ -23,11 +23,15 @@ block content
 											h3 #{point.address.city}, #{point.address.state}
 											ul.point_item_metadata
 												li
-													i.fa.fa-comment 
+													span.icon-comments
 													| #{point.comments.length}
 												li
-													i.fa.fa-camera 
-													| #{point.images.userImages.length}
+													if (point.images.userImages.length > 1)
+														span.icon-images
+													else
+														span.icon-image
+													endif
+														| #{point.images.userImages.length}
 		div#search_history.one-half.column.search_meta
 			div.section_title
 				h2 Search History

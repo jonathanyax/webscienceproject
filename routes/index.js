@@ -48,12 +48,12 @@ var Point = mongoose.model('Point')
 router.get('/regions', function(req, res) {
 	Region.find({}, function(err, regions) {
 		if (err) {
-		res.render('error', {error: err})
+		res.render('error', {error: err, user: req.user})
 			return
 		}
 		City.find({}, function(err2, cities) {
 			if (err) {
-		res.render('error', {error: err2})
+		res.render('error', {error: err2, user: req.user})
 				return
 			}
 			res.render('regions', {title: 'Regions', active: 'regions', regions: regions, cities: cities, user: req.user})
@@ -66,33 +66,33 @@ router.get('/regions/:regionName', function(req, res) {
 	var regionName = req.params.regionName.replace(/-/g, ' ')
 	Region.find({}, function(err, regions) {
 		if (err) {
-			res.render('error', {error: err})
+			res.render('error', {error: err, user: req.user})
 			return
 		}
 		if(regions) {
 			City.find({}, function(err2, cities) {
 				if(cities) {
 					if (err2) {
-						res.render('error', {error: err2})
+						res.render('error', {error: err2, user: req.user})
 						return
 					}
 					Region.findOne({name: regionName}, function(err3, selectedRegion) {
 						if (err3) {
-							res.render('error', {error: err3})
+							res.render('error', {error: err3, user: req.user})
 							return
 						}
 						if(selectedRegion) {
 							res.render('regions', {title: 'Regions', active: 'regions', regions: regions, cities: cities, selectedRegion: selectedRegion, user: req.user})
 						} else {
-							return res.render('error', {message: "Could not find selected region."})
+							return res.render('error', {message: "Could not find selected region.", user: req.user})
 						}
 					})
 				} else { // if (!cities)
-					return res.render('error', {message: "Could not find cities"})
+					return res.render('error', {message: "Could not find cities", user: req.user})
 				}
 			}) // end City.find()
 		} else { // if (!regions)
-			return res.render('error', {message: "Could not find region"});
+			return res.render('error', {message: "Could not find region", user: req.user});
 		}
 	}) // end Region.find()
 })
@@ -104,19 +104,19 @@ router.get('/regions/:regionName/:cityName', function(req, res) {
 
 	Region.findOne({name: regionName}, function(err, region) {
 		if (err) {
-			res.render('error', {error: err});
+			res.render('error', {error: err, user: req.user});
 			return
 		}
 		if(region) {
 			City.findOne({name: cityName}, function(err2, city) {
 				if (err2) {
-					res.render('error', {error: err2})
+					res.render('error', {error: err2, user: req.user})
 					return
 				}
 				if (city) {
 					Point.find({cityId: city.id}, function(err3, points) {
 						if (err3) {
-							res.render('error', {error: err3})
+							res.render('error', {error: err3, user: req.user})
 							return
 						}
 						var my_points = {}
@@ -132,11 +132,11 @@ router.get('/regions/:regionName/:cityName', function(req, res) {
 						return res.render('city', {title: cityName, region: region, city: city, points: points, user: req.user, mypoints: my_points})
 					})
 				} else {
-					return res.render('error', {message: "Could not find city"})
+					return res.render('error', {message: "Could not find city", user: req.user})
 				}
 			}) // end City.findOne()
 		} else { // if (!region)
-			res.render('error', {message: "Could not find region"})
+			res.render('error', {message: "Could not find region", user: req.user})
 			return
 		}
 	}) // end Region.findOne()
@@ -195,7 +195,7 @@ router.post('/point', function(req, res) {
 	// get point info from google
 	geocoder.geocode(fullAddress, function(err, geoRes) {
 		if (err) {
-			res.render('error', {error: err})
+			res.render('error', {error: err, user: req.user})
 			return
 		}
 		var lat     = geoRes[0].latitude,
@@ -219,7 +219,7 @@ router.post('/point', function(req, res) {
 
 		City.findOne({name: city}, function(err2, pointCity) {
 			if (err2) {
-				res.render('error', {error: err2})
+				res.render('error', {error: err2, user: req.user})
 				return
 			}
 
@@ -249,11 +249,11 @@ router.post('/point', function(req, res) {
 					point.comments = [comment]
 				}
 				point.save(function(err3, point) {
-					if (err3) res.render('error', {error: err3})
+					if (err3) res.render('error', {error: err3, user: req.user})
 					return res.redirect('/point/' + point.id)
 				})
 			} else {
-				return res.render('error', {message: "Could not find city"})
+				return res.render('error', {message: "Could not find city", user: req.user})
 			}
 		})
 	})
@@ -404,7 +404,7 @@ router.post('/register', function(req, res) {
 			email    = req.body.email,
 			fullName = req.body.fullName
 
-	Account.register(new Account({username: username, email: email, fullName: fullName}), password, function (err, account) {
+	Account.register(new Account({username: username, email: email, fullName: fullName, picture: "/images/profile.png"}), password, function (err, account) {
 		if (err) {
 			if (!username) return res.render('signin', {info: "Please enter a username!"})
 			else if (!password) return res.render('signin', {join_username: username, info: "Please enter a password!"})
@@ -417,7 +417,7 @@ router.post('/register', function(req, res) {
 })
 
 router.get('/signin', function(req, res) {
-	res.render('signin', {info: req.flash('error'), title: 'Sign In'})
+	res.render('signin', {info: req.flash('error'), title: 'Sign In', user: req.user})
 })
 
 router.post('/signin',

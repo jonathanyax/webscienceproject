@@ -1021,6 +1021,9 @@ ul.points_list li {
   list-style-type: none;
   margin-bottom: 1rem;
 }
+ul.points_list li:nth-child(odd) {
+  margin-left: 0;
+}
 ul.points_list div.point_item {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -1311,6 +1314,11 @@ section#point_display section#point_data div.point_social li a {
   border-right: #00ac85 1px solid;
   width: 100%;
   -webkit-text-stroke: 0.05em #fff;
+}
+section#point_display section#point_data div.point_social li a input,
+section#point_display section#point_data div.point_social li a select,
+section#point_display section#point_data div.point_social li a textarea {
+  color: #222;
 }
 @media screen and (min-width: 550px) {
   section#point_display section#point_data div.point_social li a {

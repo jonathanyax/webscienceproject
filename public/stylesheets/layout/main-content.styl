@@ -231,6 +231,8 @@ ul.points_list
 	li
 		list-style-type none
 		margin-bottom 1rem
+		&:nth-child(odd)
+			margin-left 0
 	div.point_item
 		transition all .2s ease-in-out
 		overflow auto
@@ -440,6 +442,8 @@ section#point_display
 					border-right color--primary-dark 1px solid
 					width 100%
 					text-stroke .05em color--white
+					input, select, textarea
+						color color--black
 					@media screen and (min-width: mq--phablet)
 						border-right none
 						padding .7em .1em
