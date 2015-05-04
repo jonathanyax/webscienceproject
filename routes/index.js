@@ -31,7 +31,7 @@ router.use(multer({dest: './public/images/uploads/',
 		uploadDone = true
 	},
 	limits: {
-		fileSize: 100000
+		fileSize: 1000000
 	},
 	onFileSizeLimit: function (file) {
 	  console.log('>> ERROR image file too big: ', file.originalname)
