@@ -32,15 +32,17 @@ block content
 														span.icon-image
 													endif
 														| #{point.images.userImages.length}
-		div#search_history.one-half.column.search_meta
-			div.section_title
-				h2 Search History
-				button.delete
-					span
-						i.icon-del
-						| Clear
-			ul.search_list
-				li
-					a(href="/search_results") boston
-				li
-					a(href="/search_results") new york city
+		if(user)
+			div#search_history.one-half.column.search_meta
+				div.section_title
+					h2 Search History
+					a(href="/clearsearch/")
+						button.delete
+							span
+								i.icon-del
+								| Clear
+				if(history)
+					ul.search_list
+						for term in history
+							li
+								a(href="/search/#{term}") #{term}

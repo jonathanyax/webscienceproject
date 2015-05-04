@@ -9,7 +9,8 @@ var Account = new Schema({
 	fullName: String,
 	picture: String,
 	oauthID: Number,
-	points: [{type: String}]
+	points: [{type: String}],
+	search_history: [{type: String}]
 });
 
 Account.plugin(passportLocalMongoose);

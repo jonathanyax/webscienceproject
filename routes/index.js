@@ -313,14 +313,60 @@ router.post('/comment/:pointId', function(req, res) {
 router.get('/search', function(req, res) {
 	Point.find({}, function(err, points) {
 		if (err) return res.render('search', {title: 'Search', active: 'search', user: req.user})
-		if (points) return res.render('search', {title: 'Search', active: 'search', user: req.user, points: points})
-		else return res.render('search', {title: 'Search', active: 'search', user: req.user})
+		else {
+			// Check logged in
+			if(req.user) {
+				// Get user search_history
+				
+				Account.findOne({_id: ObjectId(req.user._id)}, function(err, account) {
+					if (err) console.log(err);
+					else {
+						var user_history = account.search_history;
+						return res.render('search', {title: 'Search', active: 'search', user: req.user, points: points, history: user_history});
+					}
+				});
+
+				
+			}
+			else return res.render('search', {title: 'Search', active: 'search', user: req.user, points: points});
+		}
 	}).limit(5)
+})
+
+router.get('/clearsearch/', function(req, res) {
+	if (req.user) {
+		var account = accounts.find({_id: ObjectId(req.user._id)}, function(err, account) {
+			if (err) {}
+			else {
+				accounts.update( {_id: ObjectId(req.user._id)}, { $set : {search_history: []} });
+				
+				Point.find({}, function(err, points) {
+					return res.render('search', {title: 'Search', active: 'search', user: req.user, points: points, history: []});
+				}).limit(5)
+				
+			}
+		});
+	}
 })
 
 // define the temp search results route
 router.get('/search/:searchterm', function(req, res) {
 	var searchterm = req.params.searchterm
+	
+	// Add search term to user model
+	if(req.user) {
+		// var my_history = req.user.search_history;
+		var account = accounts.findOne({_id: ObjectId(req.user._id)}, function(err, account) {
+			if (err) {}
+			else {
+				var my_history = account.search_history;
+				// Add search term to search_history
+				my_history.push(req.params.searchterm);
+				accounts.update( {_id: ObjectId(req.user._id)}, { $set : {search_history: my_history} });
+			}
+		});
+	}
+	
 	Point.find({"name": new RegExp(searchterm, 'i')}, function(err, points) {
 		if (err) return res.render('search_results', {message: "No search results for: " + req.params.searchterm, user: req.user})
 		if (!points.length == 0) {
@@ -338,6 +384,7 @@ router.get('/search/:searchterm', function(req, res) {
 		}
 	}
 )})
+
 
 router.post('/search', function(req, res) {
 	var searchterm = req.body.searchterm
