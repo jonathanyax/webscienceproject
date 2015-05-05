@@ -31,3 +31,17 @@ First, run <code>npm install</code> to install the NPM dependencies.
 To start the application, run <code>npm start</code>.
 
 On the server-side, run <code>PORT=80 npm start</code> to set the express server port to default 80.  Otherwise, the default port will result in the app's running on localhost:5000.
+
+## Mongo Database
+
+Our application uses the name <code>onpoint-dev</code> for the mongo database.
+
+A copy of all the default supported cities and a collection of sample points are included in a mongodump at <code>dump/onpoint-dev</code>.  To use this, make sure there is no local copy of a mongodb called <code>onpoint-dev</code> and just run <code>mongorestore</code> in the repo's directory to load the mongodump.
+
+## Social Media Integration
+
+As our application is not registered on the Facebook Developer Platform yet, the passport.JS integration with Facebook will only work on a local running copy of the application and not on our live site.
+
+### Live Version
+
+A sandbox/live version of our application is developed and live at [http://onpoint.devinnguyen.com/]
