@@ -182,9 +182,43 @@ $(document).ready(function() {
 				.data('origWidth', newWidth);
 		});
 	}
-	
+
+	// show permalink for share on point page
 	$("div.point_social ul li a.share").click(function() {
 		$("section#urlcopy input").toggle();
 	});
+
+	// upload profile pic on signin page
+	if ($('.profile_pic_upload_button') !== null) {
+		var profWrapper = $('<div/>').css({height:0, width:0, 'overflow':'hidden'});
+		var profFileInput = $('#profile_pic_file:file').wrap(profWrapper);
+
+		profFileInput.change(function() {
+			$this = $(this);
+			$('.profile_pic_upload_button').text($this.val());
+			if ($('.profile_pic_upload_button').text() === '') {
+				$('.profile_pic_upload_button').text('Choose File');
+			}
+		});
+
+		$('.profile_pic_upload_button').click(function() {
+			profFileInput.click();
+		}).show();
+	}
+
+	// upload cover photo on signin page
+	if ($('.cover_photo_upload_button') !== null) {
+		var wrapper = $('<div/>').css({height:0, width:0, 'overflow':'hidden'});
+		var fileInput = $('#cover_photo_file:file').wrap(wrapper);
+
+		fileInput.change(function() {
+			$this = $(this);
+			$('.cover_photo_upload_button').text($this.val());
+		});
+
+		$('.cover_photo_upload_button').click(function() {
+			fileInput.click();
+		}).show();
+	}
 
 });

@@ -24,9 +24,17 @@ block content
 					| Sign up with Facebook
 			hr
 			p Or create an account using your email address
-			form(action="/register", method="post")
-				input(type="text", name="fullName", placeholder="Full Name").u-full-width
-				input(type="text", name="username", placeholder="Username", value=join_username).u-full-width
-				input(type="email", name="email", placeholder="E-mail").u-full-width
-				input(type="password", name="password", placeholder="Password").u-full-width
+			form(action="/register", method="post", enctype="multipart/form-data")
+				input(type="text", name="fullName", placeholder="Full Name", required).u-full-width
+				input(type="text", name="username", placeholder="Username", value=join_username, required).u-full-width
+				input(type="email", name="email", placeholder="E-mail", required).u-full-width
+				input(type="password", name="password", placeholder="Password", required).u-full-width
+				div.row.profile_pic_upload
+					label(for="profilePic").three.columns Profile Picture
+					span.profile_pic_upload_button Choose File
+					input(id="profile_pic_file", type="file", name="profilePic", accept="image/*")
+				div.row.profile_pic_upload
+					label(for="coverPhoto").three.columns Cover Photo
+					span.cover_photo_upload_button Choose File
+					input(id="cover_photo_file", type="file", name="coverPhoto", accept="image/*")
 				input(type="submit", value="Join Us")

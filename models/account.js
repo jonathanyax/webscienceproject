@@ -7,7 +7,8 @@ var Account = new Schema({
 	password: String,
 	email: String,
 	fullName: String,
-	picture: String,
+  picture: String,
+	coverPhoto: String,
 	oauthID: Number,
 	points: [{type: String}],
 	search_history: [{type: String}]

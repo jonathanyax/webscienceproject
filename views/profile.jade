@@ -5,6 +5,11 @@ extend layout
 
 block content
 	section#profile.container
+		span.cover_photo_wrap
+			if (user.coverPhoto == undefined)
+				img(src="/images/profile_cover_default.jpg").cover_photo
+			else
+				img(src="#{user.coverPhoto}").cover_photo
 		span.profile_image
 			span.profile_image_wrap
 				img(src="#{user.picture}")

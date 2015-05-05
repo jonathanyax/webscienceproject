@@ -100,7 +100,10 @@ block content
 				for comment in point.comments
 					li
 						span.author-pic 
-							img(src="#{comment.userImage}")
+							if (comment.userImage === undefined)
+								img(src="/images/profile.png")
+							else
+								img(src="#{comment.userImage}")
 						span.author #{comment.userName}
 						span.comment "#{comment.message}"
 		

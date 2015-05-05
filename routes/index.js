@@ -447,20 +447,29 @@ router.get('/profile', function(req, res) {
 // Need more error checking for firstname/lastname/email-validation
 // For register, you can send it vars to auto-fill given info after error like username-taken
 router.post('/register', function(req, res) {
-	var username = req.body.username,
-			password = req.body.password,
-			email    = req.body.email,
-			fullName = req.body.fullName
+	var username    = req.body.username,
+			password    = req.body.password,
+			email       = req.body.email,
+			fullName    = req.body.fullName,
+			picture     = '/images/profile.png',
+			coverPhoto  = '/images/profile_cover_default.jpg'
 
-	Account.register(new Account({username: username, email: email, fullName: fullName, picture: "/images/profile.png"}), password, function (err, account) {
-		if (err) {
-			if (!username) return res.render('signin', {info: "Please enter a username!"})
-			else if (!password) return res.render('signin', {join_username: username, info: "Please enter a password!"})
-			else return res.render('signin', {join_username: username, info:"Sorry! That username is taken."})
-		}
-		passport.authenticate('local')(req, res, function() {
-			res.redirect('/')
-		})
+	if (uploadDone == true) {
+		picture = '/images/uploads/' + req.files.profilePic.name
+		coverPhoto = '/images/uploads/' + req.files.coverPhoto.name
+	}
+
+	Account.register(
+		new Account({username: username, email: email, fullName: fullName, picture: picture, coverPhoto: coverPhoto}),
+		password, function (err, account) {
+			if (err) {
+				if (!username) return res.render('signin', {info: "Please enter a username!"})
+				else if (!password) return res.render('signin', {join_username: username, info: "Please enter a password!"})
+				else return res.render('signin', {join_username: username, info:"Sorry! That username is taken."})
+			}
+			passport.authenticate('local')(req, res, function() {
+				res.redirect('/')
+			})
 	})
 })
 

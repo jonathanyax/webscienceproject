@@ -1508,13 +1508,66 @@ section#signin_accounts a {
   font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
   line-height: 1.25em;
 }
+section#signin_accounts input[type="submit"] {
+  border-color: #12ca9a;
+  color: #666;
+}
+section#signin_accounts input[type="submit"]:hover,
+section#signin_accounts input[type="submit"]:focus,
+section#signin_accounts input[type="submit"]:active {
+  border-color: #00ac85;
+  color: #00ac85;
+}
 section#signin_accounts input {
   display: block;
+  border: 1px solid #cbd3d8;
+}
+section#signin_accounts input:focus {
+  border-color: #12ca9a;
 }
 section#signin_accounts h3 {
   margin: 0 0 0.5em 0;
   padding: 0 0 0.15em 0;
   border-bottom: 3px solid #12ca9a;
+}
+section#signin_accounts .profile_pic_upload {
+  border: 1px solid #cbd3d8;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 6px 10px;
+  margin-bottom: 15px;
+}
+section#signin_accounts .profile_pic_upload label {
+  color: #9cacb5;
+  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+section#signin_accounts .profile_pic_upload input {
+  display: none;
+}
+section#signin_accounts .profile_pic_upload .profile_pic_upload_button,
+section#signin_accounts .profile_pic_upload .cover_photo_upload_button {
+  display: inline-block;
+  border: 1px solid #8b9da8;
+  padding: 3px 6px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+  color: #8b9da8;
+  font-size: 10px;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  text-align: center;
+  margin-top: 1px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+section#signin_accounts .profile_pic_upload .profile_pic_upload_button:hover,
+section#signin_accounts .profile_pic_upload .cover_photo_upload_button:hover {
+  border-color: #12ca9a;
+  color: #12ca9a;
 }
 section#signin_accounts button.fb_login {
   background: #3b5998;
@@ -1551,14 +1604,10 @@ section#settings ul {
   list-style-type: none;
 }
 #profile {
-  background: -webkit-linear-gradient(top, rgba(234,240,239,0), rgba(234,240,239,0) 50%, #fff 50%, #fff), url("../../images/profile_cover_default.jpg");
-  background: -moz-linear-gradient(top, rgba(234,240,239,0), rgba(234,240,239,0) 50%, #fff 50%, #fff), url("../../images/profile_cover_default.jpg");
-  background: -o-linear-gradient(top, rgba(234,240,239,0), rgba(234,240,239,0) 50%, #fff 50%, #fff), url("../../images/profile_cover_default.jpg");
-  background: -ms-linear-gradient(top, rgba(234,240,239,0), rgba(234,240,239,0) 50%, #fff 50%, #fff), url("../../images/profile_cover_default.jpg");
-  background: linear-gradient(to bottom, rgba(234,240,239,0), rgba(234,240,239,0) 50%, #fff 50%, #fff), url("../../images/profile_cover_default.jpg");
   margin-top: -2px;
   padding-top: 40px;
   position: relative;
+  overflow: hidden;
 }
 @media screen and (min-width: 550px) {
   #profile {
@@ -1568,17 +1617,30 @@ section#settings ul {
 @media screen and (min-width: 750px) {
   #profile {
     padding-top: 140px;
-    background: -webkit-linear-gradient(top, rgba(234,240,239,0), rgba(234,240,239,0) 65%, #fff 35%, #fff), url("../../images/profile_cover_default.jpg");
-    background: -moz-linear-gradient(top, rgba(234,240,239,0), rgba(234,240,239,0) 65%, #fff 35%, #fff), url("../../images/profile_cover_default.jpg");
-    background: -o-linear-gradient(top, rgba(234,240,239,0), rgba(234,240,239,0) 65%, #fff 35%, #fff), url("../../images/profile_cover_default.jpg");
-    background: -ms-linear-gradient(top, rgba(234,240,239,0), rgba(234,240,239,0) 65%, #fff 35%, #fff), url("../../images/profile_cover_default.jpg");
-    background: linear-gradient(to bottom, rgba(234,240,239,0), rgba(234,240,239,0) 65%, #fff 35%, #fff), url("../../images/profile_cover_default.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     background-position: middle;
     border-top: 5px solid #12ca9a;
   }
+}
+#profile .cover_photo_wrap {
+  display: block;
+  height: 52%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -2;
+}
+@media screen and (min-width: 750px) {
+  #profile .cover_photo_wrap {
+    height: 65%;
+  }
+}
+#profile img.cover_photo {
+  width: 100%;
 }
 #profile span.profile_image {
   display: block;
@@ -1592,6 +1654,7 @@ section#settings ul {
   padding: 10px;
   background: rgba(255,255,255,0.6);
   text-align: center;
+  z-index: 1;
 }
 @media screen and (min-width: 750px) {
   #profile span.profile_image {
@@ -1636,7 +1699,7 @@ section#settings ul {
 #profile a.profile_logout {
   position: absolute;
   top: 95px;
-  left: 50%;
+  left: 44%;
   margin-left: 95px;
   background: #12ca9a;
   padding: 4px 10px;
@@ -1651,6 +1714,7 @@ section#settings ul {
 }
 @media screen and (min-width: 750px) {
   #profile a.profile_logout {
+    left: 50%;
     top: 210px;
   }
 }
