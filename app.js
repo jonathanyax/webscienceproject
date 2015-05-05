@@ -95,7 +95,8 @@ function (accessToken, refreshToken, profile, done) {
 				newAccount.oauthID = profile.id;
 				newAccount.fullName = profile.displayName;
 				newAccount.email = profile.emails[0].value;
-				newAccount.picture = "https://graph.facebook.com/" + profile.id + "/picture?width=250&height=250";
+        newAccount.picture = "https://graph.facebook.com/" + profile.id + "/picture?width=250&height=250";
+				newAccount.coverPhoto = '/images/profile_cover_default.jpg';
 				
 				newAccount.save(function(err) {
 					if (err) throw err;

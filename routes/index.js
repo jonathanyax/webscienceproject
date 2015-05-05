@@ -411,9 +411,9 @@ router.get('/settings', function(req, res) {
 // define the profile page route
 router.get('/profile', function(req, res) {
 	if (req.user) {
-		var mypoints = req.user.points;
-		var final_points = [];
-		var points_to_check = [];
+		var mypoints 				= req.user.points,
+		 		final_points 		= [],
+				points_to_check = []
 		
 		for (each in mypoints) {points_to_check.push(each);}
 		
