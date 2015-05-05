@@ -9,8 +9,6 @@ Using a standard user account system as a foundation, users will have profiles w
 
 On Point intends to become a local-oriented valuable information source for traveling recommendations and a social platform to curate featured points and interest sharing. 
 
-
-
 Emily Roth
 rothe2@rpi.edu
 
@@ -25,3 +23,11 @@ yaxarj@rpi.edu
 
 Aidan Pelisson
 pelisa@rpi.edu
+
+## Installation
+
+First, run <code>npm install</code> to install the NPM dependencies.
+
+To start the application, run <code>npm start</code>.
+
+On the server-side, run <code>PORT=80 npm start</code> to set the express server port to default 80.  Otherwise, the default port will result in the app's running on localhost:5000.
