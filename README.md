@@ -44,4 +44,4 @@ As our application is not registered on the Facebook Developer Platform yet, the
 
 ### Live Version
 
-A sandbox/live version of our application is developed and live at [http://onpoint.devinnguyen.com/]
+A sandbox/live version of our application is developed and live at [http://onpoint.devinnguyen.com/](http://onpoint.devinnguyen.com/)
