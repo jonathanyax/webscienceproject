@@ -1487,15 +1487,29 @@ section#point_display section#point_comments li span.comment {
 .addcomment_modal.modal #point_comment {
   height: 150px;
 }
-section#help {
-  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+section#help h2,
+section#help h3 {
+  font-family: lane-narrow, Helvetica Neue, Arial, sans-serif;
+}
+section#help h2 {
+  border-bottom: 2px solid #12ca9a;
+  margin-bottom: 30px;
+  font-size: 3em;
+}
+section#help h3 {
+  font-size: 1.7em;
+  -webkit-text-stroke: 0.035em #222;
 }
 section#help ul {
+  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
   margin: 1em 0;
 }
 section#help ul li {
   list-style-type: none;
-  margin: 1em 0;
+  margin: 2em 0;
+}
+section#help ul p {
+  font-size: 14px;
 }
 section#signin_accounts div#joinus,
 section#signin_accounts div#signin {
