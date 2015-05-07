@@ -1613,9 +1613,34 @@ section#signin_accounts button.fb_login:hover {
   font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
   font-size: 0.8em;
 }
+section#settings h2 {
+  border-bottom: 2px solid #12ca9a;
+  margin-bottom: 30px;
+  font-size: 3em;
+}
 section#settings ul {
   font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
   list-style-type: none;
+}
+section#settings li {
+  margin: 0.5em 0;
+}
+section#settings .settings_cover_photo,
+section#settings .settings_profile_image {
+  vertical-align: top;
+  display: block;
+  margin-top: 10px;
+}
+section#settings .settings_cover_photo {
+  max-width: 500px;
+  width: 100%;
+}
+section#settings .settings_profile_image {
+  width: 70%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid #12ca9a;
 }
 #profile {
   margin-top: -2px;
